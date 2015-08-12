@@ -35,7 +35,7 @@ I will implement user authentication in Rails based on the practices learned at
 App Academy. By the end of this phase, users will be able to ask questions using
 a simple text form in a Rails view. The most important part of this phase will
 be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2. Finally, I will integrate bootstrap to provide a clean interface. 
+to phase 2. Finally, I will integrate bootstrap to provide a clean interface.
 
 [Details][phase-one]
 
