@@ -1,7 +1,7 @@
-Reddit.Views.LinkShow = Backbone.CompositeView.extend({
+Fora.Views.QuestionShow = Backbone.View.extend({
   template: JST["questions/show"],
 
-  
+
   initialize: function () {
     this.listenTo(this.model, "sync", this.render)
   },

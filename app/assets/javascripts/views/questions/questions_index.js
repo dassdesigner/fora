@@ -1,4 +1,4 @@
-Fora.Views.LinksIndex = Backbone.View.extend({
+Fora.Views.QuestionsIndex = Backbone.View.extend({
   template: JST["questions/index"],
 
   initialize: function () {
