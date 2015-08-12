@@ -181,7 +181,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.2.3)
-  sass-rails (~> 5.0)
+  sass-rails
   sdoc
   sprockets-rails
   therubyracer
