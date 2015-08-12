@@ -16,7 +16,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.new-session {
-  margin: 0 auto;
-  width:10%;
+.new-session, .new-user {
+  text-align:center
 }
