@@ -15,22 +15,22 @@ session_token   | string    | not null, unique
 name            | string    | not null
 description     | string    |
 
-## answers
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-body        | string    | not null
-votes       | integer   | not null
-
 ## questions
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
 title       | string    | not null
-body        | string    |
+body        | text      |
+votes       | integer   | not null
+
+## answers
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+author_id   | integer   | not null, foreign key (references users)
+title       | string    | not null
+body        | text      | not null
 votes       | integer   | not null
 
 ## user_followings
