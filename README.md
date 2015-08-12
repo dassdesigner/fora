@@ -31,9 +31,7 @@ able to:
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Adding Questions (~1 day)
-I will implement user authentication in Rails based on the practices learned at
-App Academy. I will also add a simple question and add view function in Rails
-(to be moved to Backbone at a later time). The most important part of this phase
+I will implement user authentication in Rails based on the practices learned at App Academy. The most important part of this phase
 will be pushing the app to Heroku and ensuring that everything works before
 moving on to phase 2. Finally,I will integrate bootstrap to provide a clean
 interface.
