@@ -4,8 +4,7 @@ window.Fora = {
   Views: {},
   Routers: {},
   initialize: function() {
-    Fora.Routers.Router()
-    }
+    new Fora.Routers.Router()
     Backbone.history.start()
   }
 };

@@ -2,26 +2,27 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   initialize: function () {
     this.collection = new Fora.Collections.Questions();
-    this.$rootEl = ('#main');
-  }
+    this.$rootEl = $('#main');
+  },
   routes: {
-    "": "feedShow"
+    "": "feedShow",
     "questions": "questionsIndex",
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
-  }
+  },
 
   questionsIndex: function () {
     this.collection.fetch();
-    var view = Fora.Views.QuestionsIndex({questions: this.collection});
+    debugger;
+    var view = new Fora.Views.QuestionsIndex({collection: this.collection});
     this._swapView(view);
-  }
+  },
 
   questionNew: function () {
     var question = new Fora.Models.Question();
-    var view = Fora.Views.QuestionForm({model: question});
+    var view = new Fora.Views.QuestionForm({model: question});
     this._swapView(view);
-  }
+  },
 
   questionShow: function (id) {
     var question = this.collection.getOrFetch(id);
@@ -29,7 +30,7 @@ Fora.Routers.Router = Backbone.Router.extend({
       collection: this.collection, model: question
     });
     this._swapView(view);
-  }
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
@@ -37,4 +38,4 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.$rootEl.html(view.render().$el);
   }
 
-})
+});

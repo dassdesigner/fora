@@ -1,6 +1,6 @@
-Fora.Collections.Links = Backbone.Collection.extend({
+Fora.Collections.Questions = Backbone.Collection.extend({
   url: "/api/questions",
-  model: Fora.Models.Link,
+  model: Fora.Models.Question,
 
   // comparator: function () {
   //
@@ -10,7 +10,7 @@ Fora.Collections.Links = Backbone.Collection.extend({
     var question = this.get(id);
     that = this;
     if (!question) {
-      question = new Fora.Models.Link({id: id});
+      question = new Fora.Models.Question({id: id});
       question.fetch({success: function(){
         that.add(question);
       }})
