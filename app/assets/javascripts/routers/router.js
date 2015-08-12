@@ -5,7 +5,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.$rootEl = $('#main');
   },
   routes: {
-    "": "feedShow",
+    "": "questionsIndex", //TODO change to feedShow
     "questions": "questionsIndex",
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
@@ -13,20 +13,22 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   questionsIndex: function () {
     this.collection.fetch();
-    var view = new Fora.Views.QuestionsIndex({collection: this.collection});
+    var view = new Fora.Views.QuestionsIndex({
+        collection: this.collection});
     this._swapView(view);
   },
 
   questionNew: function () {
     var question = new Fora.Models.Question();
-    var view = new Fora.Views.QuestionForm({model: question});
+    var view = new Fora.Views.QuestionForm({
+        model: question, collection: this.collection});
     this._swapView(view);
   },
 
   questionShow: function (id) {
     var question = this.collection.getOrFetch(id);
     var view = Fora.Views.QuestionShow({
-      collection: this.collection, model: question
+        collection: this.collection, model: question
     });
     this._swapView(view);
   },

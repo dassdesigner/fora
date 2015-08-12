@@ -1,14 +1,18 @@
 Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
   template: JST["questions/index"],
 
-  // tagName: li,
 
+  addQuestionSubview: function (question) {
+    var subView = new Fora.Views.QuestionsIndexItem({model: question});
+    this.addSubview(".questions-container", subView);
+  },
 
   initialize: function () {
     this.listenTo(this.collection, "add remove sync", this.render)
     this.listenTo(this.collection, "add", this.addQuestionSubview)
+    that = this;
     this.collection.each (function (question) {
-      this.addQuestionSubview(question);
+      that.addQuestionSubview(question);
     });
   },
 
@@ -20,8 +24,4 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
     return this;
   },
 
-  addQuestionSubview: function (question) {
-    var subView = new Fora.Views.QuestionsIndexItem({model: question});
-    this.addSubview(".questions-container", subView);
-  }
 });

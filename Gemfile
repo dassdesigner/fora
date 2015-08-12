@@ -16,6 +16,7 @@ gem 'font-awesome-rails'
 # gem 'execjs'
 gem 'therubyracer'
 gem 'sprockets-rails'
+gem 'serialize_json-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass'

@@ -1,7 +1,8 @@
 class Api::QuestionsController < ApplicationController
 
   def create
-    @question = Question.find(params[:id])
+    @question = Question.new(question_params)
+    @question.author_id = current_user.id
     if @question.save
       render :json => @question
     else
@@ -17,4 +18,9 @@ class Api::QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     render :json => @question
   end
+
+  private
+    def question_params
+      params.require(:question).permit(:title, :body)
+    end
 end
