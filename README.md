@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://foraforafora.herokuapp.com
 
 ## Minimum Viable Product
 Fora is a clone of Quora where users can ask and answer questions. Users will be
