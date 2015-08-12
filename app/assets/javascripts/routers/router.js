@@ -1,7 +1,7 @@
 Fora.Routers.Router = Backbone.Router.extend({
 
   initialize: function () {
-    collection = new Fora.Collections.Questions();
+    this.collection = new Fora.Collections.Questions();
     this.$rootEl = ('#main');
   }
   routes: {

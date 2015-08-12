@@ -1,5 +1,5 @@
 Fora.Views.QuestionShow = Backbone.View.extend({
-  template: JST["questions/show"],
+  template: JST["questions/form"],
 
 
   initialize: function () {
