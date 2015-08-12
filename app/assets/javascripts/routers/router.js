@@ -13,7 +13,6 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   questionsIndex: function () {
     this.collection.fetch();
-    debugger;
     var view = new Fora.Views.QuestionsIndex({collection: this.collection});
     this._swapView(view);
   },

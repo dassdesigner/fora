@@ -1,7 +1,7 @@
 Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   template: JST["questions/index_item"],
 
-  // tagName: li,
+  tagName: "li",
 
 
   initialize: function () {
@@ -10,7 +10,8 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
 
 
   render: function () {
-    var content = this.template(question: model);
+    debugger;
+    var content = this.template({question: this.model});
     this.$el.html(content);
     return this;
   },
