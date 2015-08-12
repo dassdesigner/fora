@@ -10,8 +10,8 @@ able to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
 - [ ] Create Questions
 - [ ] Create Answers for Questions
 - [ ] View Questions with their Answers
@@ -32,10 +32,11 @@ able to:
 
 ### Phase 1: User Authentication, Adding Questions (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to ask questions using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2. Finally, I will integrate bootstrap to provide a clean interface.
+App Academy. I will also add a simple question and add view function in Rails
+(to be moved to Backbone at a later time). The most important part of this phase
+will be pushing the app to Heroku and ensuring that everything works before
+moving on to phase 2. Finally,I will integrate bootstrap to provide a clean
+interface.
 
 [Details][phase-one]
 

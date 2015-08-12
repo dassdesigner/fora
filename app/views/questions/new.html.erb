@@ -1,0 +1,12 @@
+<h1>Add Question</h1>
+
+<form action="/questions" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Title<br>
+    <input name="question[title]" type="text"><br>
+  </label><br>
+  <label>Body<br>
+    <textarea name="question[body]"></textarea>
+  </label><br>
+  <input type="submit" value="Submit" class="btn btn-primary"><br>
+</form>
