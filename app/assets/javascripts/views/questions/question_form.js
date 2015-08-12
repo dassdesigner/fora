@@ -1,17 +1,25 @@
-Fora.Views.QuestionShow = Backbone.View.extend({
+Fora.Views.QuestionForm = Backbone.View.extend({
   template: JST["questions/form"],
-
-
-  initialize: function () {
-    this.listenTo(this.model, "sync", this.render)
+  tagName: 'form',
+  events: {
+    "click button" : "submit"
   },
-
-  render: function () {
+  render: function() {
     var content = this.template({question: this.model});
     this.$el.html(content);
-    this.attachSubviews();
     return this;
-  }
+  },
 
+  submit: function (event) {
+    event.preventDefault();
+    var attrs = this.$el.serializeJSON();
+    that = this;
+    this.model.set(attrs);
+    this.model.save({}, {success: function () {
+      that.collection.add(that.model, {merge: true});
+      Backbone.navigate("", {trigger: true})
+    }})
+
+  }
 
 });
