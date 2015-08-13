@@ -16,6 +16,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+ul {
+  list-style-type: none;
+}
+
 .new-session, .new-user {
-  text-align:center
+  text-align:center;
+}
+
+.question-title {
+  font-weight: bold;
+  font-size: large;
+  color: black;
 }

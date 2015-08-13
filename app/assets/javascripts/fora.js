@@ -8,7 +8,3 @@ window.Fora = {
     Backbone.history.start()
   }
 };
-
-$(document).ready(function(){
-  Fora.initialize();
-});
