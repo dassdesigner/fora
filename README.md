@@ -12,7 +12,7 @@ able to:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] Create Questions
+- [x] Create Questions
 - [ ] Create Answers for Questions
 - [ ] View Questions with their Answers
 - [ ] Create Topics for Questions
@@ -77,7 +77,9 @@ questions based on search queries. This will be displayed in a Search Show compo
 [Details][phase-six]
 
 ###Phase 7: Add Cool CSS/ Javascript
-Make the website FABULOUS.
+I will have 2 main columns. The left column will be a sidebar containing the
+current user's followed topics. The right (main column) will consist of the
+current show page (feedShow/topicShow/questionShow). Details TBD.
 
 ### Phase 8: (Bonus) Voting and Searching By Topic (~1~2 days) (TBD)
 Users will be able to upvote or downvote answers and questions. This information
