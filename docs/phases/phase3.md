@@ -4,8 +4,7 @@
 * Answer
 
 ### Controllers
-AnswersController (create, new, show)
-Api:AnswersController (create, destroy, index, show, update)
+Api::AnswersController (create, destroy, index, show, update)
 
 ### Views
 questions/show.json.jbuilder
