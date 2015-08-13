@@ -5,8 +5,8 @@ Fora.Models.Question = Backbone.Model.extend({
       this._answers = new Fora.Collections.Answers([], {question: this})
     }
 
-    return this._cards;
+    return this._answers;
   },
-  
+
   }
 });
