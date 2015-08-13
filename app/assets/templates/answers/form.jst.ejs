@@ -1,0 +1,16 @@
+<h3>Answer this Question!</h3>
+
+  <label for='title'>Title</label>
+  <br>
+
+  <input type='text'
+         name='title'
+         id='title'
+         value='<%= question.escape('title') %>'>
+  <br>
+  <label for='body'>Body</label>
+  <br>
+
+  <textarea name='body' id='body'><%= question.escape('body') %></textarea>
+<br>
+<button>Submit</button>
