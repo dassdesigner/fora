@@ -36,9 +36,8 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><%= link_to "Sign out", session_url, method: :delete %></li>
           </ul>
-        <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-info navbar-btn" %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
