@@ -15,7 +15,8 @@ class Api::AnswersController < ApplicationController
   end
 
   def show
-    render :json => Answer.find(params[:id])
+    @answer = Answer.find(params[:id])
+    render :show
   end
 
   private
