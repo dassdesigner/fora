@@ -76,26 +76,27 @@ questions based on search queries. This will be displayed in a Search Show compo
 
 [Details][phase-six]
 
-###Phase 7: Add Cool CSS/ Javascript
+###Phase 7: Beautify with CSS/ Javascript
 I will have 2 main columns. The left column will be a sidebar containing the
 current user's followed topics. The right (main column) will consist of the
 current show page (feedShow/topicShow/questionShow). Details TBD.
 
-### Phase 8: (Bonus) Voting and Searching By Topic (~1~2 days) (TBD)
+### Phase 8: Voting (~1~2 days) (Details TBD)
 Users will be able to upvote or downvote answers and questions. This information
 will be used to sort questions on both the feed and topic pages. This will also
 determine the top answer shown for each question on the above pages. In addition,
 answers on the question show page will be sorted by votes.
-If there is remaining time, I will add searching by topic.
+
 
 ### Bonus Features (TBD)
+- [ ] User Pages
 - [ ] Notifications
 - [ ] Deleting Posts
 - [ ] Comments on Answers
 - [ ] Pagination/infinite scroll
 - [ ] Activity history (e.g. upvoted answers)
 - [ ] Typeahead search bar
-
+- [ ] Searching by topic
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
