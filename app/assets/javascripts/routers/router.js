@@ -27,8 +27,8 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   questionShow: function (id) {
     var question = this.collection.getOrFetch(id);
-    var view = Fora.Views.QuestionShow({
-        collection: this.collection, model: question
+    var view = new Fora.Views.QuestionShow({
+        model: question
     });
     this._swapView(view);
   },
