@@ -3,6 +3,7 @@ class Api::AnswersController < ApplicationController
   def create
     current_question.answers.new(answer_params)
     @answer.author_id = current_user.id
+    @answer.question_id = current_question.id
     if @answer.save
       render :json => @answer
     else
@@ -21,7 +22,7 @@ class Api::AnswersController < ApplicationController
 
   private
     def answer_params
-      params.require(:answer).permit(:body, :question_id)
+      params.require(:answer).permit(:body)
     end
 
     def current_question
