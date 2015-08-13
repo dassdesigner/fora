@@ -1,4 +1,4 @@
 Fora.Models.Answer = Backbone.Model.extend({
-  urlRoot: '/api/answers'
+  urlRoot: 'api/answers'
 
 })
