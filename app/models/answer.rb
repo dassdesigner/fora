@@ -7,7 +7,7 @@ class Answer < ActiveRecord::Base
     primary_key: :id
   }
 
-  belongs_to :question    
+  belongs_to :question
 
 
 end
