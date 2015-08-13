@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
-  validates :author_id, :title, :body, presence: true
+  validates :author_id, :body, presence: true
   belongs_to(
     :author,
     foreign_key: :author_id,
