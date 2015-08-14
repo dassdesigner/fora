@@ -21,6 +21,7 @@ class Api::QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
+    render json: @question
   end
 
   def update

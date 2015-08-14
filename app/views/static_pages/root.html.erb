@@ -3,6 +3,7 @@
 </div>
 <script>
   $(document).ready(function(){
+    Fora.CURRENT_USER_ID = <%= current_user.id %>;
     Fora.initialize();
   });
 </script>
