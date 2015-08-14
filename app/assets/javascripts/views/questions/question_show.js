@@ -1,6 +1,5 @@
 Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   template: JST["questions/show"],
-
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     var answer = new Fora.Models.Answer({question_id: this.model.get('id')});
