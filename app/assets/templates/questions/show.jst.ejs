@@ -1,6 +1,9 @@
 <p class="question-title"><%=question.escape('title')%></p>
 <p><%=question.escape('body')%></p>
 <p class="author-name"><%=question.escape('question_author')%></p>
-<button type="button" class="btn btn-default delete" aria-label="Left Align">Delete</button>
+<% if (Fora.CURRENT_USER_ID == question.escape('author_id')) { %>
+  <button type="button" class="btn btn-default delete" aria-label="Left Align">Delete</button>
+<% } %>
+
 <div class="answer-form"></div>
 <div class="answers-index"></div>
