@@ -18,7 +18,7 @@ Fora.Views.AnswerForm = Backbone.View.extend({
     this.model.set(attrs);
     this.model.save({}, {success: function () {
       that.collection.add(that.model, {merge: true});
-      Backbone.history.navigate("", {trigger: true});
+      Backbone.history.navigate("#questions/" + that.model.get('question_id'), {trigger: true});
       }
     });
 
