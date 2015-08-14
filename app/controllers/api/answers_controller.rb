@@ -1,7 +1,7 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    current_question.answers.new(answer_params)
+    @answer = current_question.answers.new(answer_params)
     @answer.author_id = current_user.id
     @answer.question_id = current_question.id
     if @answer.save
