@@ -3,11 +3,11 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    var answer = new Fora.Models.Answer();
-    var answerForm = new Fora.Views.AnswerForm({model: answer});
-    var answerIndex = new Fora.Views.AnswersIndex({collection: this.model.answers()});
+    var answer = new Fora.Models.Answer({question_id: this.model.get('id')});
+    var answersIndex = new Fora.Views.AnswersIndex({collection: this.model.answers()});
+    var answerForm = new Fora.Views.AnswerForm({model: answer, collection: answersIndex});
     this.addSubview('.answer-form', answerForm);
-    this.addSubview('.answers-index', answerIndex);
+    this.addSubview('.answers-index', answersIndex);
   },
 
   render: function () {
