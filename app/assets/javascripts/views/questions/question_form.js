@@ -2,7 +2,7 @@ Fora.Views.QuestionForm = Backbone.View.extend({
   template: JST["questions/form"],
   tagName: 'form',
   events: {
-    "click button" : "submit"
+    "click button.submit" : "submit"
   },
   render: function() {
     var content = this.template({question: this.model});
