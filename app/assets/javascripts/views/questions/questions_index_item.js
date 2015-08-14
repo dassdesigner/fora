@@ -2,10 +2,10 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   template: JST["questions/index_item"],
 
   tagName: "li",
-
+  className: "index-item",
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render)
+    this.listenTo(this.collection, "sync", this.render);
   },
 
 
