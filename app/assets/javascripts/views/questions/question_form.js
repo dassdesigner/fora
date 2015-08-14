@@ -14,13 +14,11 @@ Fora.Views.QuestionForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
     var that = this;
-
     this.model.set(attrs);
     this.model.save({}, {success: function () {
       that.collection.add(that.model, {merge: true});
-      Backbone.history.navigate("", {trigger: true});
-    }});
-
+      Backbone.history.navigate("questions/" + that.model.id , {trigger: true});
+      }
+    });
   }
-
 });
