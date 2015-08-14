@@ -1,6 +1,10 @@
 Fora.Views.AnswersIndexItem = Backbone.View.extend({
   template: JST["answers/index_item"],
 
+  events: {
+    "click button.delete" : "delete"
+  },
+  
   tagName: "li",
   className: "index-item",
 
@@ -16,5 +20,12 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
     return this;
   },
 
-
+  delete: function (event) {
+    event.preventDefault();
+    var that = this;
+    this.model.destroy({success: function () {
+      that.collection.remove(that.model);
+      Backbone.history.navigate("", {trigger: true});
+    }});
+  }
 });

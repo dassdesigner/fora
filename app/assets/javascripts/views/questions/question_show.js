@@ -6,7 +6,7 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync add destroy", this.render);
+    this.listenTo(this.model, "sync add destroy change", this.render);
     var answer = new Fora.Models.Answer({question_id: this.model.get('id')});
     var answersIndex = new Fora.Views.AnswersIndex({collection: this.model.answers()});
     var answerForm = new Fora.Views.AnswerForm({model: answer, collection: this.model.answers()});
@@ -25,7 +25,7 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   delete: function (event) {
     event.preventDefault();
     var that = this;
-    this.model.destroy({}, {success: function () {
+    this.model.destroy({success: function () {
       that.collection.remove(that.model);
       Backbone.history.navigate("", {trigger: true});
     }});
