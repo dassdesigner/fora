@@ -12,9 +12,9 @@ able to:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [x] Create Questions
+- [x] Create/Edit/Destroy Questions
 - [x] Create Answers for Questions
-- [x] View Questions with their Answers
+- [x] Edit/Destroy Answers
 - [ ] Create Topics for Questions
 - [ ] Follow Questions, Users, and Topics
 - [ ] View Followed Questions, Users, and Topics

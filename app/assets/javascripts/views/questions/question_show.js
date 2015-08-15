@@ -1,12 +1,14 @@
 Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   template: JST["questions/show"],
   events: {
-    "click button.edit" : "edit",
-    "click button.delete" : "delete"
+    "click button.edit" : "editQuestion",
+    "click button.delete" : "deleteQuestion"
   },
 
   initialize: function () {
     this.listenTo(this.model, "sync add destroy change", this.render);
+
+    //TODO REFACTOR
     var answer = new Fora.Models.Answer({question_id: this.model.get('id')});
     var answersIndex = new Fora.Views.AnswersIndex({collection: this.model.answers()});
     var answerForm = new Fora.Views.AnswerForm({model: answer, collection: this.model.answers()});
@@ -22,7 +24,7 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   },
 
 
-  delete: function (event) {
+  deleteQuestion: function (event) {
     event.preventDefault();
     var that = this;
     this.model.destroy({
@@ -32,5 +34,12 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
         Backbone.history.navigate("", {trigger: true});
       }
     });
+  },
+
+  editQuestion: function (event) {
+    event.preventDefault();
+
   }
+
+
 });

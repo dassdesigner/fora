@@ -8,12 +8,9 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
     this.listenTo(this.collection, "sync", this.render);
   },
 
-
   render: function () {
     var content = this.template({question: this.model});
     this.$el.html(content);
     return this;
-  },
-
-
+  }
 });
