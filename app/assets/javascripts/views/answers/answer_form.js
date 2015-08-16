@@ -19,7 +19,7 @@ Fora.Views.AnswerForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
     var that = this;
-
+    this.model.set(attrs);
     this.model.save({}, {success: function () {
       that.collection.add(that.model, {merge: true});
       }
