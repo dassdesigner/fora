@@ -4,6 +4,9 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   tagName: "li",
   className: "index-item",
 
+  events: {
+    "click .answer-question" : "answerQuestion"
+  },
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
   },
@@ -12,5 +15,10 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
     var content = this.template({question: this.model});
     this.$el.html(content);
     return this;
+  },
+
+  answerQuestion: function () {
+    debugger
+    Backbone.history.navigate("#questions/" + this.model.get('id'), {trigger: true});
   }
 });

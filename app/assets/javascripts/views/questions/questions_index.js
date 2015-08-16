@@ -15,7 +15,7 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
     var subView = new Fora.Views.QuestionsIndexItem({model: question});
     this.addSubview(".questions-container", subView);
   },
-  
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
