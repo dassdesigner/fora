@@ -4,6 +4,7 @@ Fora.Views.QuestionForm = Backbone.View.extend({
   events: {
     "click button.submit" : "submit"
   },
+  
   render: function() {
     var content = this.template({question: this.model});
     this.$el.html(content);

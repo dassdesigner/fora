@@ -1,2 +1,5 @@
 <p class="author-name"><%=answer.get('answer_author')%></p>
-<button class="delete-answer">X<p><%=answer.escape('body')%></p></span>
+<button class="delete-answer btn btn-default btn-xs">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button>
+<span><%=answer.escape('body')%></span>

@@ -2,7 +2,7 @@ Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
   template: JST["answers/index"],
 
   initialize: function () {
-    this.listenTo(this.collection, "change", this.render);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addAnswerSubview);
     this.listenTo(this.collection, "remove", this.removeAnswerSubview);
 

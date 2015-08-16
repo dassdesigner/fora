@@ -6,7 +6,7 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync add destroy change", this.render);
+    this.listenTo(this.model, "sync", this.render);
 
     //TODO REFACTOR
     var answer = new Fora.Models.Answer({question_id: this.model.get('id')});
