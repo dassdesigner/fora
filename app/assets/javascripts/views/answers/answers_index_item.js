@@ -21,11 +21,6 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
   },
 
   deleteAnswer: function (event) {
-    event.preventDefault();
-    var that = this;
-    this.model.destroy({success: function () {
-      that.collection.remove(that.model);
-      Backbone.history.navigate("", {trigger: true});
-    }});
+    this.model.destroy();
   }
 });
