@@ -89,6 +89,7 @@ answers on the question show page will be sorted by votes.
 
 
 ### Bonus Features (TBD)
+- [ ] User Follows
 - [ ] User Pages
 - [ ] Notifications
 - [ ] Deleting Posts
