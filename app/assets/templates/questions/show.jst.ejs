@@ -1,5 +1,5 @@
 <p class="question-title"><%=question.escape('title')%></p>
-<p><%=question.escape('body')%></p>
+<p class="question-body"><%=question.escape('body')%></p>
 <p class="author-name"><%=question.escape('question_author')%></p>
 <% if (Fora.CURRENT_USER_ID == question.escape('author_id')) { %>
   <button type="button" class="btn btn-default edit" aria-label="Left Align">Edit</button>

@@ -29,15 +29,14 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
     var that = this;
     this.model.destroy({
       success: function () {
-        // debugger;
-        // that.collection.remove(that.model);
         Backbone.history.navigate("", {trigger: true});
       }
     });
   },
 
-  editQuestion: function (event) {
-    event.preventDefault();
+  editQuestionBody: function () {
+    var $question = $('.question-body');
+
 
   }
 
