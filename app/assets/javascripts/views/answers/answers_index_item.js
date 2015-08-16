@@ -2,9 +2,9 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
   template: JST["answers/index_item"],
 
   events: {
-    "click button.delete" : "delete"
+    "click button.delete-answer" : "deleteAnswer"
   },
-  
+
   tagName: "li",
   className: "index-item",
 
@@ -20,7 +20,7 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
     return this;
   },
 
-  delete: function (event) {
+  deleteAnswer: function (event) {
     event.preventDefault();
     var that = this;
     this.model.destroy({success: function () {
