@@ -26,6 +26,15 @@ class Api::AnswersController < ApplicationController
     render json: @answer
   end
 
+  def update
+    @answer = Question.find(params[:id])
+    if @answer.update(answer_params)
+      render :json => @answer
+    else
+      render :json => @answer.errors.full_messages
+    end
+  end
+
   private
     def answer_params
       params.require(:answer).permit(:body, :question_id)
