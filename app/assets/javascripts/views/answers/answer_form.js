@@ -4,6 +4,11 @@ Fora.Views.AnswerForm = Backbone.View.extend({
   events: {
     "click button" : "submit"
   },
+
+  initialize: function () {
+    this.listenTo(this.collection, "sync", this.render);
+  },
+
   render: function() {
     var content = this.template({answer: this.model});
     this.$el.html(content);
@@ -15,13 +20,10 @@ Fora.Views.AnswerForm = Backbone.View.extend({
     var attrs = this.$el.serializeJSON();
     var that = this;
 
-    this.model.set(attrs);
     this.model.save({}, {success: function () {
       that.collection.add(that.model, {merge: true});
-      Backbone.history.navigate("#questions/" + that.model.get('question_id'), {trigger: true});
       }
     });
-
   }
 
 });

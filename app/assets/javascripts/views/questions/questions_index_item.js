@@ -18,7 +18,6 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   },
 
   answerQuestion: function () {
-    debugger
     Backbone.history.navigate("#questions/" + this.model.get('id'), {trigger: true});
   }
 });
