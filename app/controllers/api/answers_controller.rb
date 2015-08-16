@@ -36,17 +36,17 @@ class Api::AnswersController < ApplicationController
   end
 
   private
-    def answer_params
-      params.require(:answer).permit(:body, :question_id)
-    end
+  
+  def answer_params
+    params.require(:answer).permit(:body, :question_id)
+  end
 
-    def current_question
-      if params[:id]
-        @answer = Answer.find(params[:id])
-        @question = Answer.question
-      elsif params[:answer]
-        @question = Question.find(params[:answer][:question_id])
-      end
+  def current_question
+    if params[:id]
+      @answer = Answer.find(params[:id])
+      @question = Answer.question
+    elsif params[:answer]
+      @question = Question.find(params[:answer][:question_id])
     end
-
+  end
 end
