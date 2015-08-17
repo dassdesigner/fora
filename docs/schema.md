@@ -29,7 +29,6 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
 body        | text      | not null
 votes       | integer   | not null
 
@@ -40,13 +39,13 @@ id          | integer   | not null, primary key
 followee_id | integer   | not null, foreign key (references users)
 follower_id | integer   | not null, foreign key (references users)
 
-## topic_taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-topic_id    | integer   | not null, foreign key (references topics)
-tagger_id   | integer   | not null, foreign key (references users, questions )
-
+## taggings
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+topic_id     | integer   | not null, foreign key (references topics)
+taggable_id  | integer   | not null, foreign key (references users, questions )
+taggable_type| string    | not null
 
 ## topics
 column name | data type | details
