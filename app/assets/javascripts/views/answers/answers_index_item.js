@@ -27,15 +27,14 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
   },
 
   editAnswer: function(e) {
-    $('.answer-body').attr('contenteditable', 'true');
-    $('.answer-body').focus();
+    $targetAnswer = $(e.currentTarget).parent().find('.answer-body');
+    $targetAnswer.attr('contenteditable', 'true');
+    $targetAnswer.focus();
   },
 
   saveAnswer: function (e) {
     e.preventDefault();
-    debugger
-    var formData = $(e.currentTarget).text();
     this.model.save({body: formData});
-    // $(e.currentTarget).attr('contenteditable', 'false');
+    $(e.currentTarget).attr('contenteditable', 'false');
   }
 });
