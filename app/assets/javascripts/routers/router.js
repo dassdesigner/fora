@@ -2,7 +2,7 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   initialize: function () {
     this.collection = new Fora.Collections.Questions();
-    this.$router = $('#sidebar');
+    this.$sideBar = $('#sidebar');
     this.$rootEl = $('#main');
 
   },

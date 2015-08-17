@@ -6,7 +6,7 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync change", this.render);
     //TODO REFACTOR
     var answer = new Fora.Models.Answer({question_id: this.model.get('id')});
     var answersIndex = new Fora.Views.AnswersIndex({collection: this.model.answers()});
@@ -34,6 +34,8 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   },
 
   editQuestionBody: function () {
+    $('.question-body').attr('contenteditable', 'true');
+    $('.question-body').focus();
   }
 
 
