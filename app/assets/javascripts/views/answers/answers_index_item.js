@@ -2,7 +2,9 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
   template: JST["answers/index_item"],
 
   events: {
-    "click button.delete-answer" : "deleteAnswer"
+    "click button.delete-answer" : "deleteAnswer",
+    "click button.edit-answer" : "editAnswer",
+    "blur .answer-body" : "saveAnswer"
   },
 
   tagName: "li",
