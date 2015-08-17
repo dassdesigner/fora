@@ -5,7 +5,7 @@ class Api::AnswersController < ApplicationController
     @answer.author_id = current_user.id
     @answer.question_id = current_question.id
     if @answer.save
-      render :json => @answer
+      render :show
     else
       render :json => @answer.errors, :status => :unprocessable_entity
     end
@@ -29,14 +29,14 @@ class Api::AnswersController < ApplicationController
   def update
     @answer = Question.find(params[:id])
     if @answer.update(answer_params)
-      render :json => @answer
+      render :show
     else
       render :json => @answer.errors.full_messages
     end
   end
 
   private
-  
+
   def answer_params
     params.require(:answer).permit(:body, :question_id)
   end
