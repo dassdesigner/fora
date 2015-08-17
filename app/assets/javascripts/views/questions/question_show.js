@@ -2,7 +2,8 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   template: JST["questions/show"],
   events: {
     "click button.edit" : "editQuestionBody",
-    "click button.delete" : "deleteQuestion"
+    "click button.delete" : "deleteQuestion",
+    "blur .question-body" : "saveQuestionBody"
   },
 
   initialize: function () {
@@ -36,7 +37,11 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   editQuestionBody: function () {
     $('.question-body').attr('contenteditable', 'true');
     $('.question-body').focus();
+  },
+
+  saveQuestionBody: function (e) {
+    e.preventDefault();
+    var formData = $(e.currentTarget).text();
+    this.model.save({body: formData});
   }
-
-
 });
