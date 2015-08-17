@@ -2,5 +2,5 @@
 <span class="answer-body"><%=answer.escape('body')%></span>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
   <button type="button" class="btn btn-default delete-answer">Delete</button>
-  <button type="button" class="btn btn-default edit-answer" aria-label="Right Align">Edit</button>
+  <button type="button" class="btn btn-default edit-answer">Edit</button>
 <% } %>
