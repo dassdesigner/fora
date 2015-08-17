@@ -2,8 +2,10 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   initialize: function () {
     this.collection = new Fora.Collections.Questions();
-    this.$sideBar = $('#sidebar');
+    this.$leftSidebar = $('#left-sidebar');
     this.$rootEl = $('#main');
+    //should take current user('s') topics?
+    // this.leftSidebarView = new Journal.Views.TopicsIndex({collection: this.collection});
 
   },
   routes: {
