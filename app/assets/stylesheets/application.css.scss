@@ -47,6 +47,7 @@ body { padding-top: 70px;}
   border: 1px solid #EEE;
   border-radius: 2px;
   background-color: #EEE;
+  word-wrap: break-word;
 }
 
 
@@ -55,13 +56,8 @@ body { padding-top: 70px;}
   padding: 10px;
 }
 
-.delete-answer {
-  border: none;
-  background: none;
-}
-
-.edit-answer {
+.edit-answer, .delete-answer {
   float: right;
-  margin: auto;
+  bottom: 10px;
   padding: 2px;
 }

@@ -1,8 +1,6 @@
 <p class="author-name"><%=answer.escape('answer_author')%></p>
-<button class="delete-answer btn btn-default btn-xs">
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-</button>
 <span class="answer-body"><%=answer.escape('body')%></span>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
+  <button type="button" class="btn btn-default delete-answer">Delete</button>
   <button type="button" class="btn btn-default edit-answer" aria-label="Right Align">Edit</button>
 <% } %>
