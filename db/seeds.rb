@@ -17,6 +17,6 @@ q3 = Question.create(title: 'How do I shot web?', body: "I've been looking every
 q4 = Question.create(title: 'How do I use Backbone?', body: "Looking for a guide on the Dark Arts.", author_id: 4)
 
 a1 = Answer.create(body: 'Let me get back to you on that one.', author_id: 5, question_id: 4)
-a2 = Answer.create(body: 'Mewmew (pewpew?)', author_id: 2, question_id: 3)
-a3 = Answer.create(body: '>w< baka', author_id: 4, question_id: 1)
+a2 = Answer.create(body: 'Meow', author_id: 2, question_id: 3)
+a3 = Answer.create(body: 'Currently holed up with Bruce Willis.', author_id: 4, question_id: 1)
 a4 = Answer.create(body: 'Calm down now Minerva.', author_id: 5, question_id: 2)
