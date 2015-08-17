@@ -39,17 +39,11 @@ id          | integer   | not null, primary key
 followee_id | integer   | not null, foreign key (references users)
 follower_id | integer   | not null, foreign key (references users)
 
-## taggings
-column name  | data type | details
--------------|-----------|-----------------------
-id           | integer   | not null, primary key
-topic_id     | integer   | not null, foreign key (references topics)
-taggable_id  | integer   | not null, foreign key (references users, questions )
-taggable_type| string    | not null
-
 ## topics
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-description | string    |
+column name   | data type | details
+--------------|-----------|-----------------------
+id            | integer   | not null, primary key
+topic_id      | integer   | not null, foreign key (references topics)
+topicable_id  | integer   | not null, foreign key (references users, questions )
+topicable_type| string    | not null
+name          | string    | not null
