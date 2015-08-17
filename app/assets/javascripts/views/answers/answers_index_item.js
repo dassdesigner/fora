@@ -22,5 +22,16 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
 
   deleteAnswer: function (event) {
     this.model.destroy();
+  },
+
+  editAnswer: function() {
+    $('.answer-body').attr('contenteditable', 'true');
+    $('.question-body').focus();
+  },
+
+  saveAnswer: function (e) {
+    e.preventDefault();
+    var formData = $(e.currentTarget).text();
+    this.model.save({body: formData});
   }
 });
