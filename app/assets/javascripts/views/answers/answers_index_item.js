@@ -26,8 +26,8 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
     this.model.destroy();
   },
 
-  editAnswer: function() {
-    $('.answer-body').attr('contenteditable', 'true');
+  editAnswer: function(e) {
+    $(e.currentTarget).attr('contenteditable', 'true');
     $('.question-body').focus();
   },
 
@@ -35,5 +35,6 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
     e.preventDefault();
     var formData = $(e.currentTarget).text();
     this.model.save({body: formData});
+    $(e.currentTarget).attr('contenteditable', 'false');
   }
 });
