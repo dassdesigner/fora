@@ -25,7 +25,13 @@ Fora.Views.TagsIndex = Backbone.CompositeView.extend({
         that.removeSubview('.tags-container', subview);
       }
     });
-  }
+  },
 
+  render: function () {
+    var content = this.template();
+    this.$el.html(content);
+    this.attachSubviews();
+    return this;
+  }
 
 });
