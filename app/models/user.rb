@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
   has_many :questions
-  has_many :topics, :as => :topicable
+  has_many :tags, :through => :tag_following
   
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])
