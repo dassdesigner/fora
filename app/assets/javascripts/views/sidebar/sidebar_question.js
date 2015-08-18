@@ -1,13 +1,14 @@
 Fora.Views.SidebarQuestion = Backbone.CompositeView.extend({
   template: JST["sidebars/question"],
-  initialize: function () {
+  initialize: function (options) {
+    var current_question = options.current_question;
     var tag = new Fora.Models.Tag();
     var tagsIndex = new Fora.Views.TagsIndex({
-      collection: this.current_question.tags()
+      collection: current_question.tags()
     });
     var tagForm = new Fora.Views.TagForm({
       model: tag,
-      collection: this.current_question.tags()
+      collection: current_question.tags()
     });
     this.addSubview('.tags-index', tagsIndex);
     this.addSubview('.tag-form', tagForm);
