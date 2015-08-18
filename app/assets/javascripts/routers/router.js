@@ -34,6 +34,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     var view = new Fora.Views.QuestionShow({
         model: question
     });
+    var sideView = new Fora.Views.SidebarFeed();
     this._swapView(view);
   },
 
