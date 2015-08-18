@@ -41,6 +41,12 @@ Fora.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
+  },
+
+  _swapSidebarView: function (view) {
+    this._sidebarView && this._sidebarView.remove();
+    this._sidebarView = view;
+    this.$sidebar.html(view.render().$el);
   }
 
 });
