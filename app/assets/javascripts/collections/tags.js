@@ -1,4 +1,4 @@
-Fora.Collections.Questions = Backbone.Collection.extend({
-  url: "/api/questions",
-  model: Fora.Models.Question,
+Fora.Collections.Tags = Backbone.Collection.extend({
+  url: "/api/tags",
+  model: Fora.Models.Tag,
 });
