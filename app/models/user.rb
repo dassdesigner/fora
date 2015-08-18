@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
   has_many :questions
-  has_many :tags, :through => :tag_following
-  
+  has_many :tag_followings
+  has_many :tags, :through => :tag_followings
+
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])
     if user && user.is_password?(user_params[:password])

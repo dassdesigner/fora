@@ -2,6 +2,6 @@ class Tag < ActiveRecord::Base
   validates :title, presence: true
   has_many :taggings
   has_many :tag_followings
-  has_many :questions, :through => :tagging
-  has_many :users, :through => :tag_following
+  has_many :questions, :through => :taggings
+  has_many :users, :through => :tag_followings
 end
