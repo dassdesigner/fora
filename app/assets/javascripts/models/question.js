@@ -15,11 +15,16 @@ Fora.Models.Question = Backbone.Model.extend({
 
     return this._tags;
   },
-  
+
   parse: function(resp) {
     if (resp.answers) {
       this.answers().set(resp.answers);
       delete resp.answers;
+    }
+
+    if (resp.tags) {
+      this.tags().set(resp.tags);
+      delete resp.tags;
     }
     return resp;
   }
