@@ -1,4 +1,4 @@
-Fora.Models.Answer = Backbone.Model.extend({
+Fora.Models.Tag = Backbone.Model.extend({
   urlRoot: 'api/tags'
 
 });
