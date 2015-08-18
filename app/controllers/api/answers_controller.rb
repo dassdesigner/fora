@@ -27,7 +27,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def update
-    @answer = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
     if @answer.update(answer_params)
       render :show
     else

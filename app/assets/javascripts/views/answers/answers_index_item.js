@@ -34,7 +34,7 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
 
   saveAnswer: function (e) {
     e.preventDefault();
+    var formData = $(e.currentTarget).text();
     this.model.save({body: formData});
-    $(e.currentTarget).attr('contenteditable', 'false');
   }
 });
