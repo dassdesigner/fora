@@ -19,8 +19,10 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
   },
 
   addTagsSubview: function (tag) {
-
+    var subView = new Fora.Views.TagsIndexItem({model: tag});
+    this.addSubview(".tags-cointainer", subView);
   },
+  
   render: function () {
     var content = this.template();
     this.$el.html(content);
