@@ -8,6 +8,7 @@ Fora.Views.TagsIndex = Backbone.CompositeView.extend({
     var that = this;
     this.collection.each (function (tag) {
       that.addTagSubview(tag);
+      debugger;
     });
 
   },

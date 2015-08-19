@@ -4,3 +4,7 @@ json.answer_count @question.answers.count
 json.answers do
   json.partial! 'api/answers/answers', answers: @question.answers
 end
+
+json.tags @question.tags do |tag|
+  json.extract! tag :id, :title
+end

@@ -21,6 +21,7 @@ Fora.Views.TagForm = Backbone.View.extend({
     var attrs = this.$el.serializeJSON();
     var that = this;
     this.collection.create(attrs, {success: function () {
+
       // that.collection.add(that.model, {merge: true});
       // Backbone.history.navigate("#questions/" + that.model.get('question_id'), {trigger: true});
       // that.model = new Fora.Models.Tag();
