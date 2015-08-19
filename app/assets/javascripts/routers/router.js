@@ -2,6 +2,7 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   initialize: function () {
     this.collection = new Fora.Collections.Questions();
+    this.tags = new Fora.Collections.Tags();
     this.$sidebar = $('#sidebar');
     this.$rootEl = $('#main');
     //should take current user('s') topics?
@@ -17,14 +18,14 @@ Fora.Routers.Router = Backbone.Router.extend({
   },
 
   questionsIndex: function () {
-    var tags = new Fora.Collections.Tags();
-    tags.fetch();
+    var user_tags = new Fora.Collections.Tags();
+    user_tags.fetch();
     this.collection.fetch();
     var view = new Fora.Views.QuestionsIndex({
         collection: this.collection,
         });
 
-    var sideView = new Fora.Views.SidebarFeed({collection: tags});
+    var sideView = new Fora.Views.SidebarFeed({collection: user_tags});
     this._swapSidebarView(sideView);
     this._swapView(view);
   },
@@ -52,10 +53,21 @@ Fora.Routers.Router = Backbone.Router.extend({
   },
 
   tagShow: function (id) {
+    var tag = this.tags.getOrFetch(id);
+    var user_tags = new Fora.Collections.Tags();
+    user_tags.fetch();
+    var view = new Fora.Views.TagShow({
+      model: tag
+    });
 
+    var sideView = new Fora.Views.SideBarFeed({
+      collection: user_tags
+    });
+    this._swapSidebarView(sideView);
+    this._swapView(view);
   },
 
-  
+
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
