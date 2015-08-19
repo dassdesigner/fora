@@ -6,5 +6,5 @@ json.answers do
 end
 
 json.tags @question.tags do |tag|
-  json.extract! tag :id, :title
+  json.extract! tag, :id, :title
 end
