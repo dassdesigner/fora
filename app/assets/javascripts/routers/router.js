@@ -16,9 +16,15 @@ Fora.Routers.Router = Backbone.Router.extend({
   },
 
   questionsIndex: function () {
+    var tags = new Fora.Collections.Tags();
+    tags.fetch();
+
     this.collection.fetch();
     var view = new Fora.Views.QuestionsIndex({
-        collection: this.collection});
+        collection: this.collection,
+        tags: tags
+        });
+        
     var sideView = new Fora.Views.SidebarFeed();
     this._swapSidebarView(sideView);
     this._swapView(view);

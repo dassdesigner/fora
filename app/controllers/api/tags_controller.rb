@@ -16,7 +16,7 @@ class Api::TagsController < ApplicationController
   end
 
   def index
-    @tags = Tag.all
+    @tags = current_user.tags
   end
 
   def show

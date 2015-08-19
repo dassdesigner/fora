@@ -5,7 +5,3 @@ json.array!(@questions) do |question|
     json.name question.user.name
   end
 end
-# 
-# json.tags current_user.tags do |tag|
-#   json.extract! tag, :id, :title
-# end
