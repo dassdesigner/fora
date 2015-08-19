@@ -11,6 +11,10 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
     this.collection.each (function (question) {
       that.addQuestionSubview(question);
     });
+
+    // this.tags.each (function (question) {
+    //   that.add
+    // })
   },
 
   addQuestionSubview: function (question) {
@@ -18,11 +22,11 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
     this.addSubview(".questions-container", subView);
   },
 
-  addTagsSubview: function (tag) {
-    var subView = new Fora.Views.TagsIndexItem({model: tag});
-    this.addSubview(".tags-cointainer", subView);
-  },
-  
+  // addTagsSubview: function (tag) {
+  //   var subView = new Fora.Views.TagsIndexItem({model: tag});
+  //   this.addSubview(".tags-container", subView);
+  // },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);

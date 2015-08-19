@@ -13,19 +13,18 @@ Fora.Routers.Router = Backbone.Router.extend({
     "questions": "questionsIndex",
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
+    "tags/:id": "tagShow",
   },
 
   questionsIndex: function () {
     var tags = new Fora.Collections.Tags();
     tags.fetch();
-
     this.collection.fetch();
     var view = new Fora.Views.QuestionsIndex({
         collection: this.collection,
-        tags: tags
         });
-        
-    var sideView = new Fora.Views.SidebarFeed();
+
+    var sideView = new Fora.Views.SidebarFeed({collection: tags});
     this._swapSidebarView(sideView);
     this._swapView(view);
   },
@@ -52,6 +51,11 @@ Fora.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  tagShow: function (id) {
+
+  },
+
+  
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;

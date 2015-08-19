@@ -12,6 +12,11 @@ Fora.Views.SidebarQuestion = Backbone.CompositeView.extend({
     this.addSubview('.tag-form', tagForm);
   },
 
+  // addTagsSubview: function (tag) {
+  //   var subView = new Fora.Views.TagsIndexItem({model: tag});
+  //   this.addSubview(".tags-container", subView);
+  // },
+  //
   render: function () {
     var content = this.template();
     this.$el.html(content);
