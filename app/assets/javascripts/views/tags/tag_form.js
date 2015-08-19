@@ -20,11 +20,10 @@ Fora.Views.TagForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
     var that = this;
-    this.model.set(attrs);
-    this.model.save({}, {success: function () {
-      that.collection.add(that.model, {merge: true});
+    this.collection.create(attrs, {success: function () {
+      // that.collection.add(that.model, {merge: true});
       // Backbone.history.navigate("#questions/" + that.model.get('question_id'), {trigger: true});
-      that.model = new Fora.Models.Tag();
+      // that.model = new Fora.Models.Tag();
       }
     });
   }

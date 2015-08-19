@@ -1,5 +1,5 @@
 Fora.Views.TagsIndexItem = Backbone.View.extend({
-
+  template: JST["tags/index_item"],
   tagName: "li",
   className: "index-item",
 
@@ -13,6 +13,6 @@ Fora.Views.TagsIndexItem = Backbone.View.extend({
     return this;
   }
 
-  
+
 
 });

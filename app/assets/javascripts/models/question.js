@@ -4,7 +4,6 @@ Fora.Models.Question = Backbone.Model.extend({
     if (!this._answers) {
       this._answers = new Fora.Collections.Answers([], {question: this});
     }
-
     return this._answers;
   },
 
@@ -12,7 +11,6 @@ Fora.Models.Question = Backbone.Model.extend({
     if (!this._tags) {
       this._tags = new Fora.Collections.Tags([], {question: this});
     }
-
     return this._tags;
   },
 

@@ -1,12 +1,18 @@
 class Api::TagsController < ApplicationController
 
   def create
-    @tag = Tag.new(tag_params)
-    if @tag.save
-      render :json => @tag
+    if params[:question_id]
+      question = Question.find(params[:question_id])
+      @tag = question.tags.create!(tag_params)
     else
-      render :json => @tag.errors, :status => :unprocessable_entity
+      @tag = Tag.create!(tag_params)
     end
+
+    # if @tag.save
+      render :json => @tag
+    # else
+      # render :json => @tag.errors, :status => :unprocessable_entity
+    # end
   end
 
   def index

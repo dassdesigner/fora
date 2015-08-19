@@ -5,7 +5,10 @@ Fora::Application.routes.draw do
   resource :session
 
   namespace :api, defaults: {format: :json} do
-    resources :questions
+    resources :questions do
+      resources :tags, only: [:create]
+    end
     resources :answers
+    resources :tags
   end
 end
