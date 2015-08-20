@@ -5,7 +5,7 @@ Fora.Models.Tag = Backbone.Model.extend({
     if (!this._questions) {
       this._questions = new Fora.Collections.Questions([], {question: this});
     }
-    return this.questions;
+    return this._questions;
   },
 
   parse: function(resp) {

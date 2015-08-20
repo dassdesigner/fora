@@ -57,10 +57,11 @@ Fora.Routers.Router = Backbone.Router.extend({
     var user_tags = new Fora.Collections.Tags();
     user_tags.fetch();
     var view = new Fora.Views.TagShow({
-      model: tag
+      model: tag,
+      collection: tag.questions()
     });
 
-    var sideView = new Fora.Views.SideBarFeed({
+    var sideView = new Fora.Views.SidebarFeed({
       collection: user_tags
     });
     this._swapSidebarView(sideView);
