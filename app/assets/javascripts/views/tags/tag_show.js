@@ -41,11 +41,22 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   follow: function (event) {
     event.preventDefault();
-    that = this;
     debugger;
+    this.$el.find('.follow').hide();
+    this.$el.find('.unfollow').show();
+    that = this;
     this.model.save({destroy: false}, {success: function () {
       that.user_tags.add(that.model, {merge: true});
       Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
+      }
+    });
+  },
+
+  unfollow: function (event) {
+    event.preventDefault();
+    that = this;
+    this.model.save({destroy: true}, {success: function () {
+      that.user_tags.remove(that.model);
     }});
   }
 });
