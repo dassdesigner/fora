@@ -3,7 +3,8 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "sync change", this.render);
-    this.listenTo(this.collection, "add", this.addTagsSubview);
+    this.listenTo(this.collection, "add", this.addTagSubview);
+    this.listenTo(this.collection, "remove", this.removeTagSubview);
     this.collection.each (function (question) {
       that.addTagsSubview(tag);
     });
@@ -20,11 +21,21 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
   },
 
 
-  addTagsSubview: function (tag) {
+  addTagSubview: function (tag) {
     var subView = new Fora.Views.TagsIndexItem({model: tag});
     this.addSubview(".tags-container", subView);
   },
 
+  removeTagSubview: function (tag) {
+    that = this;
+    debugger;
+    this.subviews('.tags-container').forEach(function(subview){
+      if (subview.model === tag) {
+        that.removeSubview('.tags-container', subview);
+      }
+    });
+  },
+  
   render: function () {
     var content = this.template();
     this.$el.html(content);

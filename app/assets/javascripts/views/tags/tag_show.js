@@ -11,6 +11,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.listenTo(this.collection, "add remove sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
+    // this.listenTo(this.collection, "remove", this.removeQuestionSubview);
     this.listenTo(this.model, "sync", this.render);
     this.user_tags = options.user_tags;
     var that = this;
@@ -23,11 +24,20 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     // })
   },
 
+
   addQuestionSubview: function (question) {
     var subView = new Fora.Views.QuestionsIndexItem({model: question});
     this.addSubview(".questions-container", subView);
   },
 
+  // removeQuestionSubview: function (question) {
+  //   that = this;
+  //   this.subviews('.answers-container').forEach(function(subview){
+  //     if (subview.model === answer) {
+  //       that.removeSubview('.answers-container', subview);
+  //     }
+  //   });
+  // },
   // addTagsSubview: function (tag) {
   //   var subView = new Fora.Views.TagsIndexItem({model: tag});
   //   this.addSubview(".tags-container", subView);
