@@ -6,5 +6,9 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
 
   initialize: function () {
 
+  },
+
+  render: function () {
+
   }
 });
