@@ -3,7 +3,8 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
 
   events: {
-    "click button.follow": "follow"
+    "click button.follow": "follow",
+    "click button.unfollow": "unfollow"
   },
 
   //TODO refactor (it's pretty identical to QuestionsIndex)
@@ -57,6 +58,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     that = this;
     this.model.save({destroy: true}, {success: function () {
       that.user_tags.remove(that.model);
+      Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
     }});
   }
 });
