@@ -28,8 +28,8 @@ class Api::TagsController < ApplicationController
     user_ids = @tag.users.pluck(:id)
     if !params[:destroy] && @tag.update({user_ids: user_ids << current_user.id})
       render json: @tag
-    else
-      render :json => @question.errors.full_messages
+    elsif params[:destroy] && @tag.update({user_ids: user_ids - [current_user.id]})
+      render json: @tag
     end
   end
 
