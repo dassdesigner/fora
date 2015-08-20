@@ -3,8 +3,11 @@ Fora.Routers.Router = Backbone.Router.extend({
   initialize: function () {
     this.collection = new Fora.Collections.Questions();
     this.tags = new Fora.Collections.Tags();
+    // var navbarView = new Fora.Views.Navbar({collection: this.collection});
+    this.$navbar = $('.navbar');
     this.$sidebar = $('#sidebar');
     this.$rootEl = $('#main');
+    // this.$navbar.html(navbarView.render().$el);
     //should take current user('s') topics?
     // this.leftSidebarView = new Journal.Views.TopicsIndex({collection: this.collection});
 
@@ -78,7 +81,7 @@ Fora.Routers.Router = Backbone.Router.extend({
 
     var user_tags = new Fora.Collections.Tags();
     user_tags.fetch();
-    
+
     // TODO: allow for sorting
     var sideView = new Fora.Views.SidebarFeed({
       collection: user_tags
