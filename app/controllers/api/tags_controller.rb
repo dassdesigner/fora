@@ -25,8 +25,8 @@ class Api::TagsController < ApplicationController
 
   def update
     @tag = Tag.includes(:users).find(params[:id])
-    assc_users = Tag.users.pluck(:id)
-    if !params[:destroy] && @tag.update({user_ids: assc_users + current_user.id})
+    user_ids = @tag.users.pluck(:id)
+    if !params[:destroy] && @tag.update({user_ids: user_ids << current_user.id})
       render json: @tag
     else
       render :json => @question.errors.full_messages
