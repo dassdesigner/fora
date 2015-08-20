@@ -1,6 +1,11 @@
 Fora.Views.TagShow = Backbone.CompositeView.extend({
   template: JST["tags/show"],
 
+
+  events: {
+    "click button.follow": "follow"
+  },
+
   //TODO refactor (it's pretty identical to QuestionsIndex)
   initialize: function () {
     this.listenTo(this.collection, "add remove sync", this.render);
@@ -32,5 +37,9 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
+  },
+
+  follow: function (event) {
+    event.preventDefault();
   }
 });
