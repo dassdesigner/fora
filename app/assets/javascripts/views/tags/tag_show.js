@@ -1,7 +1,7 @@
 Fora.Views.TagShow = Backbone.CompositeView.extend({
   template: JST["tags/show"],
 
-
+  //TODO refactor (it's pretty identical to QuestionsIndex)
   initialize: function () {
     this.listenTo(this.collection, "add remove sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
