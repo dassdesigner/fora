@@ -15,6 +15,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
     "tags/:id": "tagShow",
+    "search/:query" : "searchShow"
   },
 
   questionsIndex: function () {
@@ -69,6 +70,23 @@ Fora.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  searchShow: function (query) {
+    this.collection.fetch({query: query});
+    var view = new Fora.Views.SearchShow({
+        collection: this.collection,
+        });
+
+    var user_tags = new Fora.Collections.Tags();
+    user_tags.fetch();
+    
+    // TODO: allow for sorting
+    var sideView = new Fora.Views.SidebarFeed({
+      collection: user_tags
+    });
+
+    this._swapSidebarView(sideView);
+    this._swapView(view);
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
