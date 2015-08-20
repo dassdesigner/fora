@@ -15,7 +15,7 @@ able to:
 - [x] Create/Edit/Destroy Questions
 - [x] Create Answers for Questions
 - [x] Edit/Destroy Answers
-- [ ] Create Topics for Questions
+- [x] Create Topics for Questions
 - [ ] Follow Questions, Users, and Topics
 - [ ] View Followed Questions, Users, and Topics
 - [ ] Search for Questions by Title or Topic

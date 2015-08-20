@@ -67,6 +67,14 @@ body { padding-top: 70px;}
 }
 
 #sidebar {
-  padding-right: 70px;
-  // position: fixed;
+  // padding-right: 70px;
+  top: 70px;
+  // right: 0;
+  width: 300px;
+  position: fixed;
+}
+
+#main {
+  margin-left: 350px;
+  position: relative;
 }

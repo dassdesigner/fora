@@ -52,7 +52,6 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   follow: function (event) {
     event.preventDefault();
-    debugger;
     this.$el.find('.follow').hide();
     this.$el.find('.unfollow').show();
     that = this;
