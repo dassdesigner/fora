@@ -7,11 +7,11 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   },
 
   //TODO refactor (it's pretty identical to QuestionsIndex)
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.collection, "add remove sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
     this.listenTo(this.model, "sync", this.render);
-
+    this.user_tags = options.user_tags;
     var that = this;
     this.collection.each (function (question) {
       that.addQuestionSubview(question);
@@ -41,6 +41,11 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   follow: function (event) {
     event.preventDefault();
-    this.model.save({destroy: false});
+    that = this;
+    debugger;
+    this.model.save({destroy: false}, {success: function () {
+      that.user_tags.add(that.model, {merge: true});
+      Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
+    }});
   }
 });
