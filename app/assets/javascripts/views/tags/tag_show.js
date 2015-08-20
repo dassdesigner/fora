@@ -41,5 +41,6 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   follow: function (event) {
     event.preventDefault();
+    this.model.save({destroy: false});
   }
 });
