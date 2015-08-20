@@ -5,7 +5,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, "add remove sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
-    this.listenTo(this.tags, "sync", this.render);
+    this.listenTo(this.model, "sync", this.render);
 
     var that = this;
     this.collection.each (function (question) {
@@ -28,6 +28,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   // },
 
   render: function () {
+    debugger
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();

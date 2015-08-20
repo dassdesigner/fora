@@ -6,7 +6,8 @@ Fora.Views.SidebarQuestion = Backbone.CompositeView.extend({
       collection: current_question.tags()
     });
     var tagForm = new Fora.Views.TagForm({
-      collection: current_question.tags()
+      collection: current_question.tags(),
+      model: new Fora.Models.Tag()
     });
     this.addSubview('.tags-index', tagsIndex);
     this.addSubview('.tag-form', tagForm);

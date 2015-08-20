@@ -19,14 +19,21 @@ Fora.Views.TagForm = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
+    attrs.question_id = this.collection.question.id;
     var that = this;
-    this.collection.create(attrs, {success: function () {
+
+    this.model.save(attrs, {
+      success: function () {
+        that.collection.add(that.model);
+      }
+    });
+    // this.collection.create(attrs, {success: function () {
 
       // that.collection.add(that.model, {merge: true});
       // Backbone.history.navigate("#questions/" + that.model.get('question_id'), {trigger: true});
       // that.model = new Fora.Models.Tag();
-      }
-    });
+      // }
+    // });
   }
 
 });
