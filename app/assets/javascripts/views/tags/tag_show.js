@@ -1,4 +1,4 @@
-Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
+Fora.Views.TagShow = Backbone.CompositeView.extend({
   template: JST["tags/show"],
 
 
