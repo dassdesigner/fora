@@ -23,22 +23,10 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
     Backbone.history.navigate("#questions/" + this.model.get('id'), {trigger: true});
   },
 
-  toggleUpvote: function (event) {
-    event.preventDefault();
-    that = this;
-    this.model.save({value: 1}, {success: function () {
-      // modify upvoter collection
-      }
-    });
-  },
-
   toggleDownvote: function(event) {
     event.preventDefault();
     that = this;
-    this.model.save({value: -1}, {success: function () {
-      // modify upvoter collection if applicable
-      }
-    });
+    this.model.save({value: -1});
   }
 
 

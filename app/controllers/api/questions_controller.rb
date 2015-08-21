@@ -30,16 +30,15 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    if params[:value]
+    if params[:value] == -1
       @question = Question.includes(:voters).find(params[:id])
       voter_ids = @question.voters.pluck(:id)
       current_user_vote = @question.votes.find_by({user_id: current_user.id})
-      if params[:value] == current_user_vote.value
+      if current_user_vote.value == -1
         @question.update({voter_ids: voter_ids - [current_user.id]})
-        current_user_vote.value = 0
       else
         @question.update({voter_ids: voter_ids + [current_user.id]})
-        current_user_vote.value = params[:value]
+        current_user_vote.update({value: -1)
       end
     else
       @question = Question.find(params[:id])
