@@ -38,7 +38,7 @@ class Api::QuestionsController < ApplicationController
         @question.update({voter_ids: voter_ids - [current_user.id]})
       else
         @question.update({voter_ids: voter_ids + [current_user.id]})
-        current_user_vote.update({value: -1)
+        current_user_vote.update({value: -1})
       end
     else
       @question = Question.find(params[:id])
