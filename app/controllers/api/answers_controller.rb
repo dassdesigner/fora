@@ -1,9 +1,9 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    @answer = current_question.answers.new(answer_params)
+    @answer = current_answer.answers.new(answer_params)
     @answer.author_id = current_user.id
-    @answer.question_id = current_question.id
+    @answer.answer_id = current_answer.id
     if @answer.save
       render :show
     else
@@ -12,7 +12,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = current_question.answers
+    @answers = current_answer.answers
   end
 
   def show
@@ -27,26 +27,39 @@ class Api::AnswersController < ApplicationController
   end
 
   def update
-    @answer = Answer.find(params[:id])
-    if @answer.update(answer_params)
-      render :show
+    if params[:value]
+      @answer = Answer.includes(:voters).find(params[:id])
+      voter_ids = @answer.voters.pluck(:id)
+      current_user_vote = @answer.votes.find_by({user_id: current_user.id})
+      if params[:value] == current_user_vote.value
+        @answer.update({voter_ids: voter_ids - [current_user.id]})
+        current_user_vote.destroy!
+      else
+        @answer.update({voter_ids: voter_ids + [current_user.id]})
+        current_user_vote.value = params[:value]
+      end
     else
-      render :json => @answer.errors.full_messages
+      @answer = Answer.find(params[:id])
+      if @answer.update(answer_params)
+        render :json => @answer
+      else
+        render :json => @answer.errors.full_messages
+      end
     end
   end
 
   private
 
   def answer_params
-    params.require(:answer).permit(:body, :question_id)
+    params.require(:answer).permit(:body, :answer_id)
   end
 
-  def current_question
+  def current_answer
     if params[:id]
       @answer = Answer.find(params[:id])
-      @question = Answer.question
+      @answer = Answer.answer
     elsif params[:answer]
-      @question = Question.find(params[:answer][:question_id])
+      @answer = Answer.find(params[:answer][:answer_id])
     end
   end
 end
