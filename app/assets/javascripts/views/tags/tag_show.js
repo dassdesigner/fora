@@ -9,11 +9,13 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   //TODO refactor (it's pretty identical to QuestionsIndex)
   initialize: function (options) {
-    this.listenTo(this.collection, "add remove sync", this.render);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
-    // this.listenTo(this.collection, "remove", this.removeQuestionSubview);
     this.listenTo(this.model, "sync", this.render);
     this.user_tags = options.user_tags;
+    this.user_tags.fetch();
+    // this.listenTo(this.collection, "remove", this.removeQuestionSubview);
+    debugger
     var that = this;
     this.collection.each (function (question) {
       that.addQuestionSubview(question);
@@ -44,7 +46,6 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   // },
 
   render: function () {
-
     var content = this.template({tag: this.model});
     this.$el.html(content);
     if (this.user_tags.any( {id: this.model.get('id') } )) {
@@ -68,7 +69,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     that = this;
     this.model.save({destroy: false}, {success: function () {
       that.user_tags.add(that.model, {merge: true});
-      Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
+      // Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
       }
     });
   },
@@ -78,7 +79,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     that = this;
     this.model.save({destroy: true}, {success: function () {
       that.user_tags.remove(that.model);
-      Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
+      // Backbone.history.navigate("#tags/" + that.model.get('id'), {trigger: true});
     }});
   }
 });
