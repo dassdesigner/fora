@@ -4,4 +4,14 @@ class Question < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   has_many :tags, :through => :taggings
   has_many :taggings
+
+  def self.topic_matches(query)
+    query_arr = query.split(" ")
+    Question.all.select {|q| q.tags.any? { |tag| query_arr.any? { |query_word| tag.title.include?(query_word)}}}
+  end
+
+  def self.title_matches(query)
+    query_arr = query.split(" ")
+    Question.all.select {|q| query_arr.any? { |query_word| q.title.include?(query_word)}}
+  end
 end

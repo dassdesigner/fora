@@ -12,5 +12,11 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     return this;
+  },
+
+  search: function (event) {
+    event.preventDefault();
+    this.collection.fetch({data: {query: $('#search').val() } });
+
   }
 });
