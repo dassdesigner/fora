@@ -3,7 +3,8 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   events: {
     "click button.edit" : "editQuestionBody",
     "click button.delete" : "deleteQuestion",
-    "blur .question-body" : "saveQuestionBody"
+    "blur .question-body" : "saveQuestionBody",
+    "click .toggle-downvote" : "toggleDownvote"
   },
 
   initialize: function () {
@@ -43,5 +44,11 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
     e.preventDefault();
     var formData = $(e.currentTarget).text();
     this.model.save({body: formData});
+  },
+
+  toggleDownvote: function(event) {
+    event.preventDefault();
+    that = this;
+    this.model.save({value: -1});
   }
 });
