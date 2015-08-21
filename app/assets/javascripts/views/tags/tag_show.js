@@ -38,7 +38,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     this.attachSubviews();
     return this;
   },
-
+  //TODO change destroy to follow
   follow: function (event) {
     event.preventDefault();
     that = this;

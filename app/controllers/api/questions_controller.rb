@@ -30,11 +30,24 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
-    if @question.update(question_params)
-      render :json => @question
+    if params[:value]
+      @question = Question.includes(:voters).find(params[:id])
+      voter_ids = @question.voters.pluck(:id)
+      current_user_vote = Question.votes.find_by({user_id: current_user.id})
+      if params[:value] == current_user_vote.value
+        @question.update({voter_ids: voter_ids - [current_user.id]})
+        current_user_vote.value = 0
+      else
+        @question.update({voter_ids: voter_ids + [current_user.id]})
+        current_user_vote.value = params[:value]
+      end
     else
-      render :json => @question.errors.full_messages
+      @question = Question.find(params[:id])
+      if @question.update(question_params)
+        render :json => @question
+      else
+        render :json => @question.errors.full_messages
+      end
     end
   end
 
