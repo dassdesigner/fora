@@ -33,7 +33,7 @@ class Api::QuestionsController < ApplicationController
     if params[:value]
       @question = Question.includes(:voters).find(params[:id])
       voter_ids = @question.voters.pluck(:id)
-      current_user_vote = Question.votes.find_by({user_id: current_user.id})
+      current_user_vote = @question.votes.find_by({user_id: current_user.id})
       if params[:value] == current_user_vote.value
         @question.update({voter_ids: voter_ids - [current_user.id]})
         current_user_vote.value = 0
