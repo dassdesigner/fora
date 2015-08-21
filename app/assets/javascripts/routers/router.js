@@ -18,7 +18,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
     "tags/:id": "tagShow",
-    "search/:query" : "searchShow"
+    "search?:query" : "searchShow"
   },
 
   questionsIndex: function () {
@@ -74,7 +74,8 @@ Fora.Routers.Router = Backbone.Router.extend({
   },
 
   searchShow: function (query) {
-    this.collection.fetch({query: query});
+    debugger;
+    this.collection.fetch({data: query });
     var view = new Fora.Views.QuestionsIndex({
         collection: this.collection,
         });

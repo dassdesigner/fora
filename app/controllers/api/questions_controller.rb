@@ -17,7 +17,6 @@ class Api::QuestionsController < ApplicationController
       # maybe select for only topics current user is following?
       @questions = Question.all
     end
-    debugger
   end
 
   def show
