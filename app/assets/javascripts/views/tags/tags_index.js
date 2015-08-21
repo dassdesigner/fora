@@ -19,7 +19,7 @@ Fora.Views.TagsIndex = Backbone.CompositeView.extend({
   removeTagSubview: function (tag) {
     that = this;
     this.subviews('.tags-container').forEach(function(subview){
-      if (subview.model === tag) {
+      if (subview && subview.model === tag) {
         that.removeSubview('.tags-container', subview);
       }
     });

@@ -44,16 +44,27 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   // },
 
   render: function () {
+
     var content = this.template({tag: this.model});
     this.$el.html(content);
+    if (this.user_tags.any( {id: this.model.get('id') } )) {
+      this.$el.find('.follow').hide();
+      this.$el.find('.unfollow').show();
+      // debugger
+    } else {
+      // debugger
+      this.$el.find('.follow').show();
+      this.$el.find('.unfollow').hide();
+    }
     this.attachSubviews();
+    // debugger
     return this;
   },
 
   follow: function (event) {
     event.preventDefault();
-    this.$el.find('.follow').hide();
-    this.$el.find('.unfollow').show();
+    // this.$el.find('.follow').hide();
+    // this.$el.find('.unfollow').show();
     that = this;
     this.model.save({destroy: false}, {success: function () {
       that.user_tags.add(that.model, {merge: true});
