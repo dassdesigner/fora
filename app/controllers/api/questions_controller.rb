@@ -36,7 +36,6 @@ class Api::QuestionsController < ApplicationController
       current_user_vote = @question.votes.find_by({user_id: current_user.id})
       if current_user_vote.value == -1
         @question.update({voter_ids: voter_ids - [current_user.id]})
-        current_user_vote.destroy!
       else
         @question.update({voter_ids: voter_ids + [current_user.id]})
         current_user_vote.update({value: -1)

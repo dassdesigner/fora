@@ -33,7 +33,6 @@ class Api::AnswersController < ApplicationController
       current_user_vote = @answer.votes.find_by({user_id: current_user.id})
       if params[:value] == current_user_vote.value
         @answer.update({voter_ids: voter_ids - [current_user.id]})
-        current_user_vote.destroy!
       else
         @answer.update({voter_ids: voter_ids + [current_user.id]})
         current_user_vote.value = params[:value]
