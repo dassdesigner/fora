@@ -9,7 +9,10 @@ class User < ActiveRecord::Base
   has_many :tag_followings
   has_many :tags, :through => :tag_followings
   has_many :votes
-
+  has_many :voted_questions, :through => :votes, :source => :voteable,
+           :source_type => 'Question'
+  has_many :voted_answers, :through => :votes, :source => :voteable,
+           :source_type => 'Answer'
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])
     if user && user.is_password?(user_params[:password])
