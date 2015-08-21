@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :tag_followings
   has_many :tags, :through => :tag_followings
+  has_many :votes
 
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])

@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   has_many :tags, :through => :taggings
   has_many :taggings
+  has_many :votes, as: :voteable
 
   def self.topic_matches(query)
     query_arr = query.split(" ")
