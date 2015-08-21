@@ -5,7 +5,7 @@ class Question < ActiveRecord::Base
   has_many :tags, :through => :taggings
   has_many :taggings
   has_many :votes, as: :voteable
-  has_many :voters, :through => :votes, :source => :voter 
+  has_many :voters, :through => :votes, :source => :voter
   def self.topic_matches(query)
     query_arr = query.split(" ")
     Question.all.select {|q| q.tags.any? { |tag| query_arr.any? { |query_word| tag.title.include?(query_word)}}}
