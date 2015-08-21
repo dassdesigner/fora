@@ -1,5 +1,8 @@
 <p class="author-name"><%=answer.escape('answer_author')%></p>
 <span class="answer-body"><%=answer.escape('body')%></span>
+<br>
+<button type="button" class="btn btn-default upvote"></button>
+<a class="text-muted q-downvote" href="javascript:;">Downvote</a>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
   <button type="button" class="btn btn-default delete-answer">Delete</button>
   <button type="button" class="btn btn-default edit-answer">Edit</button>

@@ -9,6 +9,8 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
     "click .toggle-upvote" : "toggleUpvote",
     "click .toggle-downvote" : "toggleDownvote"
   },
+
+  
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
   },
