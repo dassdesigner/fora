@@ -37,7 +37,7 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   toggleDownvote: function(event) {
     event.preventDefault();
     that = this;
-    this.model.save({value: -1});
+    this.model.save({value: -1}, {});
   }
 
 
