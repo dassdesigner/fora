@@ -2,6 +2,10 @@ Fora.Models.Question = Backbone.Model.extend(
   _.extend({}, Fora.Mixins.Voteable, {
     urlRoot: "api/questions",
 
+    voteableOptions: {
+      foreignKey: "question_id"
+    },
+    
     answers: function() {
       if (!this._answers) {
         this._answers = new Fora.Collections.Answers([], {
