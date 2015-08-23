@@ -5,7 +5,7 @@ Fora.Models.Question = Backbone.Model.extend(
     voteableOptions: {
       foreignKey: "question_id"
     },
-    
+
     answers: function() {
       if (!this._answers) {
         this._answers = new Fora.Collections.Answers([], {
@@ -36,7 +36,7 @@ Fora.Models.Question = Backbone.Model.extend(
       }
 
       this.parseVote(payload);
-      return resp;
+      return payload;
     }
   })
 );

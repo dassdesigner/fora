@@ -8,11 +8,11 @@ Fora.Models.Tag = Backbone.Model.extend({
     return this._questions;
   },
 
-  parse: function(resp) {
-    if (resp.questions) {
-      this.questions().set(resp.questions);
-      delete resp.questions;
+  parse: function(payload) {
+    if (payload.questions) {
+      this.questions().set(payload.questions);
+      delete payload.questions;
     }
-    return resp;
+    return payload;
   }
 });
