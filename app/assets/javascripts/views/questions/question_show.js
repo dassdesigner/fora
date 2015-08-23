@@ -28,7 +28,6 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
     var content = this.template({
       question: this.model
     });
-    debugger;
     this.$el.html(content);
     this.attachSubviews();
     this.delegateEvents(this.events);
@@ -63,14 +62,12 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
 
   toggleDownvote: function(event) {
     that = this;
-    // debugger
     this.model.save({
       data: {value: -1}
     }, {
       success: function() {
         $downvoteLink = $(event.currentTarget);
         if ($downvoteLink.html() === "Downvote") {
-          debugger;
           $downvoteLink.html("Downvoted");
         } else {
           $downvoteLink.html("Downvote");

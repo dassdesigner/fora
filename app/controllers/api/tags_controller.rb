@@ -31,6 +31,7 @@ class Api::TagsController < ApplicationController
     elsif params[:destroy] && @tag.update({user_ids: user_ids - [current_user.id]})
       render json: @tag
     end
+    debugger
   end
 
   private

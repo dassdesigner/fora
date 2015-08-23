@@ -12,6 +12,7 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
+    // this.listenTo(this.model, "sync", this.render);
   },
 
   render: function () {
@@ -27,8 +28,7 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   },
 
   isDownvoted: function () {
-    debugger;
-    return true;
+    return !!this.model.get('current_user_vote');
   },
   answerQuestion: function () {
     Backbone.history.navigate("#questions/" + this.model.get('id'), {trigger: true});
@@ -37,7 +37,7 @@ Fora.Views.QuestionsIndexItem = Backbone.View.extend({
   toggleDownvote: function(event) {
     event.preventDefault();
     that = this;
-    this.model.save({value: -1}, {});
+    this.model.save({toggle_downvote: true});
   }
 
 
