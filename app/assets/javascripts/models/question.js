@@ -1,29 +1,36 @@
-Fora.Models.Question = Backbone.Model.extend({
-  urlRoot: "api/questions",
-  answers: function () {
-    if (!this._answers) {
-      this._answers = new Fora.Collections.Answers([], {question: this});
-    }
-    return this._answers;
-  },
+Fora.Models.Question = Backbone.Model.extend(
+  _.extend({}, Fora.Mixins.Voteable, {
+    urlRoot: "api/questions",
 
-  tags: function () {
-    if (!this._tags) {
-      this._tags = new Fora.Collections.Tags([], {question: this});
-    }
-    return this._tags;
-  },
+    answers: function() {
+      if (!this._answers) {
+        this._answers = new Fora.Collections.Answers([], {
+          question: this
+        });
+      }
+      return this._answers;
+    },
 
-  parse: function(resp) {
-    if (resp.answers) {
-      this.answers().set(resp.answers);
-      delete resp.answers;
-    }
+    tags: function() {
+      if (!this._tags) {
+        this._tags = new Fora.Collections.Tags([], {
+          question: this
+        });
+      }
+      return this._tags;
+    },
 
-    if (resp.tags) {
-      this.tags().set(resp.tags);
-      delete resp.tags;
+    parse: function(resp) {
+      if (resp.answers) {
+        this.answers().set(resp.answers);
+        delete resp.answers;
+      }
+
+      if (resp.tags) {
+        this.tags().set(resp.tags);
+        delete resp.tags;
+      }
+      return resp;
     }
-    return resp;
-  }
-});
+  })
+);
