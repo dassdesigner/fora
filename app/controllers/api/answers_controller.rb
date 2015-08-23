@@ -17,7 +17,8 @@ class Api::AnswersController < ApplicationController
   end
 
   def show
-    @answer = Answer.find(params[:id])
+    @answer = Answer.includes(:votes).find(params[:id])
+    @votes_hash[@answer.id] = @answer.votes.find_by(user_id: current_user.id)
     render :show
   end
 
