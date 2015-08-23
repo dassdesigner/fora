@@ -16,9 +16,9 @@ able to:
 - [x] Create Answers for Questions
 - [x] Edit/Destroy Answers
 - [x] Create Topics for Questions
-- [ ] Follow Questions, Users, and Topics
-- [ ] View Followed Questions, Users, and Topics
-- [ ] Search for Questions by Title or Topic
+- [x] Follow Topics
+- [x] View Followed Topics
+- [x] Search for Questions by Title or Topic
 - [ ] Upvote/Downvote Questions
 
 ## Design Docs
@@ -89,15 +89,16 @@ answers on the question show page will be sorted by votes.
 
 
 ### Bonus Features (TBD)
+- [ ] Question Follows
 - [ ] User Follows
 - [ ] User Pages
 - [ ] Notifications
-- [ ] Deleting Posts
+- [x] Deleting Posts
 - [ ] Comments on Answers
 - [ ] Pagination/infinite scroll
 - [ ] Activity history (e.g. upvoted answers)
 - [ ] Typeahead search bar
-- [ ] Searching by topic
+- [x] Searching by topic
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
