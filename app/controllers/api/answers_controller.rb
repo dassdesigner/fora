@@ -56,10 +56,11 @@ class Api::AnswersController < ApplicationController
   end
 
   def current_question
-    if params[:id]
-       Question.find(params[:id])
-    elsif params[:answer]
-       Question.find(params[:answer][:question_id])
-    end
+    # if params[:question_id]
+    #    Question.find(params[:id])
+    # elsif params[:answer]
+    #    Question.find(params[:answer][:question_id])
+    # end
+    Question.includes(:answers).find(params[:question_id])
   end
 end
