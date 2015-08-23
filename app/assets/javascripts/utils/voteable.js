@@ -9,7 +9,7 @@ Fora.Mixins.Voteable = {
     return this._vote;
   },
   createUpvote: function () {
-    this.vote().set(this.voteableOptions.foreign_key, this.id);
+    this.vote().set(this.voteableOptions.foreignKey, this.id);
     this.vote().save({}, {
       success: function () {
         this.updateUpvoteCount(1);
@@ -18,7 +18,7 @@ Fora.Mixins.Voteable = {
   },
 
   createDownvote: function () {
-    this.vote().set(this.voteableOptions.foreign_key, this.id);
+    this.vote().set(this.voteableOptions.foreignKey, this.id);
     this.vote().save({}, {
       success: function () {
       }.bind(this)
