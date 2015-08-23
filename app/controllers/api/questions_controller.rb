@@ -17,10 +17,16 @@ class Api::QuestionsController < ApplicationController
       # maybe select for only topics current user is following?
       @questions = Question.all
     end
+
+    @votes_hash = current_user.question_votes_hash
+    render :index
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.includes(:votes).find(params[:id])
+    @votes_hash = {}
+    @votes_hash[@question.id] = @question.votes.find_by(user_id: current_user.id)
+    render :show
   end
 
   def destroy
