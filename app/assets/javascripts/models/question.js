@@ -20,15 +20,15 @@ Fora.Models.Question = Backbone.Model.extend(
       return this._tags;
     },
 
-    parse: function(resp) {
-      if (resp.answers) {
-        this.answers().set(resp.answers);
-        delete resp.answers;
+    parse: function(payload) {
+      if (payload.answers) {
+        this.answers().set(payload.answers);
+        delete payload.answers;
       }
 
-      if (resp.tags) {
-        this.tags().set(resp.tags);
-        delete resp.tags;
+      if (payload.tags) {
+        this.tags().set(payload.tags);
+        delete payload.tags;
       }
       return resp;
     }
