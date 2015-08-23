@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
            :source_type => 'Question'
   has_many :voted_answers, :through => :votes, :source => :voteable,
            :source_type => 'Answer'
+
+
   def self.find_by_credentials(user_params)
     user = User.find_by_email(user_params[:email])
     if user && user.is_password?(user_params[:password])
@@ -25,6 +27,26 @@ class User < ActiveRecord::Base
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def question_votes_hash
+    zipped_votes = votes.pluck(:question_id).zip(votes)
+    votes_hash = {}
+    zipped_votes.each do |(id, vote)|
+      votes_hash[id] = vote
+    end
+
+    votes_hash
+  end
+
+  def answer_votes_hash
+    zipped_votes = votes.pluck(:answer_id).zip(votes)
+    votes_hash = {}
+    zipped_votes.each do |(id, vote)|
+      votes_hash[id] = vote
+    end
+
+    votes_hash
   end
 
   def is_password?(password)
