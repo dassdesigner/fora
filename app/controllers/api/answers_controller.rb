@@ -18,6 +18,7 @@ class Api::AnswersController < ApplicationController
 
   def show
     @answer = Answer.includes(:votes).find(params[:id])
+    @votes_hash = {}
     @votes_hash[@answer.id] = @answer.votes.find_by(user_id: current_user.id)
     render :show
   end
@@ -29,24 +30,25 @@ class Api::AnswersController < ApplicationController
   end
 
   def update
-    if params[:value]
-      @answer = Answer.includes(:voters).find(params[:id])
-      voter_ids = @answer.voters.pluck(:id)
-      current_user_vote = @answer.votes.find_by({user_id: current_user.id})
-      if params[:value] == current_user_vote.value
-        @answer.update({voter_ids: voter_ids - [current_user.id]})
-      else
-        @answer.update({voter_ids: voter_ids + [current_user.id]})
-        current_user_vote.value = params[:value]
-      end
-    else
+    # if params[:value]
+    #   @answer = Answer.includes(:votes).find(params[:id])
+    #   @votes_hash ||= {}
+    #   @votes_hash[@answer.id] = @answer.votes.find_by(user_id: current_user.id)
+    #   current_user_vote = @answer.votes.find_by({user_id: current_user.id})
+    #   if params[:value] == current_user_vote.value
+    #     @answer.update({voter_ids: voter_ids - [current_user.id]})
+    #   else
+    #     @answer.update({voter_ids: voter_ids + [current_user.id]})
+    #     current_user_vote.value = params[:value]
+    #   end
+    # else
       @answer = Answer.find(params[:id])
       if @answer.update(answer_params)
         render :json => @answer
       else
         render :json => @answer.errors.full_messages
       end
-    end
+    # end
   end
 
   private
