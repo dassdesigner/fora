@@ -1,7 +1,6 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    debugger;
     @answer = current_question.answers.new(answer_params)
     @answer.author_id = current_user.id
     if @answer.save
@@ -12,7 +11,9 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = current_answer.answers
+    @answers = current_question.answers.includes(:votes)
+    @votes_hash = current_user.answer_votes_hash
+    render :index
   end
 
   def show
