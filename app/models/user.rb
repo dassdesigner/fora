@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def question_votes_hash
-    zipped_votes = votes.pluck(:question_id).zip(votes)
+    zipped_votes = votes.where(voteable_type: "Question").pluck(:question_id).zip(votes)
     votes_hash = {}
     zipped_votes.each do |(id, vote)|
       votes_hash[id] = vote
@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   end
 
   def answer_votes_hash
-    zipped_votes = votes.pluck(:answer_id).zip(votes)
+    zipped_votes = votes.where(voteable_type: "Answer").pluck(:answer_id).zip(votes)
     votes_hash = {}
     zipped_votes.each do |(id, vote)|
       votes_hash[id] = vote
