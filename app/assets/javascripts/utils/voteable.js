@@ -21,6 +21,7 @@ Fora.Mixins.Voteable = {
     this.vote().set(this.voteableOptions.foreignKey, this.id);
     this.vote().save({}, {
       success: function () {
+        this.updateDownvoteCount(1);
       }.bind(this)
     });
   },
@@ -39,6 +40,7 @@ Fora.Mixins.Voteable = {
     this.vote().destroy({
       success: function(model) {
         model.unset("id");
+        this.updateDownvoteCount(-1);
       }.bind(this)
     });
   },
@@ -61,7 +63,10 @@ Fora.Mixins.Voteable = {
   updateUpvoteCount: function (delta) {
     this.set("num_upvotes", this.get("num_upvotes") + delta);
   },
-
+  // TODO REFACTOR
+  updateDownvoteCount: function (delta) {
+    this.set("num_downvotes", this.get("num_downvotes") + delta);
+  },
   parseVote: function (payload) {
     if (payload.vote) {
       this.vote().set(payload.vote);
