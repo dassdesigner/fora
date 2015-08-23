@@ -1,7 +1,4 @@
 json.array!(@questions) do |question|
   json.extract! question, :id, :title, :body, :author_id
-  json.current_user_vote question.votes.find_by({user_id: current_user.id})
-  json.user do
-    json.name question.user.name
-  end
+  json.is_downvoted question.voters.pluck(:id).include?(current_user.id)
 end

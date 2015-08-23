@@ -16,7 +16,9 @@ class Question < ActiveRecord::Base
     Question.all.select {|q| query_arr.any? { |query_word| q.title.include?(query_word)}}
   end
 
-  def current_user_vote(current_user_id)
-    votes.find_by({user_id: current_user_id})
+  def downvoted_by_current_user?(current_user_id)
+    votes.pluck(:id).include?(current_user_id)
   end
+
+
 end

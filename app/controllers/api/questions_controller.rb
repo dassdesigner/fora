@@ -30,21 +30,18 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    debugger
     if params[:toggle_downvote]
       @question = Question.includes(:voters).find(params[:id])
       voter_ids = @question.voters.pluck(:id)
       # only downvoting allowed
       if voter_ids.include?(current_user.id)
         @question.update({voter_ids: voter_ids - [current_user.id]})
-        render :json => @question
       else
         # @question.update({voter_ids: voter_ids + [current_user.id]})
         @question.votes.create({user_id: current_user.id, value: -1})
-        render :json => @question
       end
 
-      # render :json => @question
+      render :json => @question
 
     else
       @question = Question.find(params[:id])

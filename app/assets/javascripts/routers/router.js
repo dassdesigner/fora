@@ -28,7 +28,6 @@ Fora.Routers.Router = Backbone.Router.extend({
     var view = new Fora.Views.QuestionsIndex({
         collection: this.collection,
         });
-
     var sideView = new Fora.Views.SidebarFeed({collection: user_tags});
     this._swapSidebarView(sideView);
     this._swapView(view);

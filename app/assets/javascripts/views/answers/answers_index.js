@@ -18,6 +18,7 @@ Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
   },
 
   removeAnswerSubview: function (answer) {
+    //TODO switch to removemodelsubview
     that = this;
     this.subviews('.answers-container').forEach(function(subview){
       if (subview.model === answer) {
@@ -31,6 +32,6 @@ Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
-  },
+  }
 
 });

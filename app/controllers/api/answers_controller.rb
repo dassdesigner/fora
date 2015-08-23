@@ -1,9 +1,9 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    @answer = current_answer.answers.new(answer_params)
+    debugger;
+    @answer = current_question.answers.new(answer_params)
     @answer.author_id = current_user.id
-    @answer.answer_id = current_answer.id
     if @answer.save
       render :show
     else
@@ -53,12 +53,11 @@ class Api::AnswersController < ApplicationController
     params.require(:answer).permit(:body, :answer_id)
   end
 
-  def current_answer
+  def current_question
     if params[:id]
-      @answer = Answer.find(params[:id])
-      @answer = Answer.answer
+       Question.find(params[:id])
     elsif params[:answer]
-      @answer = Answer.find(params[:answer][:answer_id])
+       Question.find(params[:answer][:question_id])
     end
   end
 end

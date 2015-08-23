@@ -27,6 +27,7 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
   },
 
   removeTagSubview: function (tag) {
+    //TODO: change to removemodelsubview
     that = this;
     this.subviews('.tags-container').forEach(function(subview){
       if (subview && subview.model === tag) {
