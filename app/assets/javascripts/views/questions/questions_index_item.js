@@ -10,16 +10,17 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
   },
 
 
-  // initialize: function() {
-  //   this.listenTo(this.collection, "sync", this.render);
-  //   this.listenTo(this.model, "sync", this.render);
-  //   this.listenTo(this.model, "change:is_downvoted", this.render);
-  // },
+  initialize: function() {
+    var downvoteWidget = new Fora.Views.DownvoteWidget({
+      model: this.model
+    });
+    this.addSubview(".question-footer", downvoteWidget);
+    this.listenTo(this.model, "sync", this.render);
+  },
 
   render: function() {
     var content = this.template({
       question: this.model,
-      // downvoteString: this.downvoteString()
     });
     this.$el.html(content);
     return this;
