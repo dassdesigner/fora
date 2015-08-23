@@ -1,4 +1,5 @@
 window.Fora = {
+  Mixins: {},
   Models: {},
   Collections: {},
   Views: {},
