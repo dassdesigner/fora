@@ -3,7 +3,7 @@ Fora.Models.Question = Backbone.Model.extend(
     urlRoot: "api/questions",
 
     voteableOptions: {
-      foreignKey: "question_id"
+      foreignKeyType: "Question"
     },
 
     answers: function() {

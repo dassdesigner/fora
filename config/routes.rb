@@ -10,5 +10,6 @@ Fora::Application.routes.draw do
     end
     resources :answers
     resources :tags
+    resources :votes
   end
 end

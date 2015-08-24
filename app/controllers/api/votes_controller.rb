@@ -32,6 +32,4 @@ class Api::VotesController < ApplicationController
       params.require(:vote).permit(:value, :voteable_id, :voteable_type)
     end
 
-  # end private
-  end
 end

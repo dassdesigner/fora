@@ -9,7 +9,11 @@ Fora.Mixins.Voteable = {
     return this._vote;
   },
   createUpvote: function () {
-    this.vote().set(this.voteableOptions.foreignKey, this.id);
+    this.vote().set({
+      "voteable_id": this.id,
+      "voteable_type": this.voteableOptions.foreignKeyType,
+      "value": 1});
+
     this.vote().set(value, 1);
     this.vote().save({}, {
       success: function () {
@@ -20,8 +24,11 @@ Fora.Mixins.Voteable = {
 
   createDownvote: function () {
     // maybe use .previousAttributes() ?
-    this.vote().set(this.voteableOptions.foreignKey, this.id);
-    this.vote().set(value, -1);
+    this.vote().set({
+      "voteable_id": this.id,
+      "voteable_type": this.voteableOptions.foreignKeyType,
+      "value": -1});
+
     this.vote().save({}, {
       success: function () {
       }.bind(this)

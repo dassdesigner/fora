@@ -6,7 +6,7 @@ Fora.Views.DownvoteWidget = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'change:num_upvotes', this.render);
+    this.listenTo(this.model.vote(), 'change', this.render);
   },
 
   toggleDownvote: function(event) {

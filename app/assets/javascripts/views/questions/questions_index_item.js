@@ -6,7 +6,6 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
 
   events: {
     "click .answer-question": "answerQuestion",
-    "click .downvote": "toggleDownvote"
   },
 
 
@@ -15,7 +14,6 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
       model: this.model
     });
 
-    debugger
     this.addSubview(".question-footer", downvoteWidget);
     this.listenTo(this.model, "sync", this.render);
 
@@ -41,10 +39,6 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
       trigger: true
     });
   },
-
-  toggleDownvote: function (event) {
-    // event.preventDefault
-  }
 
 
 });
