@@ -1,4 +1,4 @@
-Fora.Views.AnswersIndexItem = Backbone.View.extend({
+Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   template: JST["answers/index_item"],
 
   events: {
@@ -13,6 +13,14 @@ Fora.Views.AnswersIndexItem = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "sync add", this.render);
+    var downvoteWidget = new Fora.Views.DownvoteWidget({
+      model: this.model
+    });
+    var upvoteWidget = new Fora.Views.UpvoteWidget({
+      model: this.model
+    });
+    this.addSubview(".answer-footer", upvoteWidget);
+    this.addSubview(".answer-footer", downvoteWidget);
   },
 
 
