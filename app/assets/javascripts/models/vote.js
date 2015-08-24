@@ -1,3 +1,3 @@
-Fora.Models.Vote = Backbone.Models.extend({
+Fora.Models.Vote = Backbone.Model.extend({
   urlRoot: "api/votes"
 });

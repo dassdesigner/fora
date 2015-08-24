@@ -2,11 +2,11 @@ Fora.Views.DownvoteWidget = Backbone.View.extend({
   template: JST["widgets/downvote_widget"],
 
   events: {
-    "click .downvote": "toggleDownvote"
+    "click": "toggleDownvote"
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'change:num_downvotes', this.render);
+    this.listenTo(this.model, 'change:num_upvotes', this.render);
   },
 
   toggleDownvote: function(event) {
@@ -19,5 +19,8 @@ Fora.Views.DownvoteWidget = Backbone.View.extend({
       vote: this.model.vote(),
       model: this.model
     });
+    this.$el.html(content);
+    return this;
+
   }
 });
