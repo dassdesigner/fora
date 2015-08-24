@@ -20,10 +20,10 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
       model: answer,
       collection: this.model.answers()
     });
-    var downvoteWidget = new Fora.Views.DownvoteWidget({
+    var upvoteWidget = new Fora.Views.UpvoteWidget({
       model: this.model
     });
-    this.addSubview('.question-footer', downvoteWidget);
+    this.addSubview('.question-footer', upvoteWidget);
     this.addSubview('.answer-form', answerForm);
     this.addSubview('.answers-index', answersIndex);
   },

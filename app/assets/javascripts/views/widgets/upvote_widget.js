@@ -19,5 +19,7 @@ Fora.Views.UpvoteWidget = Backbone.View.extend({
       vote: this.model.vote(),
       model: this.model
     });
+    this.$el.html(content);
+    return this;
   }
 });

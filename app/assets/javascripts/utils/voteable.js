@@ -9,12 +9,12 @@ Fora.Mixins.Voteable = {
     return this._vote;
   },
   createUpvote: function () {
+    this.vote().clear();
     this.vote().set({
       "voteable_id": this.id,
       "voteable_type": this.voteableOptions.foreignKeyType,
       "value": 1});
 
-    this.vote().set(value, 1);
     this.vote().save({}, {
       success: function () {
         this.updateUpvoteCount(1);
@@ -22,18 +22,18 @@ Fora.Mixins.Voteable = {
     });
   },
 
-  createDownvote: function () {
-    // maybe use .previousAttributes() ?
-    this.vote().set({
-      "voteable_id": this.id,
-      "voteable_type": this.voteableOptions.foreignKeyType,
-      "value": -1});
-
-    this.vote().save({}, {
-      success: function () {
-      }.bind(this)
-    });
-  },
+  // createDownvote: function () {
+  //   this.vote().clear();
+  //   this.vote().set({
+  //     "voteable_id": this.id,
+  //     "voteable_type": this.voteableOptions.foreignKeyType,
+  //     "value": -1});
+  //
+  //   this.vote().save({}, {
+  //     success: function () {
+  //     }.bind(this)
+  //   });
+  // },
 
 
   destroyUpvote: function () {
@@ -45,29 +45,30 @@ Fora.Mixins.Voteable = {
     });
   },
 
-  destroyDownvote: function () {
-    this.vote().destroy({
-      success: function(model) {
-        model.unset("id");
-      }.bind(this)
-    });
-  },
+  // destroyDownvote: function () {
+  //   this.vote().destroy({
+  //     success: function(model) {
+  //       model.unset("id");
+  //     }.bind(this)
+  //   });
+  // },
 
   toggleUpvote: function () {
+    // debugger
     if (this.vote().isNew()) {
       this.createUpvote();
     } else {
       this.destroyUpvote();
     }
   },
-
-  toggleDownvote: function () {
-    if (this.vote().isNew()) {
-      this.createDownvote();
-    } else {
-      this.destroyDownvote();
-    }
-  },
+  // 
+  // toggleDownvote: function () {
+  //   if (this.vote().isNew()) {
+  //     this.createDownvote();
+  //   } else {
+  //     this.destroyDownvote();
+  //   }
+  // },
   updateUpvoteCount: function (delta) {
     this.set("num_upvotes", this.get("num_upvotes") + delta);
   },

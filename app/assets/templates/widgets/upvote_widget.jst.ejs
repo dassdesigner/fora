@@ -1,15 +1,15 @@
 <% if (vote.isNew()) { %>
-  <div class="btn-group upvote" role="group">
+  <span class="btn-group upvote" role="group">
     <button type="button" class="btn btn-default">Upvote</button>
     <button type="button" class="btn btn-default">
-      <%=voteable.escape('num_upvotes')%>
+      <%=model.escape('num_upvotes')%>
     </button>
-  </div>
+  </span>
 <% } else { %>
-  <div class="btn-group upvoted" role="group">
+  <span class="btn-group upvote upvoted" role="group">
     <button type="button" class="btn btn-default">Upvoted</button>
     <button type="button" class="btn btn-default">
-      <%=voteable.escape('num_upvotes')%>
+      <%=model.escape('num_upvotes')%>
     </button>
-  </div>
-<% } end %>
+  </span>
+<% }  %>

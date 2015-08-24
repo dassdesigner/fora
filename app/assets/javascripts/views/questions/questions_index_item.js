@@ -10,11 +10,11 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
 
 
   initialize: function() {
-    var downvoteWidget = new Fora.Views.DownvoteWidget({
+    var upvoteWidget = new Fora.Views.UpvoteWidget({
       model: this.model
     });
 
-    this.addSubview(".question-footer", downvoteWidget);
+    this.addSubview(".question-footer", upvoteWidget);
     this.listenTo(this.model, "sync", this.render);
 
   },
