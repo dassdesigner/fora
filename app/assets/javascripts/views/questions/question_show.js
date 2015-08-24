@@ -4,7 +4,6 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
     "click button.edit": "editQuestionBody",
     "click button.delete": "deleteQuestion",
     "blur .question-body": "saveQuestionBody",
-    "click .q-downvote": "toggleDownvote"
   },
 
   initialize: function() {
@@ -21,6 +20,10 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
       model: answer,
       collection: this.model.answers()
     });
+    var downvoteWidget = new Fora.Views.DownvoteWidget({
+      model: this.model
+    });
+    this.addSubview('.question-footer', downvoteWidget);
     this.addSubview('.answer-form', answerForm);
     this.addSubview('.answers-index', answersIndex);
   },
@@ -61,19 +64,4 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
     });
   },
 
-  toggleDownvote: function(event) {
-    that = this;
-    this.model.save({
-      data: {value: -1}
-    }, {
-      success: function() {
-        $downvoteLink = $(event.currentTarget);
-        if ($downvoteLink.html() === "Downvote") {
-          $downvoteLink.html("Downvoted");
-        } else {
-          $downvoteLink.html("Downvote");
-        }
-      }
-    });
-  }
 });
