@@ -5,7 +5,11 @@ Fora.Collections.Answers = Backbone.Collection.extend({
   initialize: function (models, options) {
     this.question = options.question;
   },
-  // 
+
+  comparator: function(model) {
+    return model.get('num_upvotes');
+  },
+  //
   // getOrFetch: function (id) {
   //   var answer = this.get(id);
   //   that = this;
@@ -19,4 +23,4 @@ Fora.Collections.Answers = Backbone.Collection.extend({
   //   }
   //   return answer;
   // }
-})
+});
