@@ -61,7 +61,7 @@ Fora.Mixins.Voteable = {
       this.destroyUpvote();
     }
   },
-  // 
+  //
   // toggleDownvote: function () {
   //   if (this.vote().isNew()) {
   //     this.createDownvote();
