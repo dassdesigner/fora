@@ -19,20 +19,32 @@
 html *
 {
   font-family: Georgia;
+  font-size: 18px;
 }
 .navbar {
 }
 ul {
-  list-type-style: none;
-  // padding-left: 12px;
+  list-style-type: none;
+  padding-left: 12px;
   // padding-right: 12px;
 }
 
-.tags-container {
-
+.tag-title {
+  margin-left: 0px;
+  background-color: #FFF ;
 }
+
+.tags-container {
+  list-style-type: square;
+  // padding-left:
+}
+
+.index-item {
+  // padding-left:
+}
+
 // body { padding-top: 70px;}
-.question-footer {
+.question-footer, .answer-footer {
   display: inline-block;
 }
 
@@ -58,7 +70,7 @@ ul {
 
 .author-name {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .answer-form {
@@ -68,21 +80,25 @@ ul {
   word-wrap: break-word;
 }
 
+.sidebar-title {
+  font-weight: bold;
+}
 
-.questions-index-item, .answers-index-item {
+.questions-index-item, .answers-index-item, .sidebar-title {
   border-bottom: 1px solid #BBB;
   padding-bottom: 10px;
+
 }
 
-.edit-answer, .delete-answer {
-  float: right;
-  bottom: 10px;
-  padding: 2px;
+.edit, .delete {
+  float: left;
+  bottom: 0px;
+  margin: 10px;
 }
-
-.questions-container {
-  padding-left: 0;
-}
+  //
+  // .questions-container {
+  //   padding-left: 0;
+  // }
 #sidebar {
   float: left;
 }

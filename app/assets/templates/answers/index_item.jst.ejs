@@ -3,6 +3,6 @@
 <br>
 <span class="answer-footer"></span>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
-  <button type="button" class="btn btn-default delete-answer">Delete</button>
-  <button type="button" class="btn btn-default edit-answer">Edit</button>
+  <a class="text-muted delete-answer" href="javascript:;">Delete</a>
+  <a class="text-muted edit-answer" href="javascript:;">Edit</a>
 <% } %>

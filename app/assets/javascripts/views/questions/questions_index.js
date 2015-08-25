@@ -3,7 +3,7 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
 
 
   initialize: function () {
-    this.listenTo(this.collection, "sync change", this.render);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
     // this.listenTo(this.tags, "sync", this.render);
     // this.collection.fetch();

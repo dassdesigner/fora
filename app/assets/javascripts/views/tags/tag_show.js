@@ -25,7 +25,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     this.addSubview(".questions-container", subView);
   },
   followString: function(){
-    return this.isFollowed() ? "unfollow" : "follow";
+    return this.isFollowed() ? "Unfollow" : "Follow";
   },
   isFollowed: function(){
     if (this.userTags.any( {id: this.model.get('id') } )) {
