@@ -1,7 +1,8 @@
 Fora.Views.Navbar = Backbone.CompositeView.extend({
   template: JST["navbar/navbar"],
   events: {
-    "submit": "search"
+    "submit": "search",
+    "click .sign-out": "signOut"
   },
 
   initialize: function () {
@@ -19,4 +20,5 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
     var query = $('#search').val().split(" ").join("+");
     Backbone.history.navigate("search?query="+ query, {trigger: true});
   }
+  
 });

@@ -23,7 +23,15 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="javascript:void(0)" onclick="document.getElementById('sign-out-form').submit();">Sign Out</a>
+            <form action="session" method="post" id="sign-out-form">
+             <input type="hidden" name="_method" value="delete">
+             <input type="hidden"
+                    name="authenticity_token"
+                    id="sign_out_auth_token"
+                    value="<%= $('meta[name=csrf-token]').attr('content') %>" >
+         </form>
+
           </ul>
         </li>
       </ul>
