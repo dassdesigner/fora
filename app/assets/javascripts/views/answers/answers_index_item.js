@@ -8,7 +8,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   },
 
   tagName: "li",
-  className: "index-item",
+  className: "answers-index-item",
 
 
   initialize: function () {

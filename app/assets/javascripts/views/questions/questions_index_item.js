@@ -2,7 +2,7 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
   template: JST["questions/index_item"],
 
   tagName: "li",
-  className: "index-item",
+  className: "questions-index-item",
 
   events: {
     "click .answer-question": "answerQuestion",

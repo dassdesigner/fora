@@ -16,24 +16,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
+html *
+{
+  font-family: Georgia;
+}
+.navbar {
+}
 ul {
-  list-style-type: none;
-  padding-left: 12px;
-  padding-right: 12px;
+  list-type-style: none;
+  // padding-left: 12px;
+  // padding-right: 12px;
 }
 
+.tags-container {
 
-body { padding-top: 70px;}
+}
+// body { padding-top: 70px;}
+.question-footer {
+  display: inline-block;
+}
 
+.user-feed {
+  list-style-type: square;
+}
 .upvote {
-
+  color: black !important;
 }
 .new-session, .new-user {
   text-align:center;
   padding-top: 100px;
   padding-left: 100px;
 }
+
 
 .question-title {
   font-weight: bold;
@@ -55,7 +69,7 @@ body { padding-top: 70px;}
 }
 
 
-.index-item {
+.questions-index-item, .answers-index-item {
   border-bottom: 1px solid #BBB;
   padding-bottom: 10px;
 }
@@ -69,16 +83,28 @@ body { padding-top: 70px;}
 .questions-container {
   padding-left: 0;
 }
-
 #sidebar {
+  float: left;
+}
+#sidebar > * {
+  width: 200px;
+  float: right;
   // padding-right: 70px;
-  top: 70px;
+  // float: left;
   // right: 0;
-  width: 300px;
-  position: fixed;
+  // width: 300px;
+  // position: fixed;
+}
+.center-block {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #main {
-  margin-left: 350px;
-  position: relative;
+  overflow: hidden;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-left: 350px;
+  // position: relative;
 }

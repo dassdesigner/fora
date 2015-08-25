@@ -1,7 +1,7 @@
 <p class="author-name"><%=answer.escape('answer_author')%></p>
 <span class="answer-body"><%=answer.escape('body')%></span>
 <br>
-<div class="answer-footer"></div>
+<span class="answer-footer"></span>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
   <button type="button" class="btn btn-default delete-answer">Delete</button>
   <button type="button" class="btn btn-default edit-answer">Edit</button>
