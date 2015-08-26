@@ -51,9 +51,11 @@ ul {
   color: black !important;
 }
 .new-session, .new-user {
-  text-align:center;
-  padding-top: 100px;
-  padding-left: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #EEE;
 }
 
 
