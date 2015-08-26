@@ -1,3 +1,3 @@
 json.array! answers do |answer|
-  json.partial! "api/answers/answer", answer: answer, votes_hash: @votes_hash
+  json.partial! "api/answers/answer", answer: answer, votes_hash: votes_hash
 end

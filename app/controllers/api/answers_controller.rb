@@ -11,9 +11,10 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = current_question.answers.includes(:votes)
+    @question ||= current_question(params)
+    @answers = @question.answers.includes(:votes)
     @votes_hash = current_user.answer_votes_hash
-    render :index
+    render :_index1
   end
 
   def show
@@ -57,12 +58,11 @@ class Api::AnswersController < ApplicationController
     params.require(:answer).permit(:body, :answer_id)
   end
 
-  def current_question
-    # if params[:question_id]
-    #    Question.find(params[:id])
-    # elsif params[:answer]
-    #    Question.find(params[:answer][:question_id])
-    # end
-    Question.includes(:answers).find(params[:question_id])
+  def current_question(params)
+    if params["question_id"]
+       @question = Question.find(params[:question_id])
+    elsif params["answer"]
+       @question = Question.find(params[:answer][:question_id])
+    end
   end
 end

@@ -23,8 +23,8 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   questionsIndex: function () {
     var user_tags = new Fora.Collections.Tags();
-    user_tags.fetch();
     this.collection.fetch();
+    user_tags.fetch();
     var view = new Fora.Views.QuestionsIndex({
         collection: this.collection,
         });

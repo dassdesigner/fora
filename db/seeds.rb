@@ -40,7 +40,7 @@ q1.tags.create({title: "Wow I am hilarious!"})
   q4.tags.create({title: "Sleep"})
   q5.tags.create({title: "The 1980s"})
 
-u1.votes.create({voteable_id: 1,voteable_type: "Question", value: 1})
+u1.votes.create({voteable_id:1 ,voteable_type: "Question", value: 1})
 u1.votes.create({voteable_id:2 ,voteable_type: "Question", value: 1})
 u1.votes.create({voteable_id:3, voteable_type: "Question", value: 1})
 u1.votes.create({voteable_id:4 ,voteable_type: "Question", value: 1})
