@@ -27,13 +27,6 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
     return this;
   },
 
-  // downvoteString: function() {
-  //   return this.isDownvoted() ? "Downvoted" : "Downvote";
-  // },
-  //
-  // isDownvoted: function() {
-  //   return this.model.get('is_downvoted');
-  // },
   answerQuestion: function() {
     Backbone.history.navigate("#questions/" + this.model.get('id'), {
       trigger: true

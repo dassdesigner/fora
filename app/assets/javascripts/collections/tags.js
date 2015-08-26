@@ -1,11 +1,6 @@
 Fora.Collections.Tags = Backbone.Collection.extend({
   url: function(){
-    // debugger
-    // if(this.question){
-    //   return this.question.url() + "/tags";
-    // } else {
       return "/api/tags";
-    // }
   },
   model: Fora.Models.Tag,
 

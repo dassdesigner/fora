@@ -27,13 +27,6 @@ Fora.Views.TagForm = Backbone.View.extend({
         that.collection.add(that.model);
       }
     });
-    // this.collection.create(attrs, {success: function () {
-
-      // that.collection.add(that.model, {merge: true});
-      // Backbone.history.navigate("#questions/" + that.model.get('question_id'), {trigger: true});
-      // that.model = new Fora.Models.Tag();
-      // }
-    // });
   }
 
 });

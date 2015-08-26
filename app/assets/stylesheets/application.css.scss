@@ -26,7 +26,6 @@ html *
 ul {
   list-style-type: none;
   padding-left: 12px;
-  // padding-right: 12px;
 }
 
 .tag-title {
@@ -36,14 +35,11 @@ ul {
 
 .tags-container {
   list-style-type: square;
-  // padding-left:
 }
 
 .index-item {
-  // padding-left:
 }
 
-// body { padding-top: 70px;}
 .question-footer, .answer-footer {
   display: inline-block;
 }
@@ -91,25 +87,14 @@ ul {
 }
 
 .edit, .delete {
-  // float: left;
   bottom: 0px;
-  // margin: 10px;
 }
-  //
-  // .questions-container {
-  //   padding-left: 0;
-  // }
 #sidebar {
   float: left;
 }
 #sidebar > * {
   width: 200px;
   float: right;
-  // padding-right: 70px;
-  // float: left;
-  // right: 0;
-  // width: 300px;
-  // position: fixed;
 }
 .center-block {
   display:block;
@@ -119,8 +104,4 @@ ul {
 
 #main {
   overflow: hidden;
-  // margin-left: auto;
-  // margin-right: auto;
-  // margin-left: 350px;
-  // position: relative;
 }
