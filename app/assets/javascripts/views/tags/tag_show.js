@@ -10,22 +10,21 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     this.userTags = options.user_tags;
     this.userTags.fetch();
     this.listenTo(this.collection, "sync", this.render);
-    // this.listenTo(this.collection, "add", this.addQuestionSubview);
-    // this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addQuestionSubview);
+    this.listenTo(this.model, "sync", this.render);
     // this.listenTo(this.userTags, "sync", this.render);
-    // var that = this;
-    var questionsIndex = new Fora.Views.QuestionsIndex({
-      collection: this.collection
+    var that = this;
+    this.collection.each (function (question) {
+      that.addQuestionSubview(question);
     });
-
-    this.addSubview(".questions-container",  questionsIndex);
   },
 
-  //
-  // addQuestionSubview: function (question) {
-  //   var subView = new Fora.Views.QuestionsIndexItem({model: question});
-  //   this.addSubview(".questions-container", subView);
-  // },
+
+  addQuestionSubview: function (question) {
+    var subView = new Fora.Views.QuestionsIndexItem({model: question});
+    this.addSubview(".questions-container", subView);
+  },
+
   followString: function(){
     return this.isFollowed() ? "Unfollow" : "Follow";
   },

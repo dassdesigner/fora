@@ -9,7 +9,7 @@ Fora.Mixins.Voteable = {
     return this._vote;
   },
   createUpvote: function () {
-    this.vote().clear();
+
     this.vote().set({
       "voteable_id": this.id,
       "voteable_type": this.voteableOptions.foreignKeyType,

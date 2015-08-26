@@ -1,5 +1,4 @@
 json.extract! @tag, :id, :title
-  debugger;
-json.array!(@tag.questions) do |question|
-  json.partial! "api/questions/question", question: question
+json.questions do
+  json.partial! 'api/questions/questions', questions: @tag.questions, votes_hash: @votes_hash
 end
