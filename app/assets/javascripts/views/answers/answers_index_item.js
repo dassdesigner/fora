@@ -2,8 +2,8 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   template: JST["answers/index_item"],
 
   events: {
-    "click .delete" : "deleteAnswer",
-    "click .edit" : "editAnswer",
+    "click .delete-answer" : "deleteAnswer",
+    "click .edit-answer" : "editAnswer",
     "blur .answer-body" : "saveAnswer"
   },
 

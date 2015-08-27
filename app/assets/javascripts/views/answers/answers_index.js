@@ -6,7 +6,6 @@ Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "add", this.addAnswerSubview);
     this.listenTo(this.collection, "remove", this.removeAnswerSubview);
     var that = this;
-    debugger;
     this.collection.each (function (answer) {
       that.addAnswerSubview(answer);
     });

@@ -16,6 +16,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.btn .btn-default .upvote{
+  background-color: #AAA
+}
+
+.upvote > .btn-default.btn {
+  background-color: #E6E6FA
+}
+
 html *
 {
   font-family: Georgia;
@@ -47,9 +56,7 @@ ul {
 .user-feed {
   list-style-type: square;
 }
-.upvote {
-  color: black !important;
-}
+
 .new-session, .new-user {
   position: fixed;
   top: 50%;
