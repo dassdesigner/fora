@@ -3,9 +3,8 @@
 // 2.) destroy the opposite type of vote if it exists
 Fora.Mixins.Voteable = {
   vote: function () {
-    debugger
     if (!this._vote) {
-      this._vote = new Fora.Models.Vote;
+      this._vote = new Fora.Models.Vote();
     }
     return this._vote;
   },
@@ -55,7 +54,6 @@ Fora.Mixins.Voteable = {
   // },
 
   toggleUpvote: function () {
-    debugger
 
     if (this.vote().isNew()) {
       this.createUpvote();
@@ -77,7 +75,6 @@ Fora.Mixins.Voteable = {
   // TODO REFACTOR
 
   parseVote: function (payload) {
-      debugger;
     if (payload.vote) {
       this.vote().set(payload.vote);
       delete payload.vote;

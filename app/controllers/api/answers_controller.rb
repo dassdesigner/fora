@@ -60,9 +60,9 @@ class Api::AnswersController < ApplicationController
 
   def current_question(params)
     if params["question_id"]
-       @question = Question.find(params[:question_id])
+       Question.find(params[:question_id])
     elsif params["answer"]
-       @question = Question.find(params[:answer][:question_id])
+       Question.find(params[:answer][:question_id])
     end
   end
 end
