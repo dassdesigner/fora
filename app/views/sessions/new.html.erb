@@ -2,15 +2,25 @@
   <h1>Fora</h1>
   <h2>Sign In</h2>
 
-  <form action="/session" method="post">
+  <form action="/session" method="post" id="sign-in">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <label>Email<br>
-      <input name="user[email]" type="text"><br>
+      <input name="user[email]" type="text" id="email"><br>
     </label><br>
     <label>Password<br>
-      <input name="user[password]" type="password"><br>
+      <input name="user[password]" type="password" id="password"><br>
     </label><br>
-    <input type="submit" value="Log In" class="btn btn-primary"><br>
+    <input type="submit" value="Log In" class="btn btn-primary">
+    <input value="Guest Login" class="btn btn-primary" id="login-guest">
     <p>Don't have an account yet? <a href="/users/new">Create one!</a></p>
   </form>
 </div>
+
+
+<script>
+  $('#login-guest').on('click', function () {
+    $('#email').val('the@guest.com');
+    $('#password').val('supersecurepassword');
+    $('#sign-in').submit();
+  });
+</script>

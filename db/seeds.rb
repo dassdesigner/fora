@@ -10,6 +10,7 @@ u2 = User.create(name: 'WhyAmIListeningToThis', email: 'cat@cat.com', password: 
 u3 = User.create(name: 'Spiderman', email: 'spider@man.com', password: 'gotweb')
 u4 = User.create(name: 'Hans Gruber', email: 'hanstheg@gmail.com', password: 'willis')
 u5 = User.create(name: 'Severus', email: 'snape@gmail.com', password: 'dumbledore')
+u6 = User.create(name: 'Ohey There', email: 'the@guest.com', password: 'supersecurepassword')
 
 q1 = Question.create(title: 'How you doing?', body: 'How YOU doin?', author_id: 1)
 q2 = Question.create(title: 'Test post please ignore', body: 'Cat goes meow', author_id: 2)
@@ -27,18 +28,20 @@ a5 = Answer.create(body: 'F', author_id: 2, question_id: 3)
 a6 = Answer.create(body: '?!', author_id: 5, question_id: 5)
 a7 = Answer.create(body: "I'm coming for you!", author_id: 3, question_id: 5)
 
-q1.tags.create({title: "#joeythings"})
+q1.tags.create({title: "How YOU doin"})
 q1.tags.create({title: "Wow I am hilarious!"})
   q2.tags.create({title: "I AM REALLY RUNNING OUT OF IDEAS"})
   q2.tags.create({title: "BUT THERE ARE SO MANY MORE THINGS TO DO"})
   q3.tags.create({title: "Webs"})
-  q3.tags.create({title: "spiders"})
+  q3.tags.create({title: "Spiders"})
   q3.tags.create({title: "Magic"})
   q4.tags.create({title: "Webs"})
   q4.tags.create({title: "The Joy of Learning"})
   q4.tags.create({title: "Magic"})
   q4.tags.create({title: "Sleep"})
   q5.tags.create({title: "The 1980s"})
+
+
 
 u1.votes.create({voteable_id:1 ,voteable_type: "Question", value: 1})
 u1.votes.create({voteable_id:2 ,voteable_type: "Question", value: 1})
@@ -61,3 +64,4 @@ u4.votes.create({voteable_id: 3,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
 u5.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
 u5.votes.create({voteable_id: 1,voteable_type: "Question", value: 1})
+u6.tags << Tag.all

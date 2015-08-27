@@ -3,6 +3,7 @@ Fora.Collections.Questions = Backbone.Collection.extend({
   model: Fora.Models.Question,
 
   comparator: function(model) {
+    debugger;
     return model.get('num_upvotes');
   },
   getOrFetch: function(id) {
