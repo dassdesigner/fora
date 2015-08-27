@@ -15,10 +15,11 @@ class Api::QuestionsController < ApplicationController
       @questions = (Question.topic_matches(params[:query]) + Question.title_matches(params[:query])).uniq
     else
       # maybe select for only topics current user is following?
-      @questions = Question.all
+      @questions = Question.includes(:answers).all
     end
 
     @votes_hash = current_user.question_votes_hash
+
     render :index
   end
 
@@ -26,6 +27,7 @@ class Api::QuestionsController < ApplicationController
     @question = Question.includes(:votes).find(params[:id])
     @votes_hash = {}
     @votes_hash[@question.id] = @question.votes.find_by(user_id: current_user.id)
+    debugger;
     render :show
   end
 
@@ -59,11 +61,19 @@ class Api::QuestionsController < ApplicationController
     # end
   end
 
-
   private
   def question_params
     params.require(:question).permit(:title, :body)
   end
 
 
+  def question_votes_hash
+    zipped_votes = votes.where(voteable_type: "Question").pluck(:voteable_id).zip(votes)
+    votes_hash = {}
+    zipped_votes.each do |(id, vote)|
+      votes_hash[id] = vote
+    end
+
+    votes_hash
+  end
 end
