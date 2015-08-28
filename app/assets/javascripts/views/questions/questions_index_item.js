@@ -34,5 +34,8 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
     });
   },
 
+  topAnswer: function () {
+  }
+
 
 });

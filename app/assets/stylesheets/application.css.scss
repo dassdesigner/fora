@@ -37,12 +37,14 @@ ul {
   padding-left: 12px;
 }
 
-.tag-title {
-  margin-left: 0px;
-  background-color: #FFF ;
+.question-tag    {
+  margin-left: 1px;
+  background-color: #EEE;
+  padding: 2px 5px;
+  border: none;
 }
 
-.tags-container {
+.tags-container > .user-feed {
   list-style-type: square;
 }
 
@@ -53,10 +55,15 @@ ul {
   display: inline-block;
 }
 
-.user-feed {
+.user-feed > li {
   list-style-type: square;
 }
 
+.question-topics > li {
+  background-color: #EEE;
+  border-radius: 10px;
+  margin: 10px;
+}
 .new-session, .new-user {
   position: fixed;
   top: 50%;

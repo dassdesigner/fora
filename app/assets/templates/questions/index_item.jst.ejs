@@ -1,8 +1,12 @@
 <span class="question-header">
-  <%=question.escape('first_tag')%><%=question.escape('question_state')%>
-</span>
+  <a class="question-tag" href="tags/<%=question.escape('tag_id')%>">
+  <%=question.escape('tag_title')%></a>
+  <%=question.escape('state')%>
+</span><br>
 <a href="#questions/<%=question.id%>" class="question-title">
 <%=question.escape('title')%></a>
+
+<span class="answer-footer"></span>
 <p><%=question.escape('body')%></p>
 <button type="button" class="btn btn-default answer-question" aria-label="Left Align">Answer Question</button>
 <p class="question-footer"></p>

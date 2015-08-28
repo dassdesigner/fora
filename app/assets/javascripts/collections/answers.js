@@ -7,6 +7,6 @@ Fora.Collections.Answers = Backbone.Collection.extend({
   },
 
   comparator: function(model) {
-    return model.get('num_upvotes');
+    return -model.get('num_upvotes');
   },
 });

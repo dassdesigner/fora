@@ -16,9 +16,8 @@ class Question < ActiveRecord::Base
     Question.all.select {|q| query_arr.any? { |query_word| q.title.include?(query_word)}}
   end
 
-  def top_answer
-    answers.max { |a, b| a.votes.count <=> b.votes.count}
-  end
-
+  # def top_answer
+  #   answers.max { |a, b| a.votes.count <=> b.votes.count}
+  # end
 
 end
