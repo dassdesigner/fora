@@ -27,7 +27,6 @@ class Api::QuestionsController < ApplicationController
     @question = Question.includes(:votes).find(params[:id])
     @votes_hash = {}
     @votes_hash[@question.id] = @question.votes.find_by(user_id: current_user.id)
-    debugger;
     render :show
   end
 
