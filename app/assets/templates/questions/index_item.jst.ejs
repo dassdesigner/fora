@@ -1,3 +1,6 @@
+<span class="question-header">
+  <%=question.escape('first_tag')%><%=question.escape('question_state')%>
+</span>
 <a href="#questions/<%=question.id%>" class="question-title">
 <%=question.escape('title')%></a>
 <p><%=question.escape('body')%></p>

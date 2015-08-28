@@ -17,6 +17,8 @@ class Question < ActiveRecord::Base
   end
 
   def top_answer
-    @top_answer ||= answers.max { |a, b| a.votes.count <=> b.votes.count}
+    answers.max { |a, b| a.votes.count <=> b.votes.count}
   end
+
+
 end

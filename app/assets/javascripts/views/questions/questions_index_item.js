@@ -11,6 +11,7 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
+
     var upvoteWidget = new Fora.Views.UpvoteWidget({
       model: this.model
     });
