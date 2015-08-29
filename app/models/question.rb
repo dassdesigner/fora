@@ -24,4 +24,7 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def related_questions
+    Question.select {|q| !(q.tags & tags).empty?}
+  end
 end
