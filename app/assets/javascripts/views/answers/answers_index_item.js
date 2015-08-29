@@ -41,7 +41,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
     $targetAnswer.attr('contenteditable', 'true');
     $targetAnswer.focus();
   },
-
+ 
   saveAnswer: function (e) {
     e.preventDefault();
     var formData = $(e.currentTarget).text();
