@@ -1,7 +1,8 @@
 <span class="question-header">
-  <a class="question-tag" href="tags/<%=question.escape('tag_id')%>">
+  <a class="question-tag" href="#tags/<%=question.escape('tag_id')%>">
   <%=question.escape('tag_title')%></a>
-  <%=question.escape('state')%>
+  <%=question.escape('state')%> • 
+  <%=question.escape('date')%>
 </span><br>
 <a href="#questions/<%=question.id%>" class="question-title">
 <%=question.escape('title')%></a>
