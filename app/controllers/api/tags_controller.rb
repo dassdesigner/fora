@@ -21,7 +21,7 @@ class Api::TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @votes_hash = current_user.question_votes_hash
+    @votes_hash = current_user.votes_hash("Question")
   end
 
   def update

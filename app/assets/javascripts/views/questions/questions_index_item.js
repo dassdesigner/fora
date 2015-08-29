@@ -12,12 +12,22 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
 
+    var topAnswerId = this.model.get('top_answer');
+    if (topAnswerId) {
+      var topAnswer = new Fora.Models.Answer({id: topAnswerId});
+      topAnswer.fetch();
+      // var topAnswer = this.model.answers().getOrFetch(topAnswerId);
+      var answer = new Fora.Views.AnswersIndexItem({
+        model: topAnswer
+      });
+      this.addSubview(".answer", answer, true);
+    } else {
     var upvoteWidget = new Fora.Views.UpvoteWidget({
       model: this.model
     });
 
     this.addSubview(".question-footer", upvoteWidget);
-
+    }
   },
 
   render: function() {
@@ -25,6 +35,7 @@ Fora.Views.QuestionsIndexItem = Backbone.CompositeView.extend({
       question: this.model,
     });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   },
 

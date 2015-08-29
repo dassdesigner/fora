@@ -36,7 +36,6 @@ Fora.Models.Question = Backbone.Model.extend(
         this.tags().set(payload.tags);
         delete payload.tags;
       }
-
       this.parseVote(payload);
       return payload;
     }

@@ -16,18 +16,19 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
     // var downvoteWidget = new Fora.Views.DownvoteWidget({
     //   model: this.model
     // });
+    this.listenTo(this.model, "sync", this.render);
     var upvoteWidget = new Fora.Views.UpvoteWidget({
       model: this.model
     });
     // this.addSubview(".answer-footer", downvoteWidget);
     this.addSubview(".answer-footer", upvoteWidget);
-    this.listenTo(this.model, "sync", this.render);
   },
 
 
   render: function () {
     var content = this.template({answer: this.model});
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   },
 

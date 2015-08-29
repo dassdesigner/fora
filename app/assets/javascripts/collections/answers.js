@@ -15,7 +15,7 @@ Fora.Collections.Answers = Backbone.Collection.extend({
       });
       answer.fetch({
         success: function() {
-          that.add(question);
+          that.add(answer);
         }
       });
     } else {

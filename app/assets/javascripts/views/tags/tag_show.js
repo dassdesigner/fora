@@ -22,7 +22,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   addQuestionSubview: function (question) {
     var subView = new Fora.Views.QuestionsIndexItem({model: question});
-    this.addSubview(".questions-container", subView);
+    this.addSubview(".content-container", subView);
   },
 
   followString: function(){

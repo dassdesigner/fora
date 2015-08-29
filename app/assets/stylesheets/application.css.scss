@@ -96,11 +96,12 @@ ul {
   font-weight: bold;
 }
 
-.questions-index-item, .answers-index-item, .sidebar-title {
+.sidebar-title, .content-container > li {
   border-bottom: 1px solid #BBB;
   padding-bottom: 10px;
 
 }
+
 
 .edit, .delete {
   bottom: 0px;
