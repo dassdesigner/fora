@@ -31,22 +31,22 @@ class User < ActiveRecord::Base
 
   def question_votes_hash
     zipped_votes = votes.where(voteable_type: "Question").pluck(:voteable_id).zip(votes)
-    votes_hash = {}
+    question_votes_hash = {}
     zipped_votes.each do |(id, vote)|
-      votes_hash[id] = vote
+      question_votes_hash[id] = vote
     end
 
-    votes_hash
+    question_votes_hash
   end
 
   def answer_votes_hash
     zipped_votes = votes.where(voteable_type: "Answer").pluck(:voteable_id).zip(votes)
-    votes_hash = {}
+    answer_votes_hash = {}
     zipped_votes.each do |(id, vote)|
-      votes_hash[id] = vote
+      answer_votes_hash[id] = vote
     end
 
-    votes_hash
+    answer_votes_hash
   end
 
   def is_password?(password)

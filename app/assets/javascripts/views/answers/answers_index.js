@@ -1,4 +1,4 @@
-Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
+  Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
   template: JST["answers/index"],
 
   initialize: function () {
@@ -9,7 +9,7 @@ Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
     this.collection.each (function (answer) {
       that.addAnswerSubview(answer);
     });
-    this.collection.fetch({data: {question_id: this.collection.question.id}});
+    this.collection.fetch({data: {question_id: this.collection.question.id, top: true}});
   },
 
   addAnswerSubview: function (answer) {

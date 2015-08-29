@@ -12,9 +12,16 @@ class Api::AnswersController < ApplicationController
 
   def index
     @question ||= current_question
-    @answers = @question.answers.includes(:votes)
-    @votes_hash = current_user.answer_votes_hash
-    render :_index1
+    if params[:top] && !@question.answers.empty?
+      @answer = @question.answers.last
+      @votes_hash = {}
+      @votes_hash[@answer.id] = @answer.votes.find_by(user_id: current_user.id)
+      render :show
+    else
+      @answers = @question.answers.includes(:votes)
+      @votes_hash = current_user.answer_votes_hash
+      render :_index1
+    end
   end
 
   def show
