@@ -19,7 +19,6 @@ class Api::QuestionsController < ApplicationController
     end
 
     @votes_hash = current_user.votes_hash("Question")
-
     render :index
   end
 
@@ -65,14 +64,4 @@ class Api::QuestionsController < ApplicationController
     params.require(:question).permit(:title, :body)
   end
 
-
-  def question_votes_hash
-    zipped_votes = votes.where(voteable_type: "Question").pluck(:voteable_id).zip(votes)
-    votes_hash = {}
-    zipped_votes.each do |(id, vote)|
-      votes_hash[id] = vote
-    end
-
-    votes_hash
-  end
 end
