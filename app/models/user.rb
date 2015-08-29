@@ -29,25 +29,6 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def question_votes_hash
-    zipped_votes = votes.where(voteable_type: "Question").pluck(:voteable_id).zip(votes)
-    votes_hash = {}
-    zipped_votes.each do |(id, vote)|
-      votes_hash[id] = vote
-    end
-
-    votes_hash
-  end
-
-  def answer_votes_hash
-    zipped_votes = votes.where(voteable_type: "Answer").pluck(:voteable_id).zip(votes)
-    votes_hash = {}
-    zipped_votes.each do |(id, vote)|
-      votes_hash[id] = vote
-    end
-
-    votes_hash
-  end
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
@@ -59,6 +40,17 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def votes_hash(type)
+    type_votes = votes.where(voteable_type: type)
+    zipped_votes = type_votes.pluck(:voteable_id).zip(type_votes)
+    votes_hash = {}
+    zipped_votes.each do |(id, vote)|
+      votes_hash[id] = vote
+    end
+
+    votes_hash
+  end
+  
   protected
 
   def ensure_session_token

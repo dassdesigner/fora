@@ -5,7 +5,7 @@ Fora.Models.Answer = Backbone.Model.extend(
       voteableOptions: {
         foreignKeyType: "Answer"
       },
-
+      
       parse: function(payload) {
         this.parseVote(payload);
         return payload;
