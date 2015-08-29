@@ -1,8 +1,7 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    @answer = current_question.answers.new(answer_params)
-    @answer.author_id = current_user.id
+    @answer = current_user.create(answer_params)
     if @answer.save
       render :show
     else
@@ -11,8 +10,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @question ||= current_question
-    @answers = @question.answers.includes(:votes)
+    @answers = Question.find(params[:question_id]).answers.includes(:votes)
     @votes_hash = current_user.votes_hash("Answer")
     render :_index1
   end
