@@ -8,7 +8,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.$sidebar = $('#sidebar');
     this.$rootEl = $('#main');
     this.$navbar.html(navbarView.render().$el);
-    // this.collection.sort();
+    this.collection.sort();
     //should take current user('s') topics?
     // this.leftSidebarView = new Journal.Views.TopicsIndex({collection: this.collection});
 
@@ -25,6 +25,7 @@ Fora.Routers.Router = Backbone.Router.extend({
   questionsIndex: function () {
     var user_tags = new Fora.Collections.Tags();
     user_tags.fetch();
+    
     var view = new Fora.Views.QuestionsIndex({
         collection: this.collection,
         });
@@ -37,10 +38,16 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   questionNew: function () {
     var question = new Fora.Models.Question();
+    var user_tags = new Fora.Collections.Tags();
+    user_tags.fetch();
     var view = new Fora.Views.QuestionForm({
         model: question,
         collection: this.collection
     });
+    var sideView = new Fora.Views.SidebarFeed({
+      collection: user_tags
+    });
+    this._swapSidebarView(sideView);
     this._swapView(view);
   },
 

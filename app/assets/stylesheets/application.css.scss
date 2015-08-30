@@ -44,9 +44,9 @@ ul {
   border: none;
 }
 
-.tags-container > .user-feed {
-  list-style-type: square;
-}
+// .tags-container > .user-feed {
+//   list-style-type: square;
+// }
 
 .index-item {
 }
@@ -55,14 +55,15 @@ ul {
   display: inline-block;
 }
 
-.user-feed > li {
-  list-style-type: square;
-}
+// .user-feed > li {
+//   list-style-type: square;
+// }
 
-.question-topics > li {
+.question-topics > li, .question-tag, .user-feed > li  {
   background-color: #EEE;
   border-radius: 10px;
   margin: 10px;
+  list-style-type: none;
 }
 .new-session, .new-user {
   position: fixed;
