@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
   attr_reader :password
+  has_many :answers
   has_many :questions
   has_many :tag_followings
   has_many :tags, :through => :tag_followings
@@ -50,7 +51,7 @@ class User < ActiveRecord::Base
 
     votes_hash
   end
-  
+
   protected
 
   def ensure_session_token

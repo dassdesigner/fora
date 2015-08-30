@@ -1,7 +1,8 @@
 class Api::AnswersController < ApplicationController
 
   def create
-    @answer = current_user.create(answer_params)
+    @answer = Answer.create(answer_params)
+    @answer.author_id = current_user.id
     if @answer.save
       render :show
     else
