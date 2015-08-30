@@ -17,11 +17,7 @@ class Question < ActiveRecord::Base
   end
 
   def top_answer
-    answer = answers.max_by {|a| a.votes.length}
-
-    if answer
-      answer.id
-    end
+    answers.max_by {|a| a.votes.length}
   end
 
   def related_questions

@@ -1,15 +1,18 @@
 <span class="question-header">
   <a class="question-tag" href="#tags/<%=question.escape('tag_id')%>">
   <%=question.escape('tag_title')%></a>
-  <%=question.escape('state')%> • 
+  <%=question.escape('state')%> •
   <%=question.escape('date')%>
 </span><br>
 <a href="#questions/<%=question.id%>" class="question-title">
 <%=question.escape('title')%></a>
-<% if (question.escape('top_answer')) { %>
-  <div class="answer"></div>
-<%} else {%>
+<% if (question.escape('answer_id')) { %>
+  <p class="author-name"><%=question.escape('answer_author')%></p>
+  <div class="answer-body"><%=question.escape('answer_body')%></div>
+  <br>
+  <p class="date">Written <%=question.escape('answer_date')%></p>
+<% } else {  %>
   <p><%=question.escape('body')%></p>
+<% } %>
   <button type="button" class="btn btn-default answer-question" aria-label="Left Align">Answer Question</button>
   <span class="question-footer"></span>
-<%} %>
