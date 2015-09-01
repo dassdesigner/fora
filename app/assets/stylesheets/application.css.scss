@@ -24,6 +24,9 @@
 .upvote > .btn-default.btn {
   background-color: #E6E6FA
 }
+body {
+  background-color: #EEEEEE;
+}
 
 html *
 {
@@ -70,9 +73,15 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #EEE;
+  background-color: #DDD;
+  border: 1px solid #DDD;
+  border-radius: 20px;
+  padding: 20px;
 }
 
+.new-session > h1, .new-user > h1 {
+  text-align: center;
+}
 .question-header, .date {
   color: #AAA
 }
