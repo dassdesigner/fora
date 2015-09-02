@@ -1,4 +1,5 @@
-Fora.Models.Tag = Backbone.Model.extend({
+Fora.Models.Tag = Backbone.Model.extend(
+  _.extend({}, Fora.Mixins.Followable, {
   urlRoot: 'api/tags',
 
   questions: function () {
@@ -16,4 +17,5 @@ Fora.Models.Tag = Backbone.Model.extend({
     this.parseFollow(payload);
     return payload;
   }
-});
+})
+);
