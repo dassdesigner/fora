@@ -17,12 +17,13 @@ class Api::TagsController < ApplicationController
 
   def index
     @tags = current_user.tags
+    @tags_hash = current_user.tags_hash
   end
 
   def show
     @tag = Tag.find(params[:id])
-    @votes_hash = current_user.votes_hash("Question")
-
+    @tags_hash = {}
+    @tags_hash[@tag.id] = @tag.tag_followings.find_by(user_id: current_user.id)
     # @followed = @tag.users.include?(current_user)
   end
 

@@ -1,6 +1,6 @@
 class Api::FollowsController < ApplicationController
   def create
-    @follow = current_user.follows.new(follow_params)
+    @follow = current_user.tag_followings(follow_params)
     if @follow.save
       render json: @follow
     else
@@ -16,7 +16,7 @@ class Api::FollowsController < ApplicationController
 
   private
   def current_follow
-    @current_follow ||= Tag.find(params[:id])
+    @current_follow ||= TagFollowing.find(params[:id])
   end
 
   def follow_params
