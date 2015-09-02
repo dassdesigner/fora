@@ -52,6 +52,7 @@ class User < ActiveRecord::Base
     votes_hash
   end
 
+   
   protected
 
   def ensure_session_token

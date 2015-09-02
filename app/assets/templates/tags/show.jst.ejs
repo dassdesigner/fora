@@ -1,6 +1,10 @@
 <h3 class="tag-title"><%=tag.escape('title')%></h3>
 <button type="button" class="btn btn-default follow">
-  <%= followString %>
+  <% if (tag.escape('followed')) {%>
+    Followed
+  <%} else {%>
+    Follow
+  <% } %>
 </button>
 
 <ul class="content-container"></ul>

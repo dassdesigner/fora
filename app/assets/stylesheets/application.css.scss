@@ -25,7 +25,13 @@
   background-color: #E6E6FA
 }
 body {
-  background-color: #EEEEEE;
+  background-image: url("half_eh.jpg");
+  background-repeat: no-repeat;
+  background-position:50% 10%;
+  // background-color: #BBB;
+}
+
+body > img {
 }
 
 html *

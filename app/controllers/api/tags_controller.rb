@@ -22,6 +22,8 @@ class Api::TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
     @votes_hash = current_user.votes_hash("Question")
+
+    # @followed = @tag.users.include?(current_user)
   end
 
   def update
