@@ -1,0 +1,15 @@
+<% if (follow.isNew()) { %>
+  <span class="btn-group follow" role="group">
+    <button type="button" class="btn btn-default btn-sm">Follow</button>
+    <button type="button" class="btn btn-default btn-sm follow-count">
+      <%=model.escape('num_follows')%>
+    </button>
+  </span>
+<% } else { %>
+  <span class="btn-group follow followed" role="group">
+    <button type="button" class="btn btn-default btn-sm">Followed</button>
+    <button type="button" class="btn btn-default btn-sm follow-count">
+      <%=model.escape('num_follows')%>
+    </button>
+  </span>
+<% }  %>
