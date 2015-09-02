@@ -13,6 +13,7 @@ Fora.Models.Tag = Backbone.Model.extend({
       this.questions().set(payload.questions);
       delete payload.questions;
     }
+    this.parseFollow(payload);
     return payload;
   }
 });
