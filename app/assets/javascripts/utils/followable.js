@@ -8,13 +8,13 @@ Fora.Mixins.Followable = {
   createFollow: function () {
 
     this.follow().set({
-      "followable_id": this.id,
+      "tag_id": this.id,
       // "followable_type": this.followableOptions.foreignKeyType,
-      "value": 1});
+      });
 
     this.follow().save({}, {
       success: function () {
-        this.updateUpfollowCount(1);
+        this.updateFollowCount(1);
       }.bind(this)
     });
   },

@@ -52,7 +52,17 @@ class User < ActiveRecord::Base
     votes_hash
   end
 
-   
+  def follows_hash
+    zipped_follows = tag_followings.pluck(:tag_id).zip(tag_followings)
+    follows_hash = {}
+
+    zipped_follows.each do |(id, like)|
+      follows_hash[id] = like
+    end
+
+    follows_hash
+  end
+
   protected
 
   def ensure_session_token
