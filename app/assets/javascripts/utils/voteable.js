@@ -22,20 +22,6 @@ Fora.Mixins.Voteable = {
     });
   },
 
-  // createDownvote: function () {
-  //   this.vote().clear();
-  //   this.vote().set({
-  //     "voteable_id": this.id,
-  //     "voteable_type": this.voteableOptions.foreignKeyType,
-  //     "value": -1});
-  //
-  //   this.vote().save({}, {
-  //     success: function () {
-  //     }.bind(this)
-  //   });
-  // },
-
-
   destroyUpvote: function () {
     this.vote().destroy({
       success: function(model) {
@@ -45,14 +31,6 @@ Fora.Mixins.Voteable = {
     });
   },
 
-  // destroyDownvote: function () {
-  //   this.vote().destroy({
-  //     success: function(model) {
-  //       model.unset("id");
-  //     }.bind(this)
-  //   });
-  // },
-
   toggleUpvote: function () {
 
     if (this.vote().isNew()) {
@@ -61,18 +39,10 @@ Fora.Mixins.Voteable = {
       this.destroyUpvote();
     }
   },
-  //
-  // toggleDownvote: function () {
-  //   if (this.vote().isNew()) {
-  //     this.createDownvote();
-  //   } else {
-  //     this.destroyDownvote();
-  //   }
-  // },
+
   updateUpvoteCount: function (delta) {
     this.set("num_upvotes", this.get("num_upvotes") + delta);
   },
-  // TODO REFACTOR
 
   parseVote: function (payload) {
     if (payload.vote) {

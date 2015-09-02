@@ -17,14 +17,19 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.btn .btn-default .upvote{
-  background-color: #AAA
-}
+// .btn .btn-default .upvote{
+//   background-color: #AAA
+// }
 
 .upvote > .btn-default.btn {
-  background-color: #E6E6FA
+  background-color: #D5E7ED;
+  border: 1px solid #CCC;
 }
-#logged-out {
+
+.btn-group:hover > * {
+  border: 1px solid #AAA !important;
+}
+.logged-out {
   background-image: url("half_eh.jpg");
   background-repeat: no-repeat;
   background-position:50% 10%;
@@ -32,6 +37,9 @@
 }
 
 
+a {
+  color: #555;
+}
 
 html *
 {
