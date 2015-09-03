@@ -24,6 +24,7 @@
 .upvote > .btn-default.btn {
   background-color: #f1f8fb;
   border: 1px solid #CCC;
+  color: #27667A;
 }
 
 .follow-count, .vote-count {
@@ -33,13 +34,16 @@
 .btn-group:hover > * {
   border: 1px solid #AAA !important;
 }
-.logged-out {
+#logged-out {
   background-image: url("half_eh.jpg");
   background-repeat: no-repeat;
   background-position:50% 10%;
   // background-color: #BBB;
 }
 
+body {
+  // background-image: url("half_eh.jpg");
+}
 
 a {
   color: #555;
@@ -47,7 +51,7 @@ a {
 
 html *
 {
-  font-family: Georgia;
+  font-family: Helvetica;
   font-size: 18px;
 }
 .navbar {
@@ -110,7 +114,7 @@ ul {
 }
 .question-title, .tag-title,  {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   color: black;
   // padding-left: -12px;
 }

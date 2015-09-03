@@ -17,7 +17,11 @@ Fora.Models.Tag = Backbone.Model.extend(
         delete payload.questions;
       }
       this.parseFollow(payload);
+
+      this.parseVote(payload);
       return payload;
     }
   })
 );
+
+_.extend(Fora.Models.Tag.prototype, Fora.Mixins.Voteable);
