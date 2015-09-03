@@ -28,7 +28,7 @@ Fora.Views.AnswersIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({answers: this.collection});
     this.$el.html(content);
     this.attachSubviews();
     return this;
