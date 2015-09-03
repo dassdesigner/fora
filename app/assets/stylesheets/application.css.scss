@@ -57,6 +57,9 @@ ul {
   padding-left: 12px;
 }
 
+.answer-count {
+  margin-left: 12px;
+}
 
 .question-tag    {
   margin-left: 1px;
@@ -128,7 +131,7 @@ ul {
   font-weight: bold;
 }
 
-.sidebar-title, .content-container > li, .action-bar {
+.sidebar-title, .content-container > li, .action-bar, .answer-count {
   border-bottom: 1px solid #BBB;
   padding-bottom: 10px;
 
