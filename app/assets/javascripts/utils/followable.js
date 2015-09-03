@@ -19,7 +19,7 @@ Fora.Mixins.Followable = {
     });
   },
 
-  destroyUpfollow: function () {
+  destroyFollow: function () {
     this.follow().destroy({
       success: function(model) {
         model.unset("id");
