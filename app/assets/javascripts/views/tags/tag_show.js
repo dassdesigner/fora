@@ -12,7 +12,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
     var followWidget = new Fora.Views.FollowWidget({
       model: this.model
     });
-    this.addSubview('.tag-title', followWidget);
+    this.addSubview('.action-bar', followWidget);
     var that = this;
     this.collection.each (function (question) {
       that.addQuestionSubview(question);
