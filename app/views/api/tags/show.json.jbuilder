@@ -1,4 +1,4 @@
-json.extract! @tag, :id, :title
+json.extract! @tag, :id, :title, :description
 json.followed @tag.users.include?(current_user)
 json.num_follows @tag.tag_followings.size
 json.follow @follows_hash[@tag.id]

@@ -22,8 +22,12 @@
 // }
 
 .upvote > .btn-default.btn {
-  background-color: #D5E7ED;
+  background-color: #f1f8fb;
   border: 1px solid #CCC;
+}
+
+.follow-count, .vote-count {
+  font-weight: bold;
 }
 
 .btn-group:hover > * {
@@ -53,18 +57,21 @@ ul {
   padding-left: 12px;
 }
 
+
 .question-tag    {
   margin-left: 1px;
   background-color: #EEE;
   padding: 2px 5px;
   border: none;
+  border-radius: 10px;
 }
 
 // .tags-container > .user-feed {
 //   list-style-type: square;
 // }
 
-.index-item {
+.questions-index-item {
+  margin-left: 0;
 }
 
 .question-footer, .answer-footer {
@@ -75,7 +82,7 @@ ul {
 //   list-style-type: square;
 // }
 
-.question-topics > li, .question-tag, .user-feed > li  {
+.question-topics > li, .tags-container > li, .user-feed > li  {
   background-color: #EEE;
   border-radius: 10px;
   margin: 10px;
@@ -98,11 +105,11 @@ ul {
 .question-header, .date {
   color: #AAA
 }
-.question-title, .tag-title {
+.question-title, .tag-title,  {
   font-weight: bold;
   font-size: 30px;
   color: black;
-  padding-left: -12px;
+  // padding-left: -12px;
 }
 
 .author-name {
