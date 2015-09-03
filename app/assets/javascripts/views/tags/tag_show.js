@@ -3,12 +3,12 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
 
   //TODO refactor (it's pretty identical to QuestionsIndex)
   initialize: function (options) {
-    this.userTags = options.user_tags;
-    this.userTags.fetch();
+    // this.userTags = options.user_tags;
+    // this.userTags.fetch();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
-    this.listenTo(this.model, "sync change", this.render);
-    this.listenTo(this.userTags, "sync", this.render);
+    this.listenTo(this.model, "sync", this.render);
+    // this.listenTo(this.userTags, "sync", this.render);
     var followWidget = new Fora.Views.FollowWidget({
       model: this.model
     });
