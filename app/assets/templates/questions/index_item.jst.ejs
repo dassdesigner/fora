@@ -1,6 +1,8 @@
 <span class="question-header">
+  <% if (question.escape('tag_id')) { %>
   <a class="question-tag" href="#tags/<%=question.escape('tag_id')%>">
   <%=question.escape('tag_title')%></a>
+  <% } %>
   <%=question.escape('state')%> •
   <%=question.escape('date')%>
 </span><br>
