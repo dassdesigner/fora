@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
   has_many :taggings
   has_many :tag_followings
   has_many :questions, :through => :taggings
