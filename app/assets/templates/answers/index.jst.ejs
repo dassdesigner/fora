@@ -1,5 +1,13 @@
 <div class="row">
-<h3 class="answer-count"><%=answers.size()%> Answer(s)</h3>
+<h3 class="answer-count">
+<% if (answers.size() === 1) {%>
+<%=answers.size()%> Answer
+<%} else if (answers.size() > 1) { %>
+<%=answers.size()%> Answers
+<% } else { %>
+No Answers Yet
+<% } %>
+</h3>
 <ul class="content-container">
 </ul>
 </div>

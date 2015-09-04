@@ -8,7 +8,6 @@
 <%=question.escape('title')%></a>
 <% if (question.escape('answer_id')) { %>
   <p class="author-name">
-  <% debugger %>
   <span><img class="avatar" src="<%=question.escape('answer_author_avatar')%>"></span>
   <t><%=question.escape('answer_author')%></p>
   <div class="answer-body"><%=question.escape('answer_body')%></div>
