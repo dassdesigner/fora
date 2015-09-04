@@ -12,43 +12,33 @@ u4 = User.create(name: 'Jamie Lannister', email: 'hanstheg@gmail.com', password:
 u5 = User.create(name: 'Hermione', email: 'snape@gmail.com', password: 'dumbledore', img_src: "http://i.imgur.com/rslzIBM.jpg")
 u6 = User.create(name: 'Bridgekeeper', email: 'the@guest.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/8GGsJhp.jpg")
 u7 = User.create(name: 'Sir Lancelot', email: 'lancelot@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/JmAGGDv.jpg")
-u8 = User.create(name: 'Galahad', email: 'serobertstrong@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/yiXreqb.jpg")
+u8 = User.create(name: 'Patrick', email: 'serobertstrong@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/yiXreqb.jpg")
 u9 = User.create(name: 'King Arthur', email: 'onetrue@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/EbnLwbH.jpg")
 
 q1 = Question.create(title: 'Fora, what are your College lifehacks??', author_id: 1)
-q2 = Question.create(title: "What in your life makes you feel rich?", body: "I\'m steady trying to figure it out.", author_id: 2)
-q3 = Question.create(title: 'Who goes there?', body: "What... is your favourite colour?", author_id: 6)
+q2 = Question.create(title: "What in your life makes you feel rich?", author_id: 2)
+q3 = Question.create(title: "What... is your favourite colour?", author_id: 6)
 q4 = Question.create(title: 'How do I use Backbone?', body: "Looking for a guide on the Dark Arts.", author_id: 5)
-q5 = Question.create(title: ' What... is the air-speed velocity of an unladen swallow?', author_id: 6)
+q5 = Question.create(title: 'What... is the air-speed velocity of an unladen swallow?', author_id: 6)
+q6 = Question.create(title: 'Who are John Snow\'s real parents?', author_id: 4 )
+q7 = Question.create(title: 'What is your morning routine?', body: "I\'ve been looking for a new one.", author_id: 9)
 
-a1 = Answer.create(body: "This is more for the academic side of college; specifically essays.
-Trick 1: If you find your essay on the short end of the word count and can't write anything coherent then simply give the illusion that you wrote more.
-
-Step 1: Control+F within your essay. And when the box appears, click advanced, or more.
-Step 2: you'll be presented with options to modify the letter or word your searching for now. This includes font, size and replacement. You want replacement.
-Step 3: You now search for a full stop. So in the search box you type '.' and then proceed to raise the size from 12 (presuming you apply standard essay formatting) to* 14 or 16. I usually go 15 but depending on how short I am, I have gone as high as 17.
-Step 4: Once you've changed the size of full stops from 12 to your preferred size, you click the 'replace all with' button and boom! You just made your essay half a page and onwards longer without actually making it look suspicious.
-Depending on your severity and size of essay, this can be applied to commas, brackets, semicolons, minor words (to, too, a, the, etc. - but proceed with caution with words since they become noticable with the most minor changes, so it is advised to only go up 1 size.. Max 2 depending on how many letters and the* consistency of word).
-I hope this may of been some help for some students struggling out there. Also, while I'm at it, I'd also like to state that I am in no way advising you to skip out on doing your essay or half ass it.
-Put the effort in. Find the articles, journals, documents and books and write a good essay. This is simply for those essays that come a long and require too many words for a simple* topic or discussion.",
+a1 = Answer.create(body: "Go to office hours. 95% of the time, I'm sitting there on Fora hoping someone will stop by. Every prof I know is in a similar state except the week before the test. We will absolutely help you out and you'll get more out of the class than just showing up to class.",
                            author_id: 2, question_id: 1)
 
-a2 = Answer.create(body: "Treat undergrad like a full time job.
-Everyday, no matter what time your classes start, make sure you're working by 8:30 or 9:00. You work for 8 hours every weekday.
-This includes going to class and labs, but any other time between 9-5, you should be either reading, studying or getting started on your papers.ssss
-You will have the best college life if you do this. Assuming you have about 15-20 hours of class per week, this leaves you another 20-25 for all the reading, studying, assignments and such. Do it like this and you'll be able to spend all your evenings and weekends having the social college experience. You'll never have to cram for an exam or spend an all-nighter to get a paper done. You will probably get really solid grades, too.
-Do it like this and you will be the only person you know who succeeds in all three categories: good grades, enough sleep, fun.", author_id: 5, question_id: 1)
+a2 = Answer.create(body: "Schedule more time than you think you'll need between classes. Things always come up, and you can always use the extra time to study.", author_id: 5, question_id: 1)
 
 a3 = Answer.create(body: "Big packs of new socks", author_id: 3, question_id: 2)
-a4 = Answer.create(body: "My book case and my Lamborghini in my garage that I use to drive in the Beverly Hills make me feel rich.", author_id: 4, question_id: 2)
+a4 = Answer.create(body: "My hand.", author_id: 4, question_id: 2)
 a5 = Answer.create(body: 'I always say that the more you learn, the more you earn.', author_id: 5, question_id: 2)
 
 a6 = Answer.create(body: 'Blue', author_id: 7, question_id: 3)
-a7 = Answer.create(body: "Blue. No, yel...", author_id: 3, question_id: 3)
+a7 = Answer.create(body: "Blue. No, yel...", author_id: 8, question_id: 3)
 
 a8 = Answer.create(body: "Huh? I... I don't know that. AGGGghhhh", author_id: 6, question_id: 5)
 a9 = Answer.create(body: "What do you mean? An African or European swallow?", author_id: 9, question_id: 5)
-
+a10 = Answer.create(body: "Coffee and Reddit.", author_id: 2, question_id: 7)
+a11 = Answer.create(body: "After five alarms go off every 15 minutes, finally wake up. Check Reddit for news. Check local news. Get breakfast. Get ready for uni. Go to uni. Realise I left my lab coat in my room half way to uni. Drive back home and get jacket. Go back to uni.", question_id: 7, author_id: 5)
 t1 = Tag.create({title: "Life", description: "On the period of time between birth and death."})
 t2 = Tag.create({title: "College", description: "Those 4 + n years you'll never forget!"})
 t3 = Tag.create({title: "Meta", description: "If it doesn't go anywhere else, just add this topic. It'll be fine."})
