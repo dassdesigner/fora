@@ -12,7 +12,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
 
 
   initialize: function () {
-    // this.listenTo(this.collection, "sync add", this.render);
+    this.listenTo(this.collection, "sync", this.render);
     // var downvoteWidget = new Fora.Views.DownvoteWidget({
     //   model: this.model
     // });
@@ -41,7 +41,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
     $targetAnswer.attr('contenteditable', 'true');
     $targetAnswer.focus();
   },
- 
+
   saveAnswer: function (e) {
     e.preventDefault();
     var formData = $(e.currentTarget).text();
