@@ -31,6 +31,27 @@
   font-weight: bold;
 }
 
+.navbar {
+  background-image: none;
+  // z-index: -1;
+  // background-color: red;
+}
+// .ask-question {
+//   // background-color: blue !important;
+//   // z-index: -1;
+//   color: white !important;
+//   position: absolute;
+//   // background-size: 50% !important;
+//   background-color: #3e78ad;
+//   text-align: center;
+//   height: 20px;
+//   top: 20px;
+//   // margin-top: 10px
+// }
+
+.ask-question:hover {
+  // background-color: none;
+}
 .btn-group:hover > * {
   border: 1px solid #AAA !important;
 }
@@ -40,7 +61,10 @@
   background-position:50% 10%;
   // background-color: #BBB;
 }
-
+.navnav {
+  padding: 0 200px;
+  margin-top: 8px;
+}
 body {
   // background-image: url("half_eh.jpg");
 }
@@ -109,8 +133,9 @@ ul {
   padding: 20px;
 }
 
-.new-session > h1, .new-user > h1 {
+.new-session > h1, .new-user > h1, .navbar-brand {
   text-align: center;
+  color: #ED5151 !important;
 }
 .question-header, .date {
   color: #AAA
@@ -122,6 +147,17 @@ ul {
   // padding-left: -12px;
 }
 
+.question-index-item {
+  margin-left: -12px;
+}
+
+.content-container {
+  margin-left: 0px;
+}
+.navbar {
+  padding-left: 5%;
+  // width: 80%;
+}
 .author-name {
   font-weight: bold;
   font-size: 20px;
@@ -152,12 +188,15 @@ ul {
   bottom: 0px;
 }
 #sidebar {
-  float: left;
+  padding-left: 5%;
+  overflow: auto;
+  white-space: nowrap;
+  width: 20%
   // position: fixed;
 }
 #sidebar > * {
-  width: 200px;
-  float: right;
+  // width: 200px;
+  // float: right;
 }
 .center-block {
   display:block;
@@ -166,5 +205,14 @@ ul {
 }
 
 #main {
-  overflow: hidden;
+  overflow: auto;
+  width: 60%;
+}
+
+#email, #password, #name {
+  width: 320px;
+}
+
+.row {
+
 }
