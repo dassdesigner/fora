@@ -161,12 +161,13 @@ ul {
   // padding-left: -12px;
 }
 
-.question-index-item {
-  margin-left: -12px;
+.questions-index-item {
+  // margin-left: 12px;
 }
 
 .content-container {
-  margin-left: 0px;
+  // padding-left: 12px;
+  float: left;
 }
 .navbar {
   padding-left: 5.5%;
@@ -234,4 +235,8 @@ ul {
 
 .row {
 
+}
+
+.tag-show {
+  padding-left: 12px;
 }
