@@ -97,7 +97,7 @@ ul {
 }
 
 .question-tag    {
-  margin-left: 1px;
+  padding-left: 0;
   background-color: #EEE;
   padding: 2px 5px;
   border: none;
@@ -163,7 +163,7 @@ ul {
   margin-left: 0px;
 }
 .navbar {
-  padding-left: 5%;
+  padding-left: 5.5%;
   // width: 80%;
 }
 .author-name {
@@ -178,8 +178,9 @@ ul {
   word-wrap: break-word;
 }
 
-.sidebar-title {
+.sidebar-title, #top-stories {
   font-weight: bold;
+  margin-left: 5%;
 }
 
 .sidebar-title, .content-container > li, .action-bar, .answer-count {
