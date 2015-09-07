@@ -62,8 +62,12 @@
   // background-color: #BBB;
 }
 .navnav {
-  padding: 0 200px;
+  // padding: 0 200px;
   margin-top: 8px;
+}
+
+.navbar-right {
+  padding-right: 21%;
 }
 body {
   // background-image: url("half_eh.jpg");
@@ -131,6 +135,7 @@ ul {
   border: 1px solid #DDD;
   border-radius: 20px;
   padding: 20px;
+  // opacity: 0.4;
 }
 
 .new-session > h1, .new-user > h1, .navbar-brand {
