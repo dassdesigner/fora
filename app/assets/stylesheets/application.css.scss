@@ -49,8 +49,14 @@
 //   // margin-top: 10px
 // }
 
-.ask-question:hover {
-  // background-color: none;
+#ask-question, #home{
+  background-color: none;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+#home {
+  // margin-top: 10px;
 }
 .btn-group:hover > * {
   border: 1px solid #AAA !important;
@@ -63,7 +69,7 @@
 }
 .navnav {
   // padding: 0 200px;
-  margin-top: 8px;
+  // margin-top: 8px;
 }
 
 .navbar-right {
@@ -171,6 +177,9 @@ ul {
   font-size: 20px;
 }
 
+.tag-form {
+  padding-left: 4%
+}
 .answer-form {
   border: 1px solid #EEE;
   border-radius: 2px;
