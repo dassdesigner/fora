@@ -12,10 +12,11 @@ class Api::QuestionsController < ApplicationController
 
   def index
     if params[:query]
+      # @questions = [Question.first]
       @questions = (Question.topic_matches(params[:query]) + Question.title_matches(params[:query])).uniq
-      debugger;
     else
       # maybe select for only topics current user is following?
+      debugger;
       @questions = Question.includes(:tags).all
     end
     @votes_hash = current_user.votes_hash("Question")

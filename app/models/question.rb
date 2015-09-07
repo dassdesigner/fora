@@ -9,13 +9,13 @@ class Question < ActiveRecord::Base
   # validates_uniqueness_of :tags
 
   def self.topic_matches(query)
-      # query_arr = query.split(" ")
-      # Question.all.select {|q| q.tags.any? { |tag| query_arr.any? { |query_word| tag.title.include?(query_word)}}}
+      query_arr = query.split(" ")
+      Question.all.select {|q| q.tags.any? { |tag| query_arr.any? { |query_word| tag.title.include?(query_word)}}}
   end
 
   def self.title_matches(query)
-    # query_arr = query.split(" ")
-    # Question.all.select {|q| query_arr.any? { |query_word| q.title.include?(query_word)}}
+    query_arr = query.split(" ")
+    Question.all.select {|q| query_arr.any? { |query_word| q.title.include?(query_word)}}
   end
 
   def top_answer

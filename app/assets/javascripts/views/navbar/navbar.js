@@ -6,7 +6,7 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    // this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function () {
@@ -20,5 +20,5 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
     var query = $('#search').val().split(" ").join("+");
     Backbone.history.navigate("search?query="+ query, {trigger: true});
   }
-  
+
 });
