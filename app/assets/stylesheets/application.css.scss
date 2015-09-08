@@ -171,8 +171,12 @@ ul {
 
 #navbar-avatar {
   border-radius: 50%;
-  height: 16px;
-  width: 16px;
+  height: 32px;
+  width: 32px;
+}
+
+#current-user-dropdown {
+  padding-top: 10px;
 }
 .content-container {
   // padding-left: 12px;
