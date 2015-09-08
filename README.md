@@ -4,11 +4,13 @@
 
 [live]: www.thefora.io
 
-## Minimum Viable Product
-Fora is an online forum users can ask and answer questions. Users will be
-able to:
+Fora is an online forum users can ask and answer questions. Questions can also be
+given topics.  In addition, users can search for questions by either topic
+or question title. 
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+## Minimum Viable Product
+Users will be able to:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
