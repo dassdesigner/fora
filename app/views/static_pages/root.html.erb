@@ -12,6 +12,7 @@
   $(document).ready(function(){
     Fora.CURRENT_USER_ID = <%= current_user.id %>;
     Fora.CURRENT_USER_NAME = "<%= current_user.name%>";
+    Fora.CURRENT_USER_AVATAR = "<%= current_user.img_src%>"
     Fora.initialize();
   });
 </script>

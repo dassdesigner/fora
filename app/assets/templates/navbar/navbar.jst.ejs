@@ -27,7 +27,7 @@
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-            <%=Fora.CURRENT_USER_NAME%><span class="caret"></span></a>
+            <img src="<%=Fora.CURRENT_USER_AVATAR%>" id="navbar-avatar"> <%=Fora.CURRENT_USER_NAME%><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="javascript:void(0)" onclick="document.getElementById('sign-out-form').submit();">Sign Out</a>
             <form action="session" method="post" id="sign-out-form">
