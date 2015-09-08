@@ -1,5 +1,6 @@
 Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   template: JST["questions/show"],
+  className: "question-show",
   events: {
     "click .edit": "editQuestionBody",
     "click .delete": "deleteQuestion",

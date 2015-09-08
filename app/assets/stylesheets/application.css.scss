@@ -1,4 +1,4 @@
-/*
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -55,6 +55,9 @@
   margin-top: 5px;
 }
 
+.question-show {
+  margin-left: 18px;
+}
 #home {
   // margin-top: 10px;
 }
@@ -179,7 +182,8 @@ ul {
 }
 
 .tag-form {
-  padding-left: 4%
+  padding-left: 2%;
+  width: 80%;
 }
 .answer-form {
   border: 1px solid #EEE;

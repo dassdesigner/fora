@@ -53,6 +53,7 @@ Fora.Routers.Router = Backbone.Router.extend({
   },
 
   questionShow: function (id) {
+    this.collection = new Fora.Collections.Questions();
     var question = this.collection.getOrFetch(id);
     var view = new Fora.Views.QuestionShow({
         model: question

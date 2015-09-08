@@ -5,7 +5,7 @@
 [heroku]: http://foraforafora.herokuapp.com
 
 ## Minimum Viable Product
-Fora is a clone of Quora where users can ask and answer questions. Users will be
+Fora is an online forum users can ask and answer questions. Users will be
 able to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
@@ -19,7 +19,7 @@ able to:
 - [x] Follow Topics
 - [x] View Followed Topics
 - [x] Search for Questions by Title or Topic
-- [ ] Upvote/Downvote Questions
+- [x] Upvote Questions/Answers
 
 ## Design Docs
 * [View Wireframes][views]
