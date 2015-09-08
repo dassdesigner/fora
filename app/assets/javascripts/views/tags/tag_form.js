@@ -21,11 +21,13 @@ Fora.Views.TagForm = Backbone.View.extend({
     var attrs = this.$el.serializeJSON();
     attrs.question_id = this.collection.question.id;
     var that = this;
-
+    debugger;
+    this.collection.fetch({data: {question_id: this.collection.question.id}});
     this.model.save(attrs, {
       success: function () {
         that.collection.add(that.model);
       }
+
     });
   }
 
