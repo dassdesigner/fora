@@ -9,7 +9,6 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.$navbar.html(navbarView.render().$el);
     // this.collection.sort();
     //should take current user('s') topics?
-    // this.leftSidebarView = new Journal.Views.TopicsIndex({collection: this.collection});
 
   },
   routes: {
@@ -69,12 +68,12 @@ Fora.Routers.Router = Backbone.Router.extend({
   tagShow: function (id) {
     var tag = this.tags.getOrFetch(id);
     var user_tags = new Fora.Collections.Tags();
-    this.collection = tag.questions();
-    this.collection.fetch();
+    var tag_questions = tag.questions();
+    // tag_questions.fetch();
     user_tags.fetch();
     var view = new Fora.Views.TagShow({
       model: tag,
-      collection: this.collection,
+      collection: tag_questions,
       user_tags: user_tags
     });
 
