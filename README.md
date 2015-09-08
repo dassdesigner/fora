@@ -1,8 +1,8 @@
 # Fora
 
-[Heroku link][heroku]
+[www.thefora.io][live]
 
-[heroku]: http://foraforafora.herokuapp.com
+[live]: www.thefora.io
 
 ## Minimum Viable Product
 Fora is an online forum users can ask and answer questions. Users will be
