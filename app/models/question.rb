@@ -10,12 +10,12 @@ class Question < ActiveRecord::Base
 
   def self.topic_matches(query)
       query_arr = query.split(" ")
-      Question.all.select {|q| q.tags.any? { |tag| query_arr.any? { |query_word| tag.title.include?(query_word)}}}
+      Question.all.select {|q| q.tags.any? { |tag| query_arr.any? { |query_word| tag.title.downcase.include?(query_word.downcase)}}}
   end
 
   def self.title_matches(query)
     query_arr = query.split(" ")
-    Question.all.select {|q| query_arr.any? { |query_word| q.title.include?(query_word)}}
+    Question.all.select {|q| query_arr.any? { |query_word| q.title.downcase.include?(query_word.downcase)}}
   end
 
   def top_answer
