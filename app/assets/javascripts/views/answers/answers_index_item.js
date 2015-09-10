@@ -14,7 +14,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   initialize: function () {
     // this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
-    // this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "all", this.render);
     // var downvoteWidget = new Fora.Views.DownvoteWidget({
     //   model: this.model
     // });
