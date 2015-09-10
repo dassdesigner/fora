@@ -27,6 +27,11 @@
   color: #27667A;
 }
 
+.upvoted > .btn-default.btn {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  color: #999;
+}
 .follow-count, .vote-count {
   font-weight: bold;
 }
@@ -197,7 +202,7 @@ ul {
   padding-left: 2%;
   width: 80%;
 }
-.answer-form {
+.answer-form, .question-form {
   border: 1px solid #EEE;
   border-radius: 2px;
   background-color: #EEE;

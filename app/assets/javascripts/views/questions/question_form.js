@@ -1,6 +1,7 @@
 Fora.Views.QuestionForm = Backbone.View.extend({
   template: JST["questions/form"],
   tagName: 'form',
+  className: 'question-form',
   events: {
     "click button.submit" : "submit"
   },
