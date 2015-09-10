@@ -7,8 +7,19 @@
 <br>
 <p class="date">Written <%=answer.escape('answer_date')%></p>
 <span class="answer-footer"></span>
-
+<span>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
-  <a class="text-muted delete-answer" href="javascript:;">Delete</a>
-  <a class="text-muted edit-answer" href="javascript:;">Edit</a>
+
+
+
+<span class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="text-muted delete-answer" href="javascript:;">Delete</a></li>
+    <li><a class="text-muted edit-answer" href="javascript:;">Edit</a></li>
+  </ul>
+</div>
 <% } %>
+</span>

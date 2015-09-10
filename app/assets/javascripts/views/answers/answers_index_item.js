@@ -14,7 +14,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   initialize: function () {
     // this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "all", this.render);
+    // this.listenTo(this.model, "all", this.render);
     // var downvoteWidget = new Fora.Views.DownvoteWidget({
     //   model: this.model
     // });
@@ -38,7 +38,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   },
 
   editAnswer: function(e) {
-    $targetAnswer = $(e.currentTarget).parent().find('.answer-body');
+    $targetAnswer = $(e.currentTarget).parent().parent().parent().parent().parent().find('.answer-body');
     $targetAnswer.attr('contenteditable', 'true');
     $targetAnswer.focus();
   },
