@@ -21,13 +21,13 @@
 //   background-color: #AAA
 // }
 
-.upvote > .btn-default.btn {
+.upvote > .btn-default.btn, .follow > .btn-default.btn {
   background-color: #f1f8fb;
   border: 1px solid #CCC;
   color: #27667A;
 }
 
-.upvoted > .btn-default.btn {
+.upvoted > .btn-default.btn, .followed > .btn-default.btn  {
   background-color: #EEE;
   border: 1px solid #CCC;
   color: #999;
