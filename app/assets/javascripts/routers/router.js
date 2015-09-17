@@ -69,7 +69,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     var tag = this.tags.getOrFetch(id);
     var user_tags = new Fora.Collections.Tags();
     var tag_questions = tag.questions();
-    // tag_questions.fetch();
+    tag_questions.fetch();
     user_tags.fetch();
     var view = new Fora.Views.TagShow({
       model: tag,
