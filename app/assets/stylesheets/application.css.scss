@@ -21,6 +21,17 @@
 //   background-color: #AAA
 // }
 
+.tag-info {
+  display: none;
+}
+
+.question-tag:hover .tag-info {
+  display: block;
+}
+#bs-example-navbar-collapse-1 {
+  display: block;
+  white-space: nowrap;
+}
 .upvote > .btn-default.btn, .follow > .btn-default.btn {
   background-color: #f1f8fb;
   border: 1px solid #CCC;
@@ -189,8 +200,11 @@ ul {
   // float: left;
   // position: relative;
 }
+
+
 .navbar {
   padding-left: 5.5%;
+  height: 48px;
   // width: 80%;
 }
 .author-name {
@@ -202,7 +216,7 @@ ul {
   padding-left: 2%;
   width: 80%;
 }
-.answer-form, .question-form {
+.answer-form {
   border: 1px solid #EEE;
   border-radius: 2px;
   background-color: #EEE;

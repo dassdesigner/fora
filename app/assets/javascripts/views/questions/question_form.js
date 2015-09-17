@@ -17,6 +17,7 @@ Fora.Views.QuestionForm = Backbone.View.extend({
     var attrs = this.$el.serializeJSON();
     var that = this;
     this.model.set(attrs);
+    debugger;
     this.model.save({}, {success: function () {
       that.collection.add(that.model, {merge: true});
       Backbone.history.navigate("#questions/" + that.model.get('id'), {trigger: true});

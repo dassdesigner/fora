@@ -1,6 +1,7 @@
 <div class"clearfix"></div>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
+
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Fora</a>
@@ -21,9 +22,10 @@
           <div>
           <a id="home" href="#" class="btn btn-link"><span class="glyphicon glyphicon-home"></span>   Home</a>
 
-        <a href="#questions/new" class="btn btn-primary btn-xs" id="ask-question" role="button">
+        <a href="#questions/new" class="btn btn-primary btn-xs" id="ask-question"  data-toggle="modal" data-target="#askQuestion" role="button">
           Ask Question</a></div>
         </li>
+
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" id="current-user-dropdown" data-toggle="dropdown" role="button">
@@ -41,6 +43,42 @@
           </ul>
         </li>
       </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+<div class="modal fade" id="askQuestion" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+        <form class="question-form">
+        <h1>Ask a question, any question!</h1>
+
+          <label for='title'>Title</label>
+          <br>
+
+          <input type='text'
+                 name='title'
+                 id='title'
+                 value='<%= question.escape('title') %>'>
+          <br>
+          <label for='body'>Body</label>
+          <br>
+
+          <textarea class='form-control'
+                    rows="3"
+                    cols="1"
+                    name='body'
+                    id='body'
+                    placeholder="Write your question"><%= question.escape('body') %></textarea>
+        <br>
+        <button type="button" class="btn btn-default submit" data-dismiss="modal">Submit</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
