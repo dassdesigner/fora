@@ -36,21 +36,6 @@ Fora.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  questionNew: function () {
-    var question = new Fora.Models.Question();
-    var user_tags = new Fora.Collections.Tags();
-    user_tags.fetch();
-    var view = new Fora.Views.QuestionForm({
-        model: question,
-        collection: this.collection
-    });
-    var sideView = new Fora.Views.SidebarFeed({
-      collection: user_tags
-    });
-    this._swapSidebarView(sideView);
-    this._swapView(view);
-  },
-
   questionShow: function (id) {
     this.collection = new Fora.Collections.Questions();
     var question = this.collection.getOrFetch(id);
