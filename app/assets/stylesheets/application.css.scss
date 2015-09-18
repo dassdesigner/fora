@@ -235,8 +235,12 @@ ul {
 .sidebar-title, .content-container > li, .action-bar, .answer-count {
   padding-top: 10px;
   border-bottom: 1px solid #BBB;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 
+}
+
+.action-bar, .answer-footer {
+  padding-bottom: 10px;
 }
 
 .btn-sm {
