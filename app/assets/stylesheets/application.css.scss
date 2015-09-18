@@ -91,6 +91,9 @@
   // margin-top: 8px;
 }
 
+.content-container {
+  padding-left: 0;
+}
 .navbar-right {
   padding-right: 22.5%;
 }
@@ -131,7 +134,7 @@ ul {
 // }
 
 .questions-index-item {
-  margin-left: 0;
+  margin-left: 17px;
 }
 
 
@@ -150,11 +153,22 @@ ul {
 #search {
   background-color: #EEE;
 }
+
+.user-feed {
+  width: 100%;
+}
 .question-topics > li, .tags-container > li, .user-feed > li  {
   background-color: #EEE;
   border-radius: 10px;
   margin: 10px;
   list-style-type: none;
+  // width: 100%;
+}
+
+
+
+.user-feed > li {
+  width: 95%;
 }
 .new-session, .new-user {
   position: fixed;
@@ -205,6 +219,9 @@ ul {
   // position: relative;
 }
 
+#title {
+  width: 100%;
+}
 
 .navbar {
   padding-left: 5.5%;
@@ -218,7 +235,7 @@ ul {
 
 .tag-form {
   padding-left: 2%;
-  width: 80%;
+  width: 100%;
 }
 .answer-form {
   border: 1px solid #EEE;
