@@ -251,14 +251,19 @@ ul {
 }
 #sidebar {
   padding-left: 5%;
-  overflow: auto;
+  overflow: hidden;
   white-space: nowrap;
   width: 20%;
   position: fixed;
 }
+
 #sidebar > * {
   // width: 200px;
   // float: right;
+}
+
+.question-show-footer {
+  height: 200px;
 }
 .center-block {
   display:block;
