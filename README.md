@@ -1,11 +1,10 @@
 # Fora
 
-##[www.thefora.io][live]
+##[www.thefora.io](http://www.thefora.io)
 
-[live]: www.thefora.io
 
 Fora is an online forum built with Rails, PostgreSQL, Backbone.js, Bootstrap,
-and jQuery. 
+and jQuery.
 
 ##Main Functionality
 - Ask and answer questions
