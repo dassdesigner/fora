@@ -4,24 +4,21 @@
 
 [live]: www.thefora.io
 
-Fora is an online forum users can ask and answer questions. Questions can also be
-given topics.  In addition, users can search for questions by either topic
-or question title. 
+Fora is an online forum built with Rails, PostgreSQL, Backbone.js, Bootstrap,
+and jQuery. 
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
-## Minimum Viable Product
-Users will be able to:
+##Main Functionality
+- Ask and answer questions
+- Search for questions by title or topic
+- Upvote questions and answers
+- View questions by topic
+- Follow and create topics
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create/Edit/Destroy Questions
-- [x] Create Answers for Questions
-- [x] Edit/Destroy Answers
-- [x] Create Topics for Questions
-- [x] Follow Topics
-- [x] View Followed Topics
-- [x] Search for Questions by Title or Topic
-- [x] Upvote Questions/Answers
+##Future features
+- Image uploading
+- User profiles
+- Following users
+- Recommended questions
 
 ## Design Docs
 * [View Wireframes][views]
@@ -33,9 +30,8 @@ Users will be able to:
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Adding Questions (~1 day)
-I will implement user authentication in Rails based on the practices learned at App Academy. The most important part of this phase
-will be pushing the app to Heroku and ensuring that everything works before
-moving on to phase 2. Finally,I will integrate bootstrap to provide a clean
+I will implement user authentication in Rails and push to Heroku.
+Finally,I will integrate bootstrap to provide a clean
 interface.
 
 [Details][phase-one]
@@ -89,18 +85,6 @@ will be used to sort questions on both the feed and topic pages. This will also
 determine the top answer shown for each question on the above pages. In addition,
 answers on the question show page will be sorted by votes.
 
-
-### Bonus Features (TBD)
-- [ ] Question Follows
-- [ ] User Follows
-- [ ] User Pages
-- [ ] Notifications
-- [x] Deleting Posts
-- [ ] Comments on Answers
-- [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. upvoted answers)
-- [ ] Typeahead search bar
-- [x] Searching by topic
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
