@@ -28,6 +28,10 @@
 .question-tag:hover .tag-info {
   display: block;
 }
+
+.tags-container > li:hover {
+  background-color: #BBB;
+}
 #bs-example-navbar-collapse-1 {
   display: block;
   white-space: nowrap;
@@ -123,7 +127,7 @@ ul {
 
 .question-tag    {
   padding-left: 0;
-  background-color: #EEE;
+  // background-color: #EEE;
   padding: 2px 5px;
   border: none;
   border-radius: 10px;
