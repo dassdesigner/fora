@@ -27,9 +27,25 @@
 
 .more-questions {
   border: 1px solid #DDD;
-  // width: 90%;
+  height: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  // background-color: #DDD;
+  // white-space: nowrap;
 }
 
+.more-questions-body {
+  // text-overflow: ellipsis;
+  // overflow: hi
+}
+.more-questions-title {
+  font-weight: bold;
+}
+
+.more-questions-header {
+  font-size: 12px;
+  color: #999;
+}
 .question-tag:hover .tag-info {
   display: block;
 }

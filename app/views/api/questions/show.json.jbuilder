@@ -13,7 +13,10 @@ json.more_questions Question.all.sample(3) do |more_question|
   if top_answer
     json.extract! top_answer.author, :img_src, :name
     json.body top_answer.body
+  else
+    json.body more_question.body
   end
+
   # debugger;
 
 end
