@@ -25,6 +25,11 @@
   display: none;
 }
 
+.more-questions {
+  border: 1px solid #DDD;
+  // width: 90%;
+}
+
 .question-tag:hover .tag-info {
   display: block;
 }
@@ -288,7 +293,10 @@ ul {
 }
 
 .question-show-footer {
-  height: 200px;
+  height: 500px;
+  margin-left: 0;
+  margin-right: 0px;
+
 }
 .center-block {
   display:block;

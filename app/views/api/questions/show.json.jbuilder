@@ -7,8 +7,14 @@ json.tags @question.tags do |tag|
   json.extract! tag, :id, :title
 end
 
-json.top_questions Question.all.sample(3) do |top_question|
-  json.extract! top_question, :title, :body
-  
+json.more_questions Question.all.sample(3) do |more_question|
+  json.extract! more_question, :title, :id, :answers
+  top_answer = more_question.answers.first
+  if top_answer
+    json.extract! top_answer.author, :img_src, :name
+    json.body top_answer.body
+  end
+  # debugger;
+
 end
 # debugger
