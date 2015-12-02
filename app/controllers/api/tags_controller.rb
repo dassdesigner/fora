@@ -3,7 +3,9 @@ class Api::TagsController < ApplicationController
   def create
     if params[:question_id]
       question = Question.find(params[:question_id])
-      @tag = question.tags.create!(tag_params)
+      @tag = Tag.find_or_initialize_by(tag_params)
+      @tag.questions << question
+      @tag.save!
     else
       @tag = Tag.create!(tag_params)
     end
