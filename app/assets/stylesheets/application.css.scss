@@ -36,6 +36,7 @@
 
 .more-questions-body {
   font-size: 14px;
+  padding: 0px;
 }
 .more-questions-title {
   font-weight: bold;
@@ -100,6 +101,11 @@
   margin-top: 5px;
 }
 
+#top-stories-header {
+  padding-top: 10px;
+  padding-left: 15px;
+  border-bottom: 1px solid #BBB;
+}
 .question-show {
   margin-left: 18px;
 }
@@ -176,9 +182,7 @@ ul {
   margin-bottom: 10px;
 }
 
-// .user-feed > li {
-//   list-style-type: square;
-// }
+
 
 #search {
   background-color: #EEE;
@@ -278,12 +282,17 @@ ul {
   word-wrap: break-word;
 }
 
-.sidebar-title, #top-stories {
+#sidebar-title, #top-stories {
   font-weight: bold;
   margin-left: 5%;
+
 }
 
-.sidebar-title, .content-container > li, .action-bar, .answer-count {
+#top-stories {
+  padding-top: 10px;
+}
+
+#sidebar-title, .content-container > li, .action-bar, .answer-count {
   padding-top: 10px;
   border-bottom: 1px solid #BBB;
   // padding-bottom: 10px;
