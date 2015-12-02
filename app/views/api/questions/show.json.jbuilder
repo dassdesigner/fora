@@ -13,8 +13,10 @@ json.more_questions Question.all.sample(3) do |more_question|
   if top_answer
     json.extract! top_answer.author, :img_src, :name
     json.body top_answer.body
+    json.date top_answer.created_at.to_date.to_formatted_s(:short)
   else
     json.body more_question.body
+    json.date more_question.created_at.to_date.to_formatted_s(:short)
   end
 
   # debugger;
