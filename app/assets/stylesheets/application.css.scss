@@ -35,15 +35,18 @@
 }
 
 .more-questions-body {
-  // text-overflow: ellipsis;
-  // overflow: hi
+  font-size: 14px;
 }
 .more-questions-title {
   font-weight: bold;
 }
 
 .more-questions-header {
-  font-size: 12px;
+  margin-top: 10px;
+}
+
+.more-questions-header {
+  font-size: 14px;
   color: #999;
 }
 .question-tag:hover .tag-info {
