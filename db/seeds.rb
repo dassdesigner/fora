@@ -30,15 +30,16 @@ a2 = Answer.create(body: "Schedule more time than you think you'll need between 
 
 a3 = Answer.create(body: "Big packs of new socks", author_id: 3, question_id: 2)
 a4 = Answer.create(body: "My hand.", author_id: 4, question_id: 2)
-a5 = Answer.create(body: 'I always say that the more you learn, the more you earn.', author_id: 5, question_id: 2)
-
-a6 = Answer.create(body: 'Blue', author_id: 7, question_id: 3)
+a5 = Answer.create(body: 'My timeturner!', author_id: 5, question_id: 2)
+a6 = Answer.create(body: 'Blue.', author_id: 7, question_id: 3)
 a7 = Answer.create(body: "Blue. No, yel...", author_id: 8, question_id: 3)
-
 a8 = Answer.create(body: "Huh? I... I don't know that. AGGGghhhh", author_id: 6, question_id: 5)
 a9 = Answer.create(body: "What do you mean? An African or European swallow?", author_id: 9, question_id: 5)
 a10 = Answer.create(body: "Coffee and Reddit.", author_id: 2, question_id: 7)
 a11 = Answer.create(body: "After five alarms go off every 15 minutes, finally wake up. Check Reddit for news. Check local news. Get breakfast. Get ready for uni. Go to uni. Realise I left my lab coat in my room half way to uni. Drive back home and get jacket. Go back to uni.", question_id: 7, author_id: 5)
+a12 = Answer.create(body: "EDDARD STARK AND ASHARA DAYNE", question_id: 6, author_id: 8)
+a13 = Answer.create(body: "EDDARD STARK AND WYLLA", question_id: 6, author_id: 8)
+
 t1 = Tag.create({title: "Life", description: "On the period of time between birth and death."})
 t2 = Tag.create({title: "College", description: "Those 4 + n years you'll never forget!"})
 t3 = Tag.create({title: "Meta", description: "If it doesn't go anywhere else, just add this topic. It'll be fine."})
