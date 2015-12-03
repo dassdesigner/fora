@@ -32,12 +32,14 @@ class Api::TagsController < ApplicationController
 
   def update
     @tag = Tag.includes(:users).find(params[:id])
-    user_ids = @tag.users.pluck(:id)
-    if !params[:destroy] && @tag.update({user_ids: user_ids << current_user.id})
-      render json: @tag
-    elsif params[:destroy] && @tag.update({user_ids: user_ids - [current_user.id]})
-      render json: @tag
+
+    if !params[:destroy]
+      @tag.users << current_user
+    elsif params[:destroy]
+       @tag.users - current_user
     end
+      @tag.save!
+      render json: @tag
   end
 
   private

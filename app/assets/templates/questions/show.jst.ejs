@@ -14,30 +14,30 @@
   <% if (more_questions) { %>
 
     <% for (i = 0; i < 3; i++) { %>
-    <div class="col-md-4 more-questions">
-      <p class="more-questions-header">
+    <a href="#questions/<%=more_questions[i].id%>">
+      <div class="col-md-4 more-questions">
+        <p class="more-questions-header">
+          <% if (more_questions[i]['name']) { %>
+            Answer Written
+          <% } else { %>
+            Question Asked
+          <% } %>
+            • <%=more_questions[i]["date"]%>
+        </p>
+
         <% if (more_questions[i]['name']) { %>
-          Answer Written
-        <% } else { %>
-          Question Asked
+          <p class="more-questions-body">
+          <span><img class="avatar" src="<%=more_questions[i]['img_src']%>">
+          <t><%=more_questions[i]['name']%></span></p>
+          <div class="answer-body"><%=more_questions[i]['body']%></div>
+          <br>
+
+        <% } else {  %>
+        <p><%= more_questions[i]["body"]%></p>
         <% } %>
-          • <%=more_questions[i]["date"]%>
-      </p>
-      <a href="#questions/<%=more_questions[i].id%>" class="more-questions-title">
-        <%= more_questions[i]["title"]%>
-      </a>
-      <% if (more_questions[i]['name']) { %>
-        <p class="more-questions-body">
-        <span><img class="avatar" src="<%=more_questions[i]['img_src']%>">
-        <t><%=more_questions[i]['name']%></span></p>
-        <div class="answer-body"><%=more_questions[i]['body']%></div>
-        <br>
 
-      <% } else {  %>
-      <p><%= more_questions[i]["body"]%></p>
-      <% } %>
-
-    </div>
+      </div>
+    </a>
     <% } %>
   <% } %>
 </div>

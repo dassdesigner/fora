@@ -30,8 +30,14 @@
   height: 300px;
   text-overflow: ellipsis;
   overflow: hidden;
+  // z-index: 100;
   // background-color: #DDD;
   // white-space: nowrap;
+}
+
+.more-questions:hover {
+  background-color: #EEE;
+  transition: all 1s ease;
 }
 
 .more-questions-body {
