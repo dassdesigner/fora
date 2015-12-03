@@ -26,7 +26,6 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
       tag: this.model,
     });
     this.$el.html(content);
-
     this.attachSubviews();
     return this;
   },

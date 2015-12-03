@@ -1,7 +1,8 @@
 Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
   template: JST["sidebars/feed"],
 
-  initialize: function () {
+  initialize: function (params) {
+    this.current_tag_id = params.tag_id;
     this.listenTo(this.collection, "sync change", this.render);
     this.listenTo(this.collection, "add", this.addTagSubview);
     this.listenTo(this.collection, "remove", this.removeTagSubview);
@@ -40,6 +41,8 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+    $("[href='#tags/" + this.current_tag_id + "']").css("background-color", "#CCC");
     return this;
+
   }
 });

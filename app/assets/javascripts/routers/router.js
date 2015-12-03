@@ -62,7 +62,8 @@ Fora.Routers.Router = Backbone.Router.extend({
     });
 
     var sideView = new Fora.Views.SidebarFeed({
-      collection: user_tags
+      collection: user_tags,
+      tag_id: id
     });
     this._swapSidebarView(sideView);
     this._swapView(view);
