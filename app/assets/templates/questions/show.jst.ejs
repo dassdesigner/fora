@@ -12,7 +12,6 @@
   <p>More Questions from Your Feed</p>
   <% var more_questions = question.toJSON()["more_questions"] %>
   <% if (more_questions) { %>
-
     <% for (i = 0; i < 3; i++) { %>
     <a href="#questions/<%=more_questions[i].id%>">
       <div class="col-md-4 more-questions">
@@ -24,7 +23,7 @@
           <% } %>
             • <%=more_questions[i]["date"]%>
         </p>
-
+        <p class="more-questions-title"><%= more_questions[i]["title"]%></p>
         <% if (more_questions[i]['name']) { %>
           <p class="more-questions-body">
           <span><img class="avatar" src="<%=more_questions[i]['img_src']%>">
