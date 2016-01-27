@@ -42,6 +42,7 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     $("[href='#tags/" + this.current_tag_id + "']").css("background-color", "#CCC");
+    $(".question-index-item-tag").css("background-color", "#FFF");
     return this;
 
   }
