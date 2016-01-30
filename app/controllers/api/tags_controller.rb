@@ -42,6 +42,17 @@ class Api::TagsController < ApplicationController
       render json: @tag
   end
 
+  def destroy
+    @tag = params
+    if params["tag_type"] == "user"
+      @tag = current_user.tags.destroy(params[:id])
+    elsif params["tag_type"] == "question"
+      @tag = Question.find(params["question_id"]).tags.destroy(params[:id])
+    end
+    # @tag.destroy
+    render json: @tag
+  end
+
   private
   def tag_params
     params.require(:tag).permit(:title)

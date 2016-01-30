@@ -3,7 +3,9 @@ Fora.Views.SidebarQuestion = Backbone.CompositeView.extend({
   initialize: function (options) {
     var current_question = options.current_question;
     var tagsIndex = new Fora.Views.TagsIndex({
-      collection: current_question.tags()
+      collection: current_question.tags(),
+      tagType: "question",
+      questionId: current_question.id
     });
     var tagForm = new Fora.Views.TagForm({
       collection: current_question.tags(),
@@ -17,7 +19,7 @@ Fora.Views.SidebarQuestion = Backbone.CompositeView.extend({
   //   var subView = new Fora.Views.TagsIndexItem({model: tag});
   //   this.addSubview(".tags-container", subView);
   // },
-  //
+
   render: function () {
     var content = this.template();
     this.$el.html(content);

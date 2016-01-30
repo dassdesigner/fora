@@ -17,6 +17,7 @@ class Api::QuestionsController < ApplicationController
     else
       # maybe select for only topics current user is following?
       @questions = Question.includes(:tags).all
+      # @questions = current_user.tags.map { |tag| tag.questions}
     end
     @votes_hash = current_user.votes_hash("Question")
     render :index

@@ -1,6 +1,6 @@
 Fora.Routers.Router = Backbone.Router.extend({
 
-  initialize: function () {
+  initialize: function() {
     this.tags = new Fora.Collections.Tags();
     var navbarView = new Fora.Views.Navbar();
     this.$navbar = $('.navbar');
@@ -17,40 +17,42 @@ Fora.Routers.Router = Backbone.Router.extend({
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
     "tags/:id": "tagShow",
-    "search?:query" : "searchShow"
+    "search?:query": "searchShow"
   },
 
-  questionsIndex: function () {
+  questionsIndex: function() {
     this.collection = new Fora.Collections.Questions();
     this.collection.fetch();
     var user_tags = new Fora.Collections.Tags();
     user_tags.fetch();
 
     var view = new Fora.Views.QuestionsIndex({
-        collection: this.collection,
-        });
+      collection: this.collection,
+    });
 
-    var sideView = new Fora.Views.SidebarFeed({collection: user_tags});
+    var sideView = new Fora.Views.SidebarFeed({
+      collection: user_tags,
+    });
 
     this._swapSidebarView(sideView);
     this._swapView(view);
   },
 
-  questionShow: function (id) {
+  questionShow: function(id) {
     this.collection = new Fora.Collections.Questions();
     var question = this.collection.getOrFetch(id);
     var view = new Fora.Views.QuestionShow({
-        model: question
+      model: question
     });
 
     var sideView = new Fora.Views.SidebarQuestion({
-        current_question: question
+      current_question: question,
     });
     this._swapSidebarView(sideView);
     this._swapView(view);
   },
 
-  tagShow: function (id) {
+  tagShow: function(id) {
     var tag = this.tags.getOrFetch(id);
     var user_tags = new Fora.Collections.Tags();
     var tag_questions = tag.questions();
@@ -63,18 +65,20 @@ Fora.Routers.Router = Backbone.Router.extend({
 
     var sideView = new Fora.Views.SidebarFeed({
       collection: user_tags,
-      tag_id: id
+      tag_id: id,
     });
     this._swapSidebarView(sideView);
     this._swapView(view);
   },
 
-  searchShow: function (query) {
+  searchShow: function(query) {
     this.collection = new Fora.Collections.Questions();
-    this.collection.fetch({data: query });
+    this.collection.fetch({
+      data: query
+    });
     var view = new Fora.Views.QuestionsIndex({
-        collection: this.collection,
-        });
+      collection: this.collection,
+    });
 
     var user_tags = new Fora.Collections.Tags();
     user_tags.fetch();
@@ -88,13 +92,13 @@ Fora.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  _swapView: function (view) {
+  _swapView: function(view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
   },
 
-  _swapSidebarView: function (view) {
+  _swapSidebarView: function(view) {
     this._sidebarView && this._sidebarView.remove();
     this._sidebarView = view;
     this.$sidebar.html(view.render().$el);

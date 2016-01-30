@@ -28,9 +28,9 @@ a1 = Answer.create(body: "Go to office hours. 95% of the time, I'm sitting there
 
 a2 = Answer.create(body: "Schedule more time than you think you'll need between classes. Things always come up, and you can always use the extra time to study.", author_id: 5, question_id: 1)
 
-a3 = Answer.create(body: "Big packs of new socks", author_id: 3, question_id: 2)
-a4 = Answer.create(body: "My hand.", author_id: 4, question_id: 2)
-a5 = Answer.create(body: 'My timeturner!', author_id: 5, question_id: 2)
+a3 = Answer.create(body: "Big packs of new socks. Maybe some cake that's not too smushed. A big 'ole hug from Harry!", author_id: 3, question_id: 2)
+a4 = Answer.create(body: "My hand. And Lannister gold! ", author_id: 4, question_id: 2)
+a5 = Answer.create(body: 'My timeturner! And Ron :^)', author_id: 5, question_id: 2)
 a6 = Answer.create(body: 'Blue.', author_id: 7, question_id: 3)
 a7 = Answer.create(body: "Blue. No, yel...", author_id: 8, question_id: 3)
 a8 = Answer.create(body: "Huh? I... I don't know that. AGGGghhhh", author_id: 6, question_id: 5)

@@ -1,6 +1,7 @@
 Fora.Views.TagShow = Backbone.CompositeView.extend({
   template: JST["tags/show"],
-
+  tagName: "div",
+  className: "feed",
   //TODO refactor (it's pretty identical to QuestionsIndex)
   initialize: function (options) {
     this.listenTo(this.collection, "add", this.addQuestionSubview);

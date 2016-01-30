@@ -1,12 +1,12 @@
 Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
   template: JST["sidebars/feed"],
 
-  initialize: function (params) {
+  initialize: function(params) {
     this.current_tag_id = params.tag_id;
     this.listenTo(this.collection, "sync change", this.render);
     this.listenTo(this.collection, "add", this.addTagSubview);
     this.listenTo(this.collection, "remove", this.removeTagSubview);
-    this.collection.each (function (question) {
+    this.collection.each(function(question) {
       that.addTagsSubview(tag);
     });
 
@@ -22,22 +22,25 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
   },
 
 
-  addTagSubview: function (tag) {
-    var subView = new Fora.Views.TagsIndexItem({model: tag});
+  addTagSubview: function(tag) {
+    var subView = new Fora.Views.TagsIndexItem({
+      model: tag,
+      tagType: "user"
+    });
     this.addSubview(".tags-container", subView);
   },
 
-  removeTagSubview: function (tag) {
+  removeTagSubview: function(tag) {
     //TODO: change to removemodelsubview
     that = this;
-    this.subviews('.tags-container').forEach(function(subview){
+    this.subviews('.tags-container').forEach(function(subview) {
       if (subview && subview.model === tag) {
         that.removeSubview('.tags-container', subview);
       }
     });
   },
 
-  render: function () {
+  render: function() {
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
