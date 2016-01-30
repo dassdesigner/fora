@@ -179,16 +179,17 @@ ul {
 
 .question-tag    {
   padding-left: 0;
-  // background-color: #EEE;
-  padding: 2px 5px;
   border: none;
-  display: block;
   border-radius: 10px;
+  width: 100%;
 }
 
-// .tags-container > .user-feed {
-//   list-style-type: square;
-// }
+.delete-topic {
+  // position:relative;
+  float:right;
+  // left: 50px;
+  padding-right: 5px;
+}
 
 .questions-index-item {
   margin-left: 17px;
@@ -405,6 +406,8 @@ ul {
   // border-radius: 5px;
   padding-right: 14px;
 }
+
+
 
 #email, #password, #name {
   width: 320px;
