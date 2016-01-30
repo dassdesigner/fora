@@ -1,15 +1,13 @@
-
-
-<div class="navbar">
-</div>
+<div class="navbar"></div>
 <div class="backdrop">
   <div class="container-fluid">
-    <div id="sidebar" class="col-sm-3"></div>
-    <div id="main" class="col-sm-6 col-centered"></div>
+    <div class="col-sm-3" id="sidebar"></div>
+    <div class="col-sm-6 col-centered" id="main"></div>
   </div>
 </div>
+
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     Fora.CURRENT_USER_ID = <%= current_user.id %>;
     Fora.CURRENT_USER_NAME = "<%= current_user.name%>";
     Fora.CURRENT_USER_AVATAR = "<%= current_user.img_src%>"

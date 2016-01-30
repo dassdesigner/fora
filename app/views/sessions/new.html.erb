@@ -2,20 +2,49 @@
   <h1>Fora</h1>
   <h2>Sign In</h2>
 
-  <form action="/session" method="post" id="sign-in">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <form action="/session" id="sign-in" method="post">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
     <label>Email<br>
-      <input name="user[email]" type="text" id="email"><br>
+      <input id="email" name="user[email]" type="text"><br>
     </label><br>
     <label>Password<br>
-      <input name="user[password]" type="password" id="password"><br>
+      <input id="password" name="user[password]" type="password"><br>
     </label><br>
-    <input type="submit" value="Log In" class="btn btn-primary">
-    <input value="Guest Login" class="btn btn-primary" id="login-guest">
-    <p>Don't have an account yet? <a href="/users/new">Create one!</a></p>
+    <input class="btn btn-primary" type="submit" value="Log In">
+    <input class="btn btn-primary" id="login-guest" value="Guest Login">
+    <p>Don't have an account yet?
+      <a href="/users/new">Create one!</a>
+    </p>
   </form>
+  <p id="about">
+    <a ="javascript:;" data-target=".bs-example-modal-sm" data-toggle="modal" href>About</a>
+  </p>
 </div>
+<div aria-labelledby="mySmallModalLabel" class="modal fade bs-example-modal-sm" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content about">
+      <h1 id="fora">Fora</h1>
+      Fora is an online forum built with Rails, PostgreSQL, Backbone.js, Bootstrap, and jQuery. I started this project in August of 2015 and I still find joy in improving and expanding functionality in my spare time.
+      <h3>
+        Main functionality
+      </h3>
+      <ul id="about-list">
+        <li>Ask and answer questions</li>
+        <li>Search for questions by title or topic</li>
+        <li>Upvote questions and answers</li>
+        <li>View questions by topic</li>
+        <li>Follow and create topics</li>
+      </ul>
 
+
+      <h3>About the Author</h3>
+      <p>
+      I am a software developer for-hire living in Berkeley, CA. I love the puzzle aspect of coding- I've found it to contain
+      some of the most intellectually stimulating challenges I have encountered.</p>
+      <a href="http://www.jakesingh.com/">Discover more projects I've worked on!</a>
+    </div>
+  </div>
+</div>
 
 <script>
   $('#login-guest').on('click', function () {
@@ -24,4 +53,3 @@
     $('#sign-in').submit();
   });
 </script>
- 

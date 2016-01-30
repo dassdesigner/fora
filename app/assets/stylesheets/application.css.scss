@@ -262,10 +262,11 @@ ul {
   border: 1px solid #DDD;
   border-radius: 20px;
   padding: 20px;
+  padding-bottom: 0px;
   // opacity: 0.4;
 }
 
-.new-session > h1, .new-user > h1, .navbar-brand {
+.new-session > h1, .new-user > h1, .navbar-brand, #fora {
   text-align: center;
   color: #ED5151 !important;
   font-weight: 700;
@@ -437,4 +438,34 @@ ul {
 
 .tag-show {
   padding-left: 12px;
+}
+
+.about {
+  padding: 25px;
+}
+
+#fora {
+  border-bottom: 1px solid #DDD;
+}
+#about {
+  height: 30px;
+  // top: 5px;
+  // position: relative;
+  // left: 385px;
+
+}
+
+h3 {
+  font-weight: bold;
+}
+#about-list {
+  list-style-type: disc;
+}
+#footer {
+  width: 100%;
+  border-top: 1px solid #DDD;
+  position: absolute;
+  bottom: 0px;
+  height: 35px;
+  background-color: #EEE;
 }
