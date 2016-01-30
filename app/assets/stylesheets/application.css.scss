@@ -137,11 +137,13 @@
 
 .content-container {
   padding-left: 0;
+  margin-bottom: 0px;
 }
 .navbar-right {
   padding-right: 22.5%;
 }
 body {
+  background-color: #FFF;
   // background-image: url("half_eh.jpg");
 }
 
@@ -345,9 +347,24 @@ ul {
 }
 
 #main {
-  overflow: auto;
+  // overflow: auto;
   width: 60%;
-  margin-left: 20%
+  margin-left: 20%;
+  bottom: 30px;
+  // background-color: #EEE;
+  position: relative;
+
+  // border: 1px solid #DDD;
+}
+
+.feed {
+  position: relative;
+  top: 29px;
+  background-color: #EEE;
+  padding-top: 0px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding-right: 14px;
 }
 
 #email, #password, #name {

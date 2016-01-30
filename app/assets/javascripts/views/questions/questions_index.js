@@ -1,6 +1,7 @@
 Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
   template: JST["questions/index"],
-
+  tagName: "div",
+  className: "feed",
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
