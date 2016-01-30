@@ -1,3 +1,20 @@
-<p id="sidebar-title">TOPICS</p>
+<p id="sidebar-title">Topics<a class="edit-tag" href="javascript:;">Edit</a>
+                            <a class="done-edit-tag">Done Editing</a></p>
 <div class="tags-index"></div>
 <div class="tag-form"></div>
+
+<script>
+  $('.edit-tag').click(function() {
+    $('.delete-tag').show();
+    $('.done-edit-tag').show();
+    $('.edit-tag').hide();
+    $('.question-tag').children().css("display", "inline")
+  });
+
+  $('.done-edit-tag').click(function () {
+    $('.delete-tag').hide();
+    $('.done-edit-tag').hide();
+    $('.edit-tag').show();
+    $('.question-tag').children().css("display", "block")
+  });
+</script>

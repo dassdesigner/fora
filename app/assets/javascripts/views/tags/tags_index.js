@@ -1,11 +1,14 @@
 Fora.Views.TagsIndex = Backbone.CompositeView.extend({
   template: JST["tags/index"],
+
+
   initialize: function(options) {
     this.listenTo(this.collection, "add", this.addTagSubview);
     this.listenTo(this.collection, "remove", this.removeTagSubview);
     this.tagType = options.tagType;
     //TODO refactor into add all subviews
     var that = this;
+    this.delegateEvents();
     if (options.questionId) {
       this.questionId = options.questionId;
     }
@@ -32,11 +35,16 @@ Fora.Views.TagsIndex = Backbone.CompositeView.extend({
     });
   },
 
+  editTag: function (e) {
+    e.preventDefault();
+    $(".delete-tag").show();
+  },
+
   render: function() {
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
     return this;
   }
-
+  
 });

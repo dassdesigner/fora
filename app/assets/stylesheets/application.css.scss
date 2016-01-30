@@ -176,18 +176,32 @@ ul {
   padding-left: 12px;
 }
 
+// tag stuff
 
+.edit-tag, .done-edit-tag {
+  float:right;
+}
+
+.done-edit-tag {
+  display: none;
+}
+.question-tag > a {
+  display: block;
+}
 .question-tag    {
+  // display: block;
   padding-left: 0;
+  padding: 5px;
   border: none;
   border-radius: 10px;
   width: 100%;
 }
 
-.delete-topic {
-  // position:relative;
+.delete-tag {
+  display: none;
+  position:relative;
   float:right;
-  // left: 50px;
+  top: 4px;
   padding-right: 5px;
 }
 
