@@ -180,8 +180,16 @@ ul {
 
 .edit-tag, .done-edit-tag {
   float:right;
+  font-weight: normal;
 }
-
+#bs-example-navbar-collapse-1 > ul {
+  // position: fixed;
+  float:right;
+  // top: 5px;
+  // left: 400px;
+  margin-right: 0px;
+  overflow: hidden;
+}
 .done-edit-tag {
   display: none;
 }
