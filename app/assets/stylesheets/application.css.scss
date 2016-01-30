@@ -25,7 +25,14 @@
   display: none;
 }
 
-
+#more-questions-title {
+  position:relative;
+  top: 5px;
+  padding: 0px;
+  font-weight: bold;
+  // margin: 0px;
+  // background-color: #DDD;
+}
 .more-questions {
   border: 1px solid #DDD;
   height: 300px;
@@ -117,6 +124,8 @@
 }
 .question-show {
   margin-left: 18px;
+  position: relative;
+  top: 30px;
 }
 #home {
   // margin-top: 10px;

@@ -9,7 +9,7 @@
 <div class="answer-form"></div>
 <div class="answers-index"></div>
 <div class="row question-show-footer">
-  <p>More Questions from Your Feed</p>
+  <p id="more-questions-title">More Questions from Your Feed</p>
   <% var more_questions = question.toJSON()["more_questions"] %>
   <% if (more_questions) { %>
     <% for (i = 0; i < 3; i++) { %>
