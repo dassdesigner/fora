@@ -31,13 +31,13 @@ this.model.destroy({
 });
 ```
 to the Rails controller to indicate whether I was deleting from a user's tags or a question's tags, in addition to the ID of the question (if applicable) I was deleting from.
-'''ruby
+```ruby
 if params["tag_type"] == "user"
   @tag = current_user.tags.destroy(params[:id])
 elsif params["tag_type"] == "question"
   @tag = Question.find(params["question_id"]).tags.destroy(params[:id])
 end
-'''
+```
 
 ## Design Docs
 * [View Wireframes][views]
