@@ -11,7 +11,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = Question.find(params[:question_id]).answers.includes(:votes)
+    @answers = Question.find(params[:question_id]).answers.sort{|a,b| b.votes.count <=> a.votes.count}
     @votes_hash = current_user.votes_hash("Answer")
     render :_index1
   end

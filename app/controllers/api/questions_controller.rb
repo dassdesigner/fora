@@ -13,12 +13,15 @@ class Api::QuestionsController < ApplicationController
   def index
     if params[:query]
       # @questions = [Question.first]
-      @questions = (Question.topic_matches(params[:query]) + Question.title_matches(params[:query])).uniq
+      @questions = (Question.topic_matches(params[:query]) + Question.title_matches(params[:query])).uniq.sort{|a,b| b.votes.count <=> a.votes.count}
+
     else
       # maybe select for only topics current user is following?
-      @questions = Question.includes(:tags).all
+      @questions = Question.includes(:tags).all.sort{|a,b| b.votes.count <=> a.votes.count}
       # @questions = current_user.tags.map { |tag| tag.questions}
     end
+
+
     @votes_hash = current_user.votes_hash("Question")
     render :index
   end
