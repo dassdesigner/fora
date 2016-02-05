@@ -83,7 +83,7 @@
 }
 #bs-example-navbar-collapse-1 {
   display: block;
-  // white-space: nowrap;
+  white-space: nowrap;
 }
 .upvote > .btn-default.btn, .follow > .btn-default.btn {
   background-color: #f1f8fb;
@@ -104,6 +104,7 @@
 .navbar {
   background-image: none;
   z-index: 5;
+  // overflow: hidden;
   // z-index: -1;
   // overflow: auto;
   // background-color: red;
@@ -177,7 +178,9 @@
   margin-bottom: 0px;
 }
 .navbar-right {
-  padding-right: 22.5%;
+  position: relative;
+  right: 22%;
+  // padding-right: 22.5%;
 }
 body {
   background-color: #FFF;
@@ -338,7 +341,9 @@ ul {
 
 .navbar {
   padding-left: 5.5%;
+  padding-bottom: 1px;
   height: 48px;
+  overflow: hidden;
   // width: 80%;
 }
 .author-name {
@@ -438,6 +443,7 @@ ul {
 
 #main {
   // overflow: auto;
+  // padding-top: 1px;
   width: 60%;
   margin-left: 20%;
   bottom: 30px;
@@ -452,9 +458,10 @@ ul {
   top: 29px;
   // background-color: #FFFFF5;
   padding-top: 0px;
+  right: 0%;
   // border: 1px solid #DDD;
   // border-radius: 5px;
-  padding-right: 14px;
+  // padding-right: 14px;
 }
 
 
