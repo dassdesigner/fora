@@ -19,7 +19,9 @@ json.more_questions Question.more_questions(@question) do |more_question|
     json.date more_question.created_at.to_date.to_formatted_s(:short)
   end
 
-  # debugger;
-
+end
+json.related_questions Question.related_questions(@question) do |related_question|
+  json.extract! related_question, :title, :id
+  json.tag_title related_question.tags.first.title
 end
 # debugger
