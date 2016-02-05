@@ -2,6 +2,7 @@
 <p class="question-body"><%=question.escape('body')%></p>
 <p class="question-author-name">Asked by <%=question.escape('question_author')%></p>
 <span class="question-footer"></span>
+<span class="write-answer"><button type="button" class="btn btn-default btn-sm">Write Answer</button></span>
 <% if (Fora.CURRENT_USER_ID == question.escape('author_id')) { %>
   <span class="question-dropdown dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -60,3 +61,8 @@
     <% } %>
 </ul>
 </span>
+<script>
+$( ".write-answer" ).click(function() {
+  $('.answer-form').show();
+});
+</script>

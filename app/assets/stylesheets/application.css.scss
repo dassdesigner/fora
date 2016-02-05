@@ -106,7 +106,7 @@
   display: block;
   white-space: nowrap;
 }
-.upvote > .btn-default.btn, .follow > .btn-default.btn {
+.upvote > .btn-default.btn, .follow > .btn-default.btn, .write-answer > .btn-default.btn {
   background-color: #f1f8fb;
   border: 1px solid #CCC;
   color: #27667A;
@@ -274,7 +274,7 @@ ul {
 }
 
 .question-footer {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 
@@ -398,6 +398,7 @@ ul {
 
 
 .answer-form {
+  display: none;
   position: relative;
   left: 15px;
   // width: 1029px;
@@ -409,6 +410,7 @@ ul {
   margin-right: 15px;
   // padding: 10px;
   word-wrap: break-word;
+  margin-top: 20px;
 }
 
 .form-control {
@@ -427,11 +429,16 @@ ul {
   padding-top: 10px;
 }
 
-#sidebar-title, .content-container > li, .action-bar, .answer-count {
+#sidebar-title, .content-container > li, .action-bar {
   padding-top: 10px;
   border-bottom: 1px solid #BBB;
   // padding-bottom: 10px;
+}
 
+.answer-count {
+  padding-top: 0px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #BBB;
 }
 
 .action-bar, .answer-footer {
@@ -442,7 +449,7 @@ ul {
   font-size: 16px;
 }
 
-.question-dropdown {
+.question-dropdown, .write-answer {
   margin-left: -15px;
 }
 
