@@ -7,6 +7,7 @@ gem 'rails', '4.2.3'
 gem 'backbone-on-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'spinjs-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets

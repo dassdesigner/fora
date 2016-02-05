@@ -18,6 +18,15 @@ class Question < ActiveRecord::Base
     Question.all.select {|q| query_arr.any? { |query_word| q.title.downcase.include?(query_word.downcase)}}
   end
 
+  def self.more_questions(question)
+    more_questions = Question.all.sample(3)
+    while more_questions.include?(question)
+      more_questions = Question.all.sample(3)
+    end
+
+    more_questions
+  end
+
   def top_answer
     answers.max_by {|a| a.votes.length}
   end

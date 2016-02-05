@@ -7,7 +7,7 @@ json.tags @question.tags do |tag|
   json.extract! tag, :id, :title
 end
 # debugger;
-json.more_questions Question.select {|q| q.id != @question.id}.sample(3) do |more_question|
+json.more_questions Question.more_questions(@question) do |more_question|
   json.extract! more_question, :title, :id, :answers
   top_answer = more_question.answers.first
   if top_answer
