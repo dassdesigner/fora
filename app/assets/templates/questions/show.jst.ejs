@@ -3,8 +3,15 @@
 <p class="question-author-name">Asked by <%=question.escape('question_author')%></p>
 <span class="question-footer"></span>
 <% if (Fora.CURRENT_USER_ID == question.escape('author_id')) { %>
-  <a class="text-muted delete" href="javascript:;">Delete</a>
-  <a class="text-muted edit" href="javascript:;">Edit</a>
+  <span class="question-dropdown dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="text-muted delete" href="javascript:;">Delete</a></li>
+      <li><a class="text-muted edit" href="javascript:;">Edit</a></li>
+    </ul>
+  </span>
 <% } %>
 <div class="answer-form"></div>
 <div class="answers-index"></div>
