@@ -59,7 +59,6 @@
       $(function() {
         $("#loading").spin(opts).hide();
         $(document).ajaxStart(function() {
-          debugger;
           $('#loading').fadeIn();
         });
         $(document).ajaxComplete(function() {

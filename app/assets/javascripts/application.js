@@ -24,3 +24,5 @@
 //= require_tree ./routers
 //= require_tree .
 //= require serialize_json
+//= require spin
+//= require jquery.spin
