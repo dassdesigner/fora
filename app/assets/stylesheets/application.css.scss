@@ -41,12 +41,17 @@
   display: inline;
   width: 300px;
   top: -3px;
+  line-height: 0.9;
 }
 
 .related-question > a {
   font-size: 80%;
+  top: 0px;
 }
 
+.related-question {
+  margin-top: 9px;
+}
 #related-questions-title {
   border-bottom: 1px solid #AAA;
 }

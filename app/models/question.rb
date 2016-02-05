@@ -28,7 +28,7 @@ class Question < ActiveRecord::Base
   end
 
   def self.related_questions(question)
-    question.tags.map {|t| t.questions}.flatten.sample(5).select {|q| q != question}
+    question.tags.map {|t| t.questions}.flatten.uniq.sample(5).select {|q| q != question}
   end
   def top_answer
     answers.max_by {|a| a.votes.length}
