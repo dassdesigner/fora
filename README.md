@@ -20,7 +20,24 @@ and jQuery.
 - Recommended questions
 
 ##Challenges
-One of the more challenging engineering problems involved figuring out how to delete a topic from either a question or a user without deleting the topic itself. This involved sending additional parameters from the front end as a hash to the Rails controller to indicate whether I was deleting from a user's tags or a question's tags, in addition to the ID of the question (if applicable) I was deleting from.
+One of the more challenging engineering problems involved figuring out how to delete a topic from either a question or a user without deleting the topic itself. This involved sending additional parameters in Backbone's destroy method
+```javascript
+this.model.destroy({
+  data: {
+    tag_type: this.tagType,
+    question_id: this.questionId
+  },
+  processData: true
+});
+```
+to the Rails controller to indicate whether I was deleting from a user's tags or a question's tags, in addition to the ID of the question (if applicable) I was deleting from.
+'''ruby
+if params["tag_type"] == "user"
+  @tag = current_user.tags.destroy(params[:id])
+elsif params["tag_type"] == "question"
+  @tag = Question.find(params["question_id"]).tags.destroy(params[:id])
+end
+'''
 
 ## Design Docs
 * [View Wireframes][views]

@@ -81,4 +81,4 @@ u4.votes.create({voteable_id: 3,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
 u5.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
 u5.votes.create({voteable_id: 1,voteable_type: "Question", value: 1})
-u6.tags << Tag.all.take(5)
+u6.tags << Tag.all
