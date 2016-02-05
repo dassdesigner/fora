@@ -20,7 +20,10 @@
 // .btn .btn-default .upvote{
 //   background-color: #AAA
 // }
-
+.modal-content {
+  top: 160px;
+  z-index: 500, !important;
+}
 #loading{
     position:fixed;
     z-index:999;
@@ -107,6 +110,17 @@
   // z-index: -1;
   // overflow: auto;
   // background-color: red;
+}
+
+.modal-dialog {
+  // z-index: 100000;
+}
+
+.modal.fade {
+  z-index: 6;
+}
+.modal-backdrop {
+  z-index: 4
 }
 // .ask-question {
 //   // background-color: blue !important;
