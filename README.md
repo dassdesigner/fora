@@ -19,6 +19,9 @@ and jQuery.
 - Following users
 - Recommended questions
 
+##Challenges
+One of the more challenging engineering problems involved figuring out how to delete a topic from either a question or a user without deleting the topic itself. This involved sending additional parameters from the front end as a hash to the Rails controller to indicate whether I was deleting from a user's tags or a question's tags, in addition to the ID of the question (if applicable) I was deleting from.
+
 ## Design Docs
 * [View Wireframes][views]
 * [DB schema][schema]
