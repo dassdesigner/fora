@@ -53,7 +53,7 @@
 <ul>
 
   <% var related_questions = question.toJSON()["related_questions"] %>
-    <% if (related_questions) { %>
+    <% if (related_questions && related_questions.length > 0) { %>
       <h3 id="related-questions-title">Related Questions</h3>
       <% for (i = 0; i < related_questions.length; i++) { %>
         <li class="related-question"><a href="#questions/<%=related_questions[i]['id']%>"><%=related_questions[i]['tag_title']%>: <%=related_questions[i]['title']%></li>
