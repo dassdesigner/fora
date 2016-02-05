@@ -1,6 +1,6 @@
 <p class="question-title"><%=question.escape('title')%></p>
 <p class="question-body"><%=question.escape('body')%></p>
-<p class="author-name"><%=question.escape('question_author')%></p>
+<p class="question-author-name">Asked by <%=question.escape('question_author')%></p>
 <span class="question-footer"></span>
 <% if (Fora.CURRENT_USER_ID == question.escape('author_id')) { %>
   <a class="text-muted delete" href="javascript:;">Delete</a>
