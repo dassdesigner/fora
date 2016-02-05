@@ -43,7 +43,7 @@ class Api::TagsController < ApplicationController
   end
 
   def destroy
-    @tag = params
+    @tag
     if params["tag_type"] == "user"
       @tag = current_user.tags.destroy(params[:id])
     elsif params["tag_type"] == "question"
