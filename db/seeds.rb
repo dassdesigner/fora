@@ -15,7 +15,7 @@ u7 = User.create(name: 'Sir Lancelot', email: 'lancelot@fora.com', password: 'su
 u8 = User.create(name: 'Patrick', email: 'serobertstrong@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/yiXreqb.jpg")
 u9 = User.create(name: 'King Arthur', email: 'onetrue@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/EbnLwbH.jpg")
 
-q1 = Question.create(title: 'Fora, what are your College lifehacks??', author_id: 1)
+q1 = Question.create(title: 'If The Onion existed in the 19th century, what would the headlines be?', author_id: 1)
 q2 = Question.create(title: "What in your life makes you feel rich?", author_id: 2)
 q3 = Question.create(title: "What... is your favourite colour?", author_id: 6)
 q4 = Question.create(title: 'How do I use Backbone?', body: "Looking for a guide on the Dark Arts.", author_id: 5)
@@ -25,10 +25,10 @@ q7 = Question.create(title: 'What is your morning routine?', body: "I\'ve been l
 q8 = Question.create(title: 'What part of your daily routine do you look forward to the most?', body: "I believe in taking care of myself, and a balanced diet and a rigorous exercise routine. In the morning, if my face is a little puffy, I\'ll put on an ice pack while doing my stomach crunches. I can do a thousand now. After I remove the ice pack, I use a deep pore cleanser lotion. In the shower, I use a water activated gel cleanser. Then a honey almond body scrub. And on the face, an exfoliating gel scrub. Then apply an herb mint facial mask, which I leave on for 10 minutes while I prepare the rest of my routine. I always use an aftershave lotion with little or no alcohol, because alcohol dries your face out and makes you look older. Then moisturizer, then an anti-aging eye balm followed by a final moisturizing protective lotion. There is an idea of a Patrick Bateman, some kind of abstraction, but there is no real me. Only an entity, something illusory. And though I can hide my cold gaze, and you can shake my hand and feel flesh gripping yours and maybe you can even sense our life styles are probably comparable, I simply am not there.", author_id: 8)
 q9 = Question.create(title: 'What actor played his role perfectly?', author_id: 6)
 q10 = Question.create(title: 'What is a great movie that no one ever talks about?', author_id: 5, body: "I recently discovered Harry is in a movie where he plays a Centaur.")
-a1 = Answer.create(body: "Go to office hours. 95% of the time, I'm sitting there on Fora hoping someone will stop by. Every prof I know is in a similar state except the week before the test. We will absolutely help you out and you'll get more out of the class than just showing up to class.",
+a1 = Answer.create(body: "Napoleon comes out of retirement for one more European tour",
                            author_id: 2, question_id: 1)
 
-a2 = Answer.create(body: "Schedule more time than you think you'll need between classes. Things always come up, and you can always use the extra time to study.", author_id: 5, question_id: 1)
+a2 = Answer.create(body: "Darwin finds birds on Galapagos, concludes we used to be monkeys.", author_id: 5, question_id: 1)
 
 a3 = Answer.create(body: "Big packs of new socks. Maybe some cake that's not too smushed. A big 'ole hug from Harry!", author_id: 3, question_id: 2)
 a4 = Answer.create(body: "My hand. And Lannister gold! ", author_id: 4, question_id: 2)
@@ -47,7 +47,7 @@ a16 = Answer.create(body: "Graham Chapman", author_id: 9, question_id: 9)
 a17 = Answer.create(body: "Sneakers. One of my favorite movies and nobody I know has ever seen it.\n
 Awesome cast - Robert Redford, Sidney Poitier, Dan Aykroyd, River Phoenix, Mary McDonnell, David Strathairn, Ben Kingsley, Stephen Tobolowsky, James Earl Jones", author_id: 8, question_id: 10)
 t1 = Tag.create({title: "Life", description: "On the period of time between birth and death."})
-t2 = Tag.create({title: "College", description: "Those 4 + n years you'll never forget!"})
+t2 = Tag.create({title: "Humor", description: "Humans find this humorous."})
 t3 = Tag.create({title: "Meta", description: "If it doesn't go anywhere else, just add this topic. It'll be fine."})
 t4 = Tag.create({title: "Bridges", description: "A way to cross otherwise impassable gaps."})
 t5 = Tag.create({title: "Quests", description: "See: this project. According to wikipedia: 'n mythology and literature, a quest, a journey towards a goal, serves as a plot device and (frequently) as a symbol.'"})
@@ -85,6 +85,17 @@ u4.votes.create({voteable_id: 1,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 2,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 3,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
-u5.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
-u5.votes.create({voteable_id: 1,voteable_type: "Question", value: 1})
+
 u6.tags << Tag.all
+Answer.all.take(5).map{|a| a.votes.create!(user_id: 1, value: 1)}
+
+Question.all.sample(3).map {|q| q.votes.create!(user_id: 3, value: 1)}
+Question.all.take(5).map {|q| q.votes.create!(user_id: 4, value: 1)}
+Question.all.take(5).map {|q| q.votes.create!(user_id: 5, value: 1)}
+Question.all.map {|q| q.votes.create!(user_id: 7, value: 1)}
+Question.all.map {|q| q.votes.create!(user_id: 8, value: 1)}
+Question.all.map {|q| q.votes.create!(user_id: 9, value: 1)}
+Answer.all.take(5).map {|a| a.votes.create!(user_id: 5, value: 1)}
+Answer.all.take(5).map {|a| a.votes.create!(user_id: 7, value: 1)}
+Answer.all.map {|a| a.votes.create!(user_id: 8, value: 1)}
+Answer.all.map {|a| a.votes.create!(user_id: 9, value: 1)}

@@ -46,5 +46,5 @@ Fora.Views.TagsIndex = Backbone.CompositeView.extend({
     this.attachSubviews();
     return this;
   }
-  
+
 });

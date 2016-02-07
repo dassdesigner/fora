@@ -6,13 +6,13 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync change", this.render);
     this.listenTo(this.collection, "add", this.addTagSubview);
     this.listenTo(this.collection, "remove", this.removeTagSubview);
-    this.collection.each(function(question) {
-      that.addTagsSubview(tag);
-    });
+    var that = this;
+    // this.collection.each(function(question) {
+    //   that.addTagsSubview(tag);
+    //
+    // });
 
-    var tagForm = new Fora.Views.TagForm({
-      collection: this.collection
-    });
+
     // this.addSubview('.tag-form', tagForm);
     // var tag = new Fora.Models.Tag({});
     // var tagsIndex = new Fora.Views.TagsIndex({collection:  })
