@@ -7,8 +7,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.$sidebar = $('#sidebar');
     this.$rootEl = $('#main');
     this.$navbar.html(navbarView.render().$el);
-    // this.collection.sort();
-    //should take current user('s') topics?
+
 
   },
   routes: {

@@ -12,7 +12,6 @@ class Api::QuestionsController < ApplicationController
 
   def index
     if params[:query]
-      # @questions = [Question.first]
       @questions = (Question.topic_matches(params[:query]) + Question.title_matches(params[:query])).uniq.sort{|a,b| b.votes.count <=> a.votes.count}
 
     else
