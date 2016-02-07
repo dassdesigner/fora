@@ -3,8 +3,9 @@ json.date question.created_at.to_date.to_formatted_s(:short)
 json.vote votes_hash[question.id]
 json.num_upvotes question.votes.count
 if !question.tags.empty?
-  json.tag_id question.tags.first.id
-  json.tag_title question.tags.first.title
+  tag = question.tags.sample
+  json.tag_id tag.id
+  json.tag_title tag.title
 end
 if answer
   json.answer_id answer.id
