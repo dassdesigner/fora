@@ -1,12 +1,16 @@
-
-Bio
+<div id="answer-form-author-info">
+<img src="<%=Fora.CURRENT_USER_AVATAR%>" id="answer-form-avatar"> <span id="answer-form-username"><%=Fora.CURRENT_USER_NAME%></span>
+<a href="javascript:;" id="add-bio">Add Bio</a>
 <br>
 <input type="text" name="author_bio" id="author-bio" placeholder='Any background information/achievements relating to the question'>
-<br>
-Body
-<br>
-
-<textarea class='form-control' rows="3" name='body' placeholder='Write your answer'>
+</div>
+<textarea id="answer-form-body" class='form-control' rows="3" name='body' placeholder='Write your answer'>
 </textarea>
 <br>
 <button type="button" class="btn btn-default submit" aria-label="Left Align">Submit</button>
+<script>
+  $("#add-bio").click(function () {
+    $("#author-bio").toggle();
+
+})
+</script>
