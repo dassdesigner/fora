@@ -85,6 +85,16 @@
   // margin: 0px;
   // background-color: #DDD;
 }
+
+#main > div > div.row.question-show-footer > a:nth-child(3) > div {
+  margin-left: 5%;
+  margin-right: 5%;
+  // width: 30%;
+
+}
+#main > div > div.row.question-show-footer > a >div {
+  width: 30%;
+}
 .more-questions {
   border: 1px solid #DDD;
   height: 400px;
@@ -124,7 +134,7 @@
   background-color: #BBB;
 }
 #bs-example-navbar-collapse-1 {
-  display: block;
+  display: inline;
   white-space: nowrap;
 }
 .upvote > .btn-default.btn, .follow > .btn-default.btn, .write-answer > .btn-default.btn {
@@ -183,7 +193,8 @@
 #ask-question, #home{
   background-color: none;
   font-size: 18px;
-  margin-top: 5px;
+  position: relative;
+  top: 9px;
 }
 
 #top-stories-header {
@@ -421,10 +432,14 @@ ul {
   width: 100%;
 }
 
+#bs-example-navbar-collapse-1 {
+
+}
 .navbar {
   padding-left: 5.5%;
   padding-bottom: 1px;
   height: 48px;
+  margin-bottom: 10px;
   // overflow: hidden;
   // width: 80%;
 }
