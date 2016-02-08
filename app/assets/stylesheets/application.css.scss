@@ -29,7 +29,7 @@
 
 #author-bio {
   font-size: 14px;
-  width: 80%;
+  width: 99%;
   padding-left: 10px;
   display: none;
   margin-bottom: 10px;
@@ -41,6 +41,7 @@
 #answer-form-body {
   position: relative;
   margin-bottom: -10px;
+  height: 150px;
 }
 #loading{
     position:fixed;
@@ -484,7 +485,7 @@ ul {
 }
 
 .answer-form-container > .form-control {
-  width: 80%;
+  width: 99%;
 }
 .answer-form-container > label{
   font-weight: normal, !important;
