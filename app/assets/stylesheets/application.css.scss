@@ -547,6 +547,14 @@ ul {
   position: fixed;
 }
 
+#tag-questions {
+  position: relative;
+  top: -9px;
+}
+
+#main > div > div > div.action-bar {
+  padding-bottom: 18px;
+}
 #sidebar > * {
   // width: 200px;
   // float: right;

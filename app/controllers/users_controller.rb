@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.tags << Tag.all
     if @user.save
       login!(@user)
       redirect_to root_url

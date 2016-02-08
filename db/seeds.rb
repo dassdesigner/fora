@@ -35,8 +35,8 @@ a4 = Answer.create(author_bio: "Son of Tywin", body: "My hand. And Lannister gol
 a5 = Answer.create(author_bio: "Expert in Wizardry", body: 'My timeturner! And Ron :^)', author_id: 5, question_id: 2)
 a6 = Answer.create(author_bio: "Enjoyer of Colors", body: 'Blue.', author_id: 7, question_id: 3)
 a7 = Answer.create(body: "Blue. No, yel...", author_id: 8, question_id: 3)
-a8 = Answer.create(author_bio: "Amateur Color Enthusiast", body: "Huh? I... I don't know that. AGGGghhhh", author_id: 6, question_id: 5)
-a9 = Answer.create(author_bio: "I keep bridges", body: "What do you mean? An African or European swallow?", author_id: 9, question_id: 5)
+a8 = Answer.create(author_bio: "I keep bridges", body: "Huh? I... I don't know that. AGGGghhhh", author_id: 6, question_id: 5)
+a9 = Answer.create(author_bio: "I cross bridges", body: "What do you mean? An African or European swallow?", author_id: 9, question_id: 5)
 a10 = Answer.create(author_bio: "Professor", body: "Coffee and Reddit.", author_id: 2, question_id: 7)
 a11 = Answer.create(author_bio: "Student", body: "After five alarms go off every 15 minutes, finally wake up. Check Reddit for news. Check local news. Get breakfast. Get ready for uni. Go to uni. Realise I left my lab coat in my room half way to uni. Drive back home and get jacket. Go back to uni.", question_id: 7, author_id: 5)
 a12 = Answer.create(author_bio: "Conspiracy Theorist", body: "EDDARD STARK AND ASHARA DAYNE", question_id: 6, author_id: 8)
@@ -85,8 +85,14 @@ u4.votes.create({voteable_id: 1,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 2,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 3,voteable_type: "Answer", value: 1})
 u4.votes.create({voteable_id: 4,voteable_type: "Answer", value: 1})
-
+u1.tags << Tag.all
+u2.tags << Tag.all.take(5)
+u3.tags << Tag.all.take(5)
+u4.tags << Tag.all.sample(5)
+u5.tags << Tag.all.sample(5)
 u6.tags << Tag.all
+u7.tags << Tag.all.sample(5)
+u8.tags << Tag.all.sample(5)
 Answer.all.take(5).map{|a| a.votes.create!(user_id: 1, value: 1)}
 
 Question.all.sample(3).map {|q| q.votes.create!(user_id: 3, value: 1)}
