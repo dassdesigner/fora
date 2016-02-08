@@ -456,10 +456,15 @@ ul {
   padding-top: 10px;
 }
 
-#sidebar-title, .content-container > li, .action-bar {
+#sidebar-title, .action-bar {
   padding-top: 10px;
   border-bottom: 1px solid #BBB;
   // padding-bottom: 10px;
+}
+
+.answers-index-item {
+  padding-top: 20px;
+  border-bottom: 1px solid #BBB;
 }
 
 .action-bar {
@@ -472,7 +477,7 @@ ul {
 }
 
 .answer-footer {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .btn-sm {
