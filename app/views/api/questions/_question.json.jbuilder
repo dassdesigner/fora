@@ -17,6 +17,7 @@ if answer
   # json.num_upvotes answer.votes.size
   json.answer_author answer.author.name
   json.state "Answer Written"
+  json.author_bio answer.author_bio
 else
   json.state "Question Asked"
 end

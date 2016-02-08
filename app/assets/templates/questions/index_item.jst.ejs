@@ -11,7 +11,11 @@
 <% if (question.escape('answer_id')) { %>
   <p class="author-name">
   <span><img class="avatar" src="<%=question.escape('answer_author_avatar')%>"></span>
-  <t><%=question.escape('answer_author')%></p>
+  <t><%=question.escape('answer_author')%>
+  <% if (question.escape('author_bio')) { %>
+  <span class="answer-author-bio">, <%=question.escape('author_bio')%><span>
+  <% } %>
+  </p>
   <div class="answer-body"><%=question.escape('answer_body')%></div>
   <br>
   <p class="date">Written <%=question.escape('answer_date')%></p>

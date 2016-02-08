@@ -1,6 +1,9 @@
 <p class="author-name">
 <span><img class="avatar" src="<%=answer.escape('answer_author_avatar')%>"></span>
 <t><%=answer.escape('answer_author')%>
+<% if (answer.escape('author_bio')) { %>
+<span class="answer-author-bio">, <%=answer.escape('author_bio')%><span>
+<% } %>
 </p>
 
 <div class="answer-body"><%=answer.escape('body')%></div>
@@ -9,8 +12,6 @@
 <span class="answer-footer"></span>
 <span>
 <% if (Fora.CURRENT_USER_ID == answer.escape('author_id')) { %>
-
-
 
 <span class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
