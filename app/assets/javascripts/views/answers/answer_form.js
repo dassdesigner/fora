@@ -3,7 +3,7 @@ Fora.Views.AnswerForm = Backbone.View.extend({
   tagName: 'form',
   className: 'answer-form-container',
   events: {
-    "click button" : "submit"
+    "click button" : "submit",
   },
 
   initialize: function () {
