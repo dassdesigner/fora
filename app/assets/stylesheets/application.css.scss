@@ -26,6 +26,13 @@
   left: -4px;
   font-weight: normal;
 }
+
+#author-bio {
+  font-size: 14px;
+  width: 80%;
+  padding-left: 10px;
+
+}
 #loading{
     position:fixed;
     z-index:999;
@@ -424,6 +431,10 @@ ul {
   // padding: 10px;
   word-wrap: break-word;
   margin-top: 20px;
+}
+
+.answer-form-container > label{
+  font-weight: normal, !important;
 }
 
 .form-control {
