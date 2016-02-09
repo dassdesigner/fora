@@ -1,5 +1,5 @@
 <p id="sidebar-title">Feeds<a class="edit-tag" href="javascript:;">Edit</a>
-                           <a class="done-edit-tag">Done Editing</a></p>
+                           <a class="done-edit-tag" href="javascript:;">Done</a></p>
 
 <a href="#" id="top-stories">Top Stories</a>
 <div class="tags-container user-feed"></div>
@@ -7,8 +7,8 @@
 
 <script>
   $('.edit-tag').click(function() {
-    $('.delete-tag').show();
-    $('.done-edit-tag').show();
+    $('.delete-tag').fadeIn();
+    $('.done-edit-tag').fadeIn();
     $('.edit-tag').hide();
     $('.question-tag').children().css("display", "inline")
   });
@@ -16,7 +16,7 @@
   $('.done-edit-tag').click(function () {
     $('.delete-tag').hide();
     $('.done-edit-tag').hide();
-    $('.edit-tag').show();
+    $('.edit-tag').fadeIn();
     $('.question-tag').children().css("display", "block")
   });
 </script>
