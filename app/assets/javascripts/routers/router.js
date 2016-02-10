@@ -92,7 +92,7 @@ Fora.Routers.Router = Backbone.Router.extend({
 
     var non_user_tags = new Fora.Collections.Tags();
     non_user_tags.fetch({data: {more_tags: true}});
-    
+
     var view = new Fora.Views.QuestionsIndex({
       collection: this.collection,
     });
@@ -126,8 +126,10 @@ Fora.Routers.Router = Backbone.Router.extend({
 
   _swapRightSidebarView: function (view) {
     this._rightSidebarView && this._rightSidebarView.remove();
-    this._sidebarView = view;
+    this._rightSidebarView = view;
     this.$rightSidebar.html(view.render().$el);
   }
+
+
 
 });

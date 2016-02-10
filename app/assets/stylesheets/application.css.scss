@@ -51,12 +51,9 @@
   display: none;
 }
 .related-questions {
-  position: absolute;
-  right: -310px;
-  display: inline;
-  width: 308px;
-  top: -10px;
-  line-height: 0.95;
+  position: relative;
+  left: -15px;
+  // padding-right: 5px;
 }
 .related-question > a {
   font-size: 90%;
@@ -68,6 +65,9 @@
 }
 #related-questions-title {
   border-bottom: 1px solid #aaa;
+  top: -5px;
+  position: relative;
+  width: 105%;
 }
 #more-questions-title {
   position: relative;
