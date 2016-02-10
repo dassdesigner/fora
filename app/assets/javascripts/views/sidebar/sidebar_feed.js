@@ -33,8 +33,8 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
-    $("[href='#tags/" + this.current_tag_id + "']").parent().css("background-color", "#CCC");
-    $(".question-index-item-tag").parent().css("background-color", "inherit");
+    $(".question-tag").find("[href='#tags/" + this.current_tag_id + "']").parent().css("background-color", "#CCC");
+    // $(".question-index-item-tag").parent().css("background-color", "inherit");
     return this;
 
   }
