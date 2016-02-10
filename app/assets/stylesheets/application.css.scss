@@ -1,4 +1,4 @@
-  /*
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -11,8 +11,6 @@
  *= require_self
  *= require_tree .
  */
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -20,13 +18,11 @@
 // .btn .btn-default .upvote{
 //   background-color: #AAA
 // }
-
 .answer-author-bio {
   position: relative;
   left: -4px;
   font-weight: normal;
 }
-
 #author-bio {
   font-size: 14px;
   width: 99%;
@@ -34,29 +30,26 @@
   display: none;
   margin-bottom: 10px;
   margin-top: 15px;
+
   // padding-bottom: 10px;
-
 }
-
 #answer-form-body {
   position: relative;
   margin-bottom: -10px;
   height: 150px;
 }
-#loading{
-    position:fixed;
-    z-index:999;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    background:rgba(0,0,0,0.1);
+#loading {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.1);
 }
-
 .tag-info {
   display: none;
 }
-
 .related-questions {
   position: absolute;
   right: -300px;
@@ -65,64 +58,59 @@
   top: -10px;
   line-height: 0.95;
 }
-
 .related-question > a {
   font-size: 80%;
-  top: 0px;
+  top: 0;
   color: #2b6dad;
 }
-
 .related-question {
   margin-top: 9px;
 }
 #related-questions-title {
-  border-bottom: 1px solid #AAA;
+  border-bottom: 1px solid #aaa;
 }
 #more-questions-title {
-  position:relative;
+  position: relative;
   top: 6px;
-  padding: 0px;
+  padding: 0;
   font-weight: bold;
+
   // margin: 0px;
   // background-color: #DDD;
 }
-
 #main > div > div.row.question-show-footer > a:nth-child(3) > div {
   margin-left: 5%;
   margin-right: 5%;
-  // width: 30%;
 
+  // width: 30%;
 }
 #main > div > div.row.question-show-footer > a >div {
   width: 30%;
 }
 .more-questions {
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   height: 400px;
   text-overflow: ellipsis;
   overflow: hidden;
+
   // z-index: 100;
   // background-color: #DDD;
   // white-space: nowrap;
 }
-
 .more-questions:hover {
-  background-color: #EEE;
+  background-color: #eee;
   transition: all 1s ease;
 }
-
 .more-questions-body {
   font-size: 14px;
-  padding: 0px;
+  padding: 0;
 }
 .more-questions-title {
   font-weight: bold;
 }
-
 .more-questions-header {
   margin-top: 10px;
 }
-
 .more-questions-header {
   font-size: 14px;
   color: #999;
@@ -130,54 +118,71 @@
 .question-tag:hover .tag-info {
   display: block;
 }
-
 .tags-container > li:hover {
-  background-color: #BBB;
+  background-color: #bbb;
+}
+.more-tags-index-item {
+  // font-size: 80%;
+  left: -2px;
+  position: relative;
+  color: #2b6dad;
+}
+
+ul.more-tags-container {
+  list-style-type: square;
+  position: relative;
+  left: 6px;
+  background-color: white !important;
+}
+
+ul.more-tags-container > li {
+  color: #2b6dad;
 }
 #bs-example-navbar-collapse-1 {
   display: inline;
   white-space: nowrap;
 }
-.upvote > .btn-default.btn, .follow > .btn-default.btn, .write-answer > .btn-default.btn {
+.upvote > .btn-default.btn,
+.follow > .btn-default.btn,
+.write-answer > .btn-default.btn {
   background-color: #f1f8fb;
-  border: 1px solid #CCC;
-  color: #27667A;
+  border: 1px solid #ccc;
+  color: #27667a;
 }
-
-.upvoted > .btn-default.btn, .followed > .btn-default.btn  {
-  background-color: #EEE;
-  border: 1px solid #CCC;
+.upvoted > .btn-default.btn,
+.followed > .btn-default.btn {
+  background-color: #eee;
+  border: 1px solid #ccc;
   color: #999;
 }
-.follow-count, .vote-count {
+.follow-count,
+.vote-count {
   font-weight: bold;
 }
-
-
 .navbar {
   background-image: none;
   z-index: 5;
+
   // overflow: hidden;
   // z-index: -1;
   // overflow: auto;
   // background-color: red;
 }
-
 .modal-dialog {
+
   // z-index: 100000;
 }
-
 .modal.fade {
   z-index: 6;
 }
 .modal-backdrop {
-  z-index: 4
+  z-index: 4;
 }
-
 .modal-content {
   top: 160px;
   z-index: 500, !important;
 }
+
 // .ask-question {
 //   // background-color: blue !important;
 //   // z-index: -1;
@@ -190,63 +195,65 @@
 //   top: 20px;
 //   // margin-top: 10px
 // }
-
-#ask-question, #home{
+#ask-question,
+#home {
   background-color: none;
   font-size: 18px;
   position: relative;
   top: 9px;
 }
-
 #top-stories-header {
   margin-top: 10px;
   margin-left: 15px;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
   left: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   padding-bottom: 1px;
 }
 .question-show > * {
   padding-left: 15px;
+
   // margin-left: 18px;
   // position: relative;
   // top: 30px;
 }
 #home {
+
   // margin-top: 10px;
 }
 .btn-group:hover > * {
-  border: 1px solid #AAA !important;
+  border: 1px solid #aaa !important;
 }
 #logged-out {
   background-image: url("http://i.imgur.com/UmCOsuC.jpg");
   background-repeat: no-repeat;
-  background-position:50% 10%;
+  background-position: 50% 10%;
+
   // background-color: #BBB;
 }
 .navnav {
+
   // padding: 0 200px;
   // margin-top: 8px;
 }
-
 .content-container {
   padding-left: 0;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .navbar-right {
   position: relative;
   right: 22%;
+
   // padding-right: 22.5%;
 }
 body {
-  background-color: #FFF;
+  background-color: #fff;
+
   // background-image: url("half_eh.jpg");
 }
-
 a {
   color: #555;
 }
-
 .avatar {
   border-radius: 50%;
 }
@@ -256,25 +263,23 @@ a {
   display: inline;
   right: 111px;
   font-size: 14px;
-  color: #AAA;
+  color: #aaa;
 }
 #answer-form-avatar {
   border-radius: 50%;
 }
-
 #answer-form-author-info {
   margin-bottom: 10px;
 }
-
 #answer-form-username {
   position: relative;
   top: -10px;
 }
-html *
-{
+html * {
   font-family: Helvetica;
   font-size: 18px;
 }
+
 // .nav  bar {
 // }
 ul {
@@ -283,17 +288,20 @@ ul {
 }
 
 // tag stuff
-
-.edit-tag, .done-edit-tag {
-  float:right;
+.edit-tag,
+.done-edit-tag {
+  float: right;
   font-weight: normal;
 }
 #bs-example-navbar-collapse-1 > ul {
+
   // position: fixed;
-  float:right;
+  float: right;
+
   // top: 5px;
   // left: 400px;
   margin-right: -0.5%;
+
   // overflow: hidden;
 }
 .done-edit-tag {
@@ -302,137 +310,128 @@ ul {
 .question-tag > a {
   display: block;
 }
-.question-tag    {
+.question-tag {
+
   // display: block;
   padding-left: 0;
   padding: 5px;
-  border: none;
   border-radius: 10px;
   width: 100%;
 }
-
 .delete-tag {
   display: none;
-  position:relative;
-  float:right;
+  position: relative;
+  float: right;
   top: 4px;
   padding-right: 5px;
 }
-
 .questions-index-item {
   margin-left: 17px;
 }
-
-
-.question-footer, .answer-footer {
+.question-footer,
+.answer-footer {
   display: inline-block;
 }
-
 .question-footer {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
-
-
-
 #search {
-  background-color: #EEE;
+  background-color: #eee;
   width: 300px;
   overflow: hidden;
-
 }
-
 .user-feed {
   width: 100%;
 }
-.question-topics > li, .tags-container > li, .user-feed > li  {
-  background-color: #EEE;
+.question-topics > li,
+.tags-container > li,
+.user-feed > li {
+  background-color: #eee;
   border-radius: 10px;
   margin: 10px;
   list-style-type: none;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
+
   // width: 100%;
 }
-
-
-
 .user-feed > li {
   width: 95%;
 }
-.new-session, .new-user {
+.new-session,
+.new-user {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   // background-color: #DDD;
   background-color: rgba(221, 221, 221, 0.9);
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 20px;
-  padding: 20px;
-  padding-bottom: 0px;
+  padding: 20px 20px 0;
   // opacity: 0.4;
 }
-
 #create-account {
   padding-top: 10px;
 }
-
 .new-user {
   padding-bottom: 20px;
 }
-.new-session > h1, .new-user > h1, .navbar-brand, #fora {
+.new-session > h1,
+.new-user > h1,
+.navbar-brand,
+#fora {
   text-align: center;
-  color: #ED5151 !important;
+  color: #ed5151 !important;
   font-weight: 700;
   font-style: Verdana;
   font-size: 25px;
 }
-.question-header, .date {
+.question-header,
+.date {
   color: #888;
   font-weight: bold;
 }
-
-.question-title, .tag-title, .question-show-title {
+.question-title,
+.tag-title,
+.question-show-title {
   font-weight: bold;
   font-size: 25px;
   color: black;
+
   // padding-left: -12px;
 }
-
 .question-show-title {
-  border-bottom: 1px solid #AAA;
+  border-bottom: 1px solid #aaa;
   position: relative;
   top: -7px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   margin-left: 13px;
-  padding-left: 0px;
+  padding-left: 0;
   font-size: normal;
-
 }
 .questions-index-item-tag {
-  background-color: #FFF, !important
+  background-color: #FFF, !important;
 }
-
 #navbar-avatar {
   border-radius: 50%;
   height: 32px;
   width: 32px;
 }
-
 #current-user-dropdown {
   padding-top: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   background-color: inherit;
 }
 .content-container {
+
   // padding-left: 0px;
   // float: left;
   // position: relative;
 }
-
 #title {
   width: 100%;
 }
-
 #bs-example-navbar-collapse-1 {
 
 }
@@ -441,28 +440,25 @@ ul {
   padding-bottom: 1px;
   height: 48px;
   margin-bottom: 10px;
+
   // overflow: hidden;
   // width: 80%;
 }
-
 .question-author-name {
-  color: #AAA;
+  color: #aaa;
   font-size: 14px;
   position: relative;
   top: -4px;
-
 }
 .author-name {
   font-weight: bold;
   font-size: 20px;
 }
-
 .tag-form {
   padding-left: 2%;
   padding-bottom: 10px;
   width: 100%;
 }
-
 .glyphicon-pencil {
   position: relative;
   top: 4px;
@@ -472,88 +468,87 @@ ul {
   display: none;
   position: relative;
   left: 15px;
+
   // width: 1029px;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 2px;
-  background-color: #EEE;
+  background-color: #eee;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-right: 15px;
+
   // padding: 10px;
   word-wrap: break-word;
   margin-top: 20px;
 }
-
 .answer-form-container > .form-control {
   width: 99%;
 }
-.answer-form-container > label{
+.answer-form-container > label {
   font-weight: normal, !important;
 }
-
 .answer-form-container {
   padding-bottom: 5px;
 }
-
 .form-control {
+
   // width: 950px;
   width: 100%;
-  border: 0px;
-  border: 1px solid #AAA;
+  border: 0;
+  border: 1px solid #aaa;
 }
-
 #main > div > ul > li > span.question-footer {
   margin-bottom: 20px;
 }
-#sidebar-title, #top-stories {
+#sidebar-title,
+#top-stories {
   font-weight: bold;
   margin-left: 5%;
-
 }
-
 #top-stories {
   padding-top: 10px;
 }
-
-#sidebar-title, .action-bar, .questions-index-item {
+#right-sidebar-title,
+#sidebar-title,
+.action-bar,
+.questions-index-item {
   padding-top: 10px;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
+
   // padding-bottom: 10px;
 }
 
+
 .answers-index-item {
   padding-top: 20px;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
 }
-
 .action-bar {
   padding-bottom: 28px;
 }
 .answer-count {
-  padding-top: 0px;
+  padding-top: 0;
   margin-bottom: 0;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
 }
-
 .answer-footer {
   padding-bottom: 20px;
 }
-
 .btn-sm {
   font-size: 16px;
 }
-
-.question-dropdown, .write-answer {
+.question-dropdown,
+.write-answer {
   margin-left: -15px;
 }
-
 .write-answer > .btn {
   padding-right: 11px;
 }
-.edit:hover, .delete:hover {
+.edit:hover,
+.delete:hover {
   cursor: pointer;
   text-decoration: none;
-  background-color: #AAA;
+  background-color: #aaa;
 }
 #sidebar {
   padding-left: 5%;
@@ -562,90 +557,83 @@ ul {
   width: 20%;
   position: fixed;
 }
-
 #tag-questions {
   position: relative;
   top: -9px;
 }
-
 #main > div > div > div.action-bar {
   padding-bottom: 18px;
 }
 #sidebar > * {
+
   // width: 200px;
   // float: right;
 }
-
 .question-show-footer {
   height: 500px;
   margin-left: 0;
-  margin-right: 0px;
-
+  margin-right: 0;
 }
 .center-block {
-  display:block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 #main {
+
   // overflow: auto;
   // padding-top: 1px;
   width: 60%;
   margin-left: 20%;
   bottom: 30px;
+
   // background-color: #EEE;
   position: relative;
 
   // border: 1px solid #DDD;
 }
-
-.feed, .question-show {
+.feed,
+.question-show {
   position: relative;
   top: 29px;
+
   // background-color: #FFFFF5;
-  padding-top: 0px;
-  right: 0%;
+  padding-top: 0;
+  right: 0;
+
   // border: 1px solid #DDD;
   // border-radius: 5px;
   // padding-right: 14px;
 }
-
 .question-show {
-  top: 36px
+  top: 36px;
 }
-
-
-
-#email, #password, #name {
+#email,
+#password,
+#name {
   width: 320px;
 }
-
 .tag-show {
   padding-left: 12px;
   position: relative;
   top: -9px;
 }
-
-
 .about {
   padding: 25px;
 }
-
 #about {
   float: right;
 }
 #fora {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
 }
 #about {
   height: 30px;
+
   // top: 5px;
   // position: relative;
   // left: 385px;
-
 }
-
 h3 {
   font-weight: bold;
 }
@@ -654,9 +642,9 @@ h3 {
 }
 #footer {
   width: 100%;
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #ddd;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   height: 35px;
-  background-color: #EEE;
+  background-color: #eee;
 }
