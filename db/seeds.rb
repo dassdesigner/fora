@@ -59,6 +59,7 @@ t10 = Tag.create({title: "Wizardry", description: "Something to do with magic."}
 t11 = Tag.create({title: "Grails", description: "A shiny cup of sorts. That plenty of people/beings seem to want."})
 t12 = Tag.create({title: "Swallows", description: "A type of bird. Comes in African and European varieties."})
 t13 = Tag.create(title: "Films", description: "Pictures that move!")
+t14 = Tag.create(title: "Nothing", description: "Nothing goes here!")
 q1.tags << t1 << t2 << t3
 q2.tags << t1 << t3
 q3.tags << t1 << t3 << t4 << t5 << t6 << t7 << t8
@@ -90,7 +91,7 @@ u2.tags << Tag.all.take(5)
 u3.tags << Tag.all.take(5)
 u4.tags << Tag.all.sample(5)
 u5.tags << Tag.all.sample(5)
-u6.tags << Tag.all
+u6.tags << Tag.take(9)
 u7.tags << Tag.all.sample(5)
 u8.tags << Tag.all.sample(5)
 Answer.all.take(5).map{|a| a.votes.create!(user_id: 1, value: 1)}
