@@ -6,6 +6,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.$navbar = $('.navbar');
     this.$sidebar = $('#sidebar');
     this.$rootEl = $('#main');
+    this.$rightSidebar = $('#right-sidebar');
     this.$navbar.html(navbarView.render().$el);
 
 
@@ -24,7 +25,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     this.collection.fetch();
     var user_tags = new Fora.Collections.Tags();
     user_tags.fetch();
-
+    var non_user_tags = new Fora.Collections.Tags();
     var view = new Fora.Views.QuestionsIndex({
       collection: this.collection,
     });
@@ -33,8 +34,13 @@ Fora.Routers.Router = Backbone.Router.extend({
       collection: user_tags,
     });
 
+    var rightSideView = new Fora.Views.RightSidebarFeed({
+      collection: non_user_tags,
+    });
+
     this._swapSidebarView(sideView);
     this._swapView(view);
+    this._swapRightSidebarView(rightSideView);
   },
 
   questionShow: function(id) {
@@ -101,6 +107,12 @@ Fora.Routers.Router = Backbone.Router.extend({
     this._sidebarView && this._sidebarView.remove();
     this._sidebarView = view;
     this.$sidebar.html(view.render().$el);
+  },
+
+  _swapRightSidebarView: function (view) {
+    this._rightSidebarView && this._rightSidebarView.remove();
+    this._sidebarView = view;
+    this.$rightSidebar.html(view.render().$el);
   }
 
 });

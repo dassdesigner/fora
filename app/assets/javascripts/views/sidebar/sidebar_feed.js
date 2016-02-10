@@ -7,17 +7,6 @@ Fora.Views.SidebarFeed = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "add", this.addTagSubview);
     this.listenTo(this.collection, "remove", this.removeTagSubview);
     var that = this;
-    // this.collection.each(function(question) {
-    //   that.addTagsSubview(tag);
-    //
-    // });
-
-
-    // this.addSubview('.tag-form', tagForm);
-    // var tag = new Fora.Models.Tag({});
-    // var tagsIndex = new Fora.Views.TagsIndex({collection:  })
-    // var tagForm = new Fora.Views.TagForm({model: tag, collection: });
-    // this.addSubview('.tags-index', answersIndex);
 
   },
 
