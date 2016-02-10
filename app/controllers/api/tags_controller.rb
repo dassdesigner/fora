@@ -18,8 +18,12 @@ class Api::TagsController < ApplicationController
   end
 
   def index
-    @tags = current_user.tags
-    @follows_hash = current_user.follows_hash
+    if params[:more_tags]
+      @tags = Tag.all - current_user.tags
+    else
+      @tags = current_user.tags
+      # @follows_hash = current_user.follows_hash
+    end
   end
 
   def show

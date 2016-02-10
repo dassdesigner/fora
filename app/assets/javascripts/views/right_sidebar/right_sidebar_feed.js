@@ -8,9 +8,8 @@ Fora.Views.RightSidebarFeed = Backbone.CompositeView.extend({
 
 
   addTagSubview: function(tag) {
-    var subView = new Fora.Views.TagsIndexItem({
+    var subView = new Fora.Views.MoreTagsIndexItem({
       model: tag,
-      tagType: "user"
     });
     this.addSubview(".more-tags-container", subView);
   },
