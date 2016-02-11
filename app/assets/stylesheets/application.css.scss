@@ -196,12 +196,22 @@ ul.more-tags-container > li {
 //   top: 20px;
 //   // margin-top: 10px
 // }
-#ask-question,
-#home {
-  background-color: none;
-  font-size: 18px;
+
+
+#ask-question, #answer-question {
   position: relative;
-  top: 9px;
+  top: -10px;
+}
+
+#answer-question > span, #ask-question > span {
+  top: 5px;
+  position: relative;
+}
+
+
+.fa {
+  padding-right: 6px;
+  font-size: 30px;
 }
 #top-stories-header {
   margin-top: 10px;

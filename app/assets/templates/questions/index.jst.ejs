@@ -1,5 +1,7 @@
 <% if (window.location.hash == "") { %>
 <p id="top-stories-header">Top Stories For You</p>
+<% } else if (window.location.hash == "#answer") { %>
+<p id="top-stories-header">Questions for You</p>
 <% } else { %>
 <p id="top-stories-header">Search Results</p>
 <% } %>
