@@ -14,6 +14,13 @@ in my spare time.
 - View questions by topic
 - Follow and create topics
 
+##Additional Features
+- Explore! Look at topics that you aren't following yet
+- Related Questions- See questions that share the current question's topics
+- More Questions- See more questions from your feed when looking at a question
+- Bio- Add background information to your questions to show your expertise in the area
+- Answer- View questions that don't have answers yet
+
 ##Future features
 - Image uploading
 - User profiles

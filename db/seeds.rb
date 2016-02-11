@@ -48,8 +48,9 @@ a13 = Answer.create(author_bio: "Conpiracy Theorist", body: "EDDARD STARK AND WY
 a14 = Answer.create(author_bio: "Son of Tywin", body: "Getting home and seeing my girl after a hard day's work. My girl is my cat.", author_id: 4, question_id: 8)
 a15 = Answer.create(author_bio: "King", body: "John Cleese", author_id: 9, question_id: 9)
 a16 = Answer.create(author_bio: "King", body: "Graham Chapman", author_id: 9, question_id: 9)
-a17 = Answer.create(author_bio: "Film Enthusiast", body: "Sneakers. One of my favorite movies and nobody I know has ever seen it.\n
-Awesome cast - Robert Redford, Sidney Poitier, Dan Aykroyd, River Phoenix, Mary McDonnell, David Strathairn, Ben Kingsley, Stephen Tobolowsky, James Earl Jones", author_id: 8, question_id: 10)
+a17 = Answer.create(author_bio: "Film Enthusiast", body: "Sneakers. One of my favorite movies and nobody I know has ever seen it.\n Awesome cast - Robert Redford, Sidney Poitier, Dan Aykroyd, River Phoenix, Mary McDonnell, David Strathairn, Ben Kingsley, Stephen Tobolowsky, James Earl Jones", author_id: 8, question_id: 10)
+a18 = Answer.create(author_bio: "UC Berkeley Student", body: "I like Cookies and Cream too! It was my favorite flavor as a child. Nowadays, with hipsters moving into my neighborhood, I get to try flavors like Rose Vanilla and Earl Grey, flavors I had no idea existed as a child. That being said, my favorite ice cream flavor is not a constant variable. It is always changing, depending on the season, my mood, and the creativity of places where I get ice cream. Did you know when I was little, I didn't like ice cream at all. And it took me a long time to like chocolate ice cream. I thought chocolate ice cream would be too sweet, but it's actually really nice and LESS SWEET than the other flavors. What a great question! I love answering questions.
+")
 t1 = Tag.create({title: "Life", description: "On the period of time between birth and death."})
 t2 = Tag.create({title: "Humor", description: "Humans find this humorous."})
 t3 = Tag.create({title: "Meta", description: "If it doesn't go anywhere else, just add this topic. It'll be fine."})
