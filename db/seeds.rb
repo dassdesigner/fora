@@ -25,6 +25,10 @@ q7 = Question.create(title: 'What is your morning routine?', body: "I\'ve been l
 q8 = Question.create(title: 'What part of your daily routine do you look forward to the most?', body: "I believe in taking care of myself, and a balanced diet and a rigorous exercise routine. In the morning, if my face is a little puffy, I\'ll put on an ice pack while doing my stomach crunches. I can do a thousand now. After I remove the ice pack, I use a deep pore cleanser lotion. In the shower, I use a water activated gel cleanser. Then a honey almond body scrub. And on the face, an exfoliating gel scrub. Then apply an herb mint facial mask, which I leave on for 10 minutes while I prepare the rest of my routine. I always use an aftershave lotion with little or no alcohol, because alcohol dries your face out and makes you look older. Then moisturizer, then an anti-aging eye balm followed by a final moisturizing protective lotion. There is an idea of a Patrick Bateman, some kind of abstraction, but there is no real me. Only an entity, something illusory. And though I can hide my cold gaze, and you can shake my hand and feel flesh gripping yours and maybe you can even sense our life styles are probably comparable, I simply am not there.", author_id: 8)
 q9 = Question.create(title: 'What actor played his role perfectly?', author_id: 6)
 q10 = Question.create(title: 'What is a great movie that no one ever talks about?', author_id: 5, body: "I recently discovered Harry is in a movie where he plays a Centaur.")
+q11 = Question.create(title: 'What are some good vacation spots in California?', author_id: 5)
+q12 = Question.create(title: 'How many monitors do you use when programming?', author_id: 2)
+q13 = Question.create(title: 'What are the differences between the main Javascript frameworks?', author_id: 2)
+q14 = Question.create(title: 'What is your favorite flavor of Ice Cream?', author_id: 6, body: 'I really like Cookies and Cream.')
 a1 = Answer.create(body: "Napoleon comes out of retirement for one more European tour",
                            author_id: 2, question_id: 1)
 
@@ -60,6 +64,7 @@ t11 = Tag.create({title: "Grails", description: "A shiny cup of sorts. That plen
 t12 = Tag.create({title: "Swallows", description: "A type of bird. Comes in African and European varieties."})
 t13 = Tag.create(title: "Films", description: "Pictures that move!")
 t14 = Tag.create(title: "Nothing", description: "Nothing goes here!")
+t15 = Tag.create(title: "Programming", description: "Computer programming is the craft of writing useful, maintainable, and extensible source code which can be interpreted or compiled by a computing system to perform a meaningful task.")
 q1.tags << t1 << t2 << t3
 q2.tags << t1 << t3
 q3.tags << t1 << t3 << t4 << t5 << t6 << t7 << t8
@@ -67,6 +72,9 @@ q4.tags << t9 << t10
 q5.tags << t5 << t6 << t7 << t11 << t12
 q8.tags << t1 << t9 << t13
 q9.tags << t12 << t1 << t13
+q12.tags << t15
+q13.tags << t15
+q14.tags << t1
 u1.votes.create({voteable_id:1 ,voteable_type: "Question", value: 1})
 u1.votes.create({voteable_id:2 ,voteable_type: "Question", value: 1})
 u1.votes.create({voteable_id:3, voteable_type: "Question", value: 1})
