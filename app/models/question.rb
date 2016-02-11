@@ -19,9 +19,9 @@ class Question < ActiveRecord::Base
   end
 
   def self.more_questions(question)
-    more_questions = Question.all.sample(3)
+    more_questions = Question.select {|q| q.answers.count > 0}.sample(3)
     while more_questions.include?(question)
-      more_questions = Question.all.sample(3)
+      more_questions = Question.select {|q| q.answers.count > 0}.sample(3)
     end
 
     more_questions
