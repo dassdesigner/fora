@@ -59,14 +59,12 @@
           <label for='title'>Title</label>
           <br>
 
-          <input type='text' name='title' id='title' value='<%= question.escape(' title ') %>'>
+          <input type='text' name='title' id='title'>
           <br>
           <label for='body'>Body</label>
           <br>
 
-          <textarea class='form-control' rows="3" cols="1" name='body' id='body' placeholder="Write your question">
-            <%= question.escape('body') %>
-          </textarea>
+          <textarea class='form-control' rows="1" cols="1" name='body' id='body' placeholder="Write your question"></textarea>
           <br>
           <button type="button" class="btn btn-default submit" data-dismiss="modal">Submit</button>
         </form>

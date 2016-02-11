@@ -33,7 +33,9 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
     this.model.save({}, {success: function () {
       that.collection.add(that.model, {merge: true});
       Backbone.history.navigate("#questions/" + that.model.get('id'), {trigger: true});
+      that.model = new Fora.Models.Question();
       }
     });
+
   }
 });

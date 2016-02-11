@@ -271,7 +271,7 @@ a {
   position: relative;
   top: 10px;
   display: inline;
-  right: 111px;
+  margin-left: -111px;
   font-size: 14px;
   color: #aaa;
 }
@@ -565,7 +565,7 @@ ul {
   padding-right: 11px;
 }
 #main > div > span.write-answer > button {
-  padding-bottom: 4px;
+  padding-bottom: 5px;
 }
 .edit:hover,
 .delete:hover {
@@ -670,4 +670,8 @@ h3 {
   bottom: 0;
   height: 35px;
   background-color: #eee;
+}
+
+#body {
+  height: 150px;
 }
