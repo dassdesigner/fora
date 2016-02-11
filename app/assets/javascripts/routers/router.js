@@ -17,7 +17,32 @@ Fora.Routers.Router = Backbone.Router.extend({
     "questions/new": "questionNew",
     "questions/:id": "questionShow",
     "tags/:id": "tagShow",
-    "search?:query": "searchShow"
+    "search?:query": "searchShow",
+    "answer": "unansweredQuestionsIndex"
+  },
+
+  unansweredQuestionsIndex: function () {
+    this.collection = new Fora.Collections.Questions();
+    this.collection.fetch({data: {unanswered_questions: true}});
+    var user_tags = new Fora.Collections.Tags();
+    user_tags.fetch();
+    var non_user_tags = new Fora.Collections.Tags();
+    non_user_tags.fetch({data: {more_tags: true}});
+    var view = new Fora.Views.QuestionsIndex({
+      collection: this.collection,
+    });
+
+    var sideView = new Fora.Views.SidebarFeed({
+      collection: user_tags,
+    });
+
+    var rightSideView = new Fora.Views.RightSidebarFeed({
+      collection: non_user_tags,
+    });
+
+    this._swapSidebarView(sideView);
+    this._swapView(view);
+    this._swapRightSidebarView(rightSideView);
   },
 
   questionsIndex: function() {
