@@ -25,7 +25,6 @@ in my spare time.
 - Image uploading
 - User profiles
 - Following users
-- Recommended questions
 
 ##Challenges
 One of the more challenging engineering problems involved figuring out how to delete a topic from either a question or a user without deleting the topic itself. This involved sending additional parameters in Backbone's destroy method
