@@ -564,6 +564,9 @@ ul {
 .write-answer > .btn {
   padding-right: 11px;
 }
+#main > div > span.write-answer > button {
+  padding-bottom: 4px;
+}
 .edit:hover,
 .delete:hover {
   cursor: pointer;
