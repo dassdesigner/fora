@@ -7,10 +7,10 @@
   <form action="/session" id="sign-in" method="post">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
     <label>Email<br>
-      <input id="email" name="user[email]" type="text"><br>
+      <input id="email" name="user[email]" type="email" required><br>
     </label><br>
     <label>Password<br>
-      <input id="password" name="user[password]" type="password"><br>
+      <input id="password" name="user[password]" type="password" required><br>
     </label><br>
     <input class="btn btn-primary" type="submit" value="Log In">
     <input class="btn btn-primary" id="login-guest" value="Guest Login">
