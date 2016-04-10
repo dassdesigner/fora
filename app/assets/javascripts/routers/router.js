@@ -30,6 +30,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     non_user_tags.fetch({data: {more_tags: true}});
     var view = new Fora.Views.QuestionsIndex({
       collection: this.collection,
+      title: "Write Answers - Fora"
     });
 
     var sideView = new Fora.Views.SidebarFeed({
@@ -54,6 +55,7 @@ Fora.Routers.Router = Backbone.Router.extend({
     non_user_tags.fetch({data: {more_tags: true}});
     var view = new Fora.Views.QuestionsIndex({
       collection: this.collection,
+      title: "Fora - Home"
     });
 
     var sideView = new Fora.Views.SidebarFeed({
@@ -117,9 +119,9 @@ Fora.Routers.Router = Backbone.Router.extend({
 
     var non_user_tags = new Fora.Collections.Tags();
     non_user_tags.fetch({data: {more_tags: true}});
-
     var view = new Fora.Views.QuestionsIndex({
       collection: this.collection,
+      title: "Search - " + query.split("=")[1] + " - Fora"
     });
 
     var user_tags = new Fora.Collections.Tags();

@@ -30,6 +30,7 @@ Fora.Views.QuestionShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    document.title = (this.model.attributes.title || "Fora");
     var content = this.template({
       question: this.model
     });

@@ -23,6 +23,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    document.title = this.model.attributes.title || "Fora"
     var content = this.template({
       tag: this.model,
     });

@@ -3,21 +3,15 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
   tagName: "div",
   className: "feed",
 
-  initialize: function () {
+  initialize: function (params) {
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addQuestionSubview);
-    // this.listenTo(this.tags, "sync", this.render);
-    // this.collection.fetch();
     var that = this;
-    // this.collection.fetch();
+    document.title = params.title;
     this.collection.each (function (question) {
-
       that.addQuestionSubview(question);
     });
 
-    // this.tags.each (function (question) {
-    //   that.add
-    // })
   },
 
   addQuestionSubview: function (question) {
@@ -26,10 +20,6 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
   },
 
 
-  // addTagsSubview: function (tag) {
-  //   var subView = new Fora.Views.TagsIndexItem({model: tag});
-  //   this.addSubview(".tags-container", subView);
-  // },
 
   render: function () {
     var content = this.template();
