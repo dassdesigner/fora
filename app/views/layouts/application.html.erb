@@ -63,9 +63,11 @@
         });
         $(document).ajaxComplete(function() {
           $('#loading').fadeOut();
+          $('a').popover();
         });
       });
     </script>
+
 </body>
 
 </html>
