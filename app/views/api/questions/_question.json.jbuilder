@@ -1,6 +1,7 @@
 json.extract! question, :id, :body, :title, :author_id
 json.date question.created_at.to_date.to_formatted_s(:short)
 json.vote votes_hash[question.id]
+json.voters (!question.votes.empty? && question.votes.map {|v| User.find(v.user_id)}.map(&:name)) || "No one!"
 json.num_upvotes question.votes.count
 if !question.tags.empty?
   tag = question.tags.sample

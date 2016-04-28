@@ -61,10 +61,12 @@
         $(document).ajaxStart(function() {
           $('#loading').fadeIn();
           $('a').popover('hide');
+          $('span').popover('hide');
         });
         $(document).ajaxComplete(function() {
           $('#loading').fadeOut();
           $('a').popover();
+          $('span').popover({html: true});
         });
       });
     </script>

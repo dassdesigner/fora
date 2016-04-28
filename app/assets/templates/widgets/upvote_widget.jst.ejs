@@ -1,12 +1,14 @@
 <% if (vote.isNew()) { %>
-  <span class="btn-group upvote" role="group">
+  <span class="btn-group upvote" role="group" data-container="body" title="Upvoted By:" data-trigger="hover"
+    data-toggle="popover" data-placement="bottom" data-content="<%=model.escape('voters').split(",").join('<br>')%>">
     <button type="button" class="btn btn-default btn-sm">Upvote</button>
     <button type="button" class="btn btn-default btn-sm vote-count">
       <%=model.escape('num_upvotes')%>
     </button>
   </span>
 <% } else { %>
-  <span class="btn-group upvote upvoted" role="group">
+  <span class="btn-group upvote upvoted" role="group" data-container="body" title="Upvoted By:" data-trigger="hover"
+    data-toggle="popover" data-placement="bottom" data-content="<%=model.escape('voters').split(",").join('<br>')%>">
     <button type="button" class="btn btn-default btn-sm">Upvoted</button>
     <button type="button" class="btn btn-default btn-sm vote-count">
       <%=model.escape('num_upvotes')%>
