@@ -60,6 +60,7 @@
         $("#loading").spin(opts).hide();
         $(document).ajaxStart(function() {
           $('#loading').fadeIn();
+          $('a').popover('hide');
         });
         $(document).ajaxComplete(function() {
           $('#loading').fadeOut();
