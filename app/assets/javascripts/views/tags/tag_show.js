@@ -5,6 +5,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   //TODO refactor (it's pretty identical to QuestionsIndex)
   initialize: function (options) {
     this.listenTo(this.collection, "add", this.addQuestionSubview);
+    this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
     var followWidget = new Fora.Views.FollowWidget({
       model: this.model
@@ -23,7 +24,7 @@ Fora.Views.TagShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    document.title = this.model.attributes.title || "Fora"
+    document.title = this.model.attributes.title || "Fora";
     var content = this.template({
       tag: this.model,
     });

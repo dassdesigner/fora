@@ -16,6 +16,8 @@ class Api::QuestionsController < ApplicationController
 
     elsif params[:unanswered_questions]
       @questions = Question.all.select {|q| q.answers.count == 0}.sort{|a,b| b.votes.count <=> a.votes.count}
+    elsif params[:tag_id]
+      @questions = Tag.find(params[:tag_id]).questions.sort{|a,b| b.votes.count <=> a.votes.count}
     else
       # maybe select for only topics current user is following?
       @questions = Question.includes(:tags).all.sort{|a,b| b.votes.count <=> a.votes.count}

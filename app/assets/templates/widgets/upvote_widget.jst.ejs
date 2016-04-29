@@ -1,4 +1,4 @@
-<% if (vote.isNew()) { %>
+<% if (vote.isNew()){ %>
   <span class="btn-group upvote" role="group" data-container="body" title="Upvoted By:" data-trigger="hover"
     data-toggle="popover" data-placement="bottom" data-content="<%=model.escape('voters').split(",").join('<br>')%>">
     <button type="button" class="btn btn-default btn-sm">Upvote</button>
