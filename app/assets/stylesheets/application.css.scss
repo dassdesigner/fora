@@ -190,9 +190,15 @@ ul.more-tags-container > li {
 #ask-question:hover, #answer-question:hover, #current-user-dropdown:hover {
   background-color: #EEE;
 }
-#answer-question > span, #ask-question > span {
-  top: 7px;
+
+#ask-question > span {
+  top: 3px;
   position: relative;
+}
+
+#answer-question > span {
+  position: relative;
+  top: 4px;
 }
 
 #current-user-dropdown {
