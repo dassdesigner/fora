@@ -6,8 +6,7 @@ json.num_upvotes @question.votes.size
 json.tags @question.tags do |tag|
   json.extract! tag, :id, :title, :description
 end
-json.voters (!@question.votes.empty? && @question.votes.map {|v| User.find(v.user_id)}.map(&:name)) || "No one!"
-# debugger;
+json.voters (!@question.votes.empty? && @question.votes.map {|v| User.find(v.user_id)}).map {|u| {img_src: u.img_src, name: u.name}} || "No one!"
 json.more_questions Question.more_questions(@question) do |more_question|
   json.extract! more_question, :title, :id, :answers
   top_answer = more_question.answers.first

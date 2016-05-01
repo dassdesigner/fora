@@ -1,6 +1,13 @@
+<% var dataContent =""; %>
+<% var voters = model.toJSON()['voters'] %>
+<% for (i = 0; i < voters.length; i++) { %>
+  <% var author_img_src = voters[i]['img_src'] %>
+  <% var author_name = voters[i]['name'] %>
+  <% dataContent += "<img class='avatar' src='" + author_img_src + "'/>   "+ author_name + "<br>" %>
+<% } %>
 <% if (vote.isNew()){ %>
   <span class="btn-group upvote" role="group" data-container="body" title="Upvoted By:" data-trigger="hover"
-    data-toggle="popover" data-placement="bottom" data-content="<%=model.escape('voters').split(",").join('<br>')%>">
+    data-toggle="popover" data-placement="bottom" data-content="<%=dataContent%>">
     <button type="button" class="btn btn-default btn-sm">Upvote</button>
     <button type="button" class="btn btn-default btn-sm vote-count">
       <%=model.escape('num_upvotes')%>
@@ -8,7 +15,7 @@
   </span>
 <% } else { %>
   <span class="btn-group upvote upvoted" role="group" data-container="body" title="Upvoted By:" data-trigger="hover"
-    data-toggle="popover" data-placement="bottom" data-content="<%=model.escape('voters').split(",").join('<br>')%>">
+    data-toggle="popover" data-placement="bottom" data-content="<%=dataContent%>">
     <button type="button" class="btn btn-default btn-sm">Upvoted</button>
     <button type="button" class="btn btn-default btn-sm vote-count">
       <%=model.escape('num_upvotes')%>
