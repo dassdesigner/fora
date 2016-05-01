@@ -12,7 +12,8 @@
 
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" id="search" class="form-control" placeholder="Search" size="20">
+          <input type="text" id="search" class="form-control" placeholder="Search by Title Or Topic" size="20">
+          <button class="btn btn-default">Search</button>
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
@@ -54,19 +55,19 @@
       <div class="modal-body">
 
         <form class="question-form">
-          <h1>Ask a question, any question!</h1>
+          <h1><strong>Ask a question, any question!</strong></h1>
 
           <label for='title'>Title</label>
           <br>
 
-          <input type='text' name='title' id='title'>
+          <input type='text' name='title' id='title' required>
           <br>
           <label for='body'>Body</label>
           <br>
 
-          <textarea class='form-control' rows="1" cols="1" name='body' id='body' placeholder="Write your question"></textarea>
+          <textarea class='form-control' rows="1" cols="1" name='body' id='body' placeholder="Write your question" required></textarea>
           <br>
-          <button type="button" class="btn btn-default submit" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-primary submit" data-dismiss="modal">Submit</button>
         </form>
       </div>
     </div>

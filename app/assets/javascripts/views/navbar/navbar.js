@@ -2,6 +2,7 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
   template: JST["navbar/navbar"],
   events: {
     "submit": "search",
+    "click .search": "search",
     "click .sign-out": "signOut",
     "click .submit" : "submit"
   },
