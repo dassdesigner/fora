@@ -23,6 +23,7 @@ Fora.Views.Navbar = Backbone.CompositeView.extend({
   search: function (event) {
     event.preventDefault();
     var query = $('#search').val().split(" ").join("+");
+    $('#search').val("");
     Backbone.history.navigate("search?query="+ query, {trigger: true});
   },
 
