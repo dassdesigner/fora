@@ -668,3 +668,24 @@ h3 {
 #body {
   height: 150px;
 }
+
+#end-feed {
+  visibility: hidden;
+  height: 110px;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 110px;
+  background-color: #EEE;
+  margin-left: 17px;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: 1px solid #DDD;
+  margin-bottom: 50px;
+}
+
+#scroll-up {
+  position: relative;
+  bottom: 3px;
+  left: 10px;
+  font-size: 19px;
+}

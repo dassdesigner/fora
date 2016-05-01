@@ -2,6 +2,9 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
   template: JST["questions/index"],
   tagName: "div",
   className: "feed",
+  events: {
+    "click #scroll-up" : "scrollUp"
+  },
 
   initialize: function (params) {
     this.listenTo(this.collection, "sync", this.render);
@@ -19,7 +22,10 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
     this.addSubview(".content-container", subView);
   },
 
-
+  scrollUp: function (e) {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  },
 
   render: function () {
     var content = this.template();

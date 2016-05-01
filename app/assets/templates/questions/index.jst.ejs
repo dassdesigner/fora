@@ -7,3 +7,20 @@
 <% } %>
 <ul class="content-container">
 </ul>
+
+<% if (window.location.hash =="") { %>
+<div id="end-feed">You've reached the end of your feed.
+  <button class="btn btn-primary" id="scroll-up"><span class="glyphicon glyphicon-arrow-up"></span>       More Stories</button>
+</div>
+<% } %>
+
+<script>
+$(document).ready(function () {
+
+  setTimeout(function () {$('#end-feed').css('visibility', 'visible')}, 1000)
+})
+</script>
+
+<script>
+$("html, body").animate({ scrollTop: 0 }, "slow");
+</script>
