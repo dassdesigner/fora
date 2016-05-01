@@ -168,16 +168,8 @@ ul.more-tags-container > li {
 .navbar {
   background-image: none;
   z-index: 5;
-
-  // overflow: hidden;
-  // z-index: -1;
-  // overflow: auto;
-  // background-color: red;
 }
-.modal-dialog {
 
-  // z-index: 100000;
-}
 .modal.fade {
   z-index: 6;
 }
@@ -188,19 +180,6 @@ ul.more-tags-container > li {
   top: 160px;
   z-index: 500, !important;
 }
-
-// .ask-question {
-//   // background-color: blue !important;
-//   // z-index: -1;
-//   color: white !important;
-//   position: absolute;
-//   // background-size: 50% !important;
-//   background-color: #3e78ad;
-//   text-align: center;
-//   height: 20px;
-//   top: 20px;
-//   // margin-top: 10px
-// }
 
 
 #ask-question, #answer-question {
@@ -403,6 +382,10 @@ ul {
   font-weight: 700;
   font-style: Verdana;
   font-size: 25px;
+}
+
+span.fa.fa-pencil-square-o, span.fa.fa-question {
+  color: #ed5151;
 }
 .question-header,
 .date {
