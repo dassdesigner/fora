@@ -7,6 +7,7 @@ if !question.tags.empty?
   tag = question.tags.sample
   json.tag_id tag.id
   json.tag_title tag.title
+  json.tag_description tag.description
 end
 if answer
   json.answer_id answer.id

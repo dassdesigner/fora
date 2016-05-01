@@ -2,7 +2,8 @@
   <%=question.escape('state')%> •
   <%=question.escape('date')%>
   <% if (question.escape('tag_title')) { %>
-     • <a class="question-index-item-tag" href="#tags/<%=question.escape('tag_id')%>"><%=question.escape('tag_title')%></a>
+     • <a data-container="body" title="<%=question.escape('tag_title')%>" data-trigger="hover"
+       data-toggle="popover" data-placement="bottom" data-content="<%=question.escape('tag_description')%>" class="question-index-item-tag" href="#tags/<%=question.escape('tag_id')%>"><%=question.escape('tag_title')%></a>
   <% } %>
 
 </span><br>
@@ -11,7 +12,7 @@
 <% if (question.escape('answer_id')) { %>
   <p class="author-name">
   <span><img class="avatar" src="<%=question.escape('answer_author_avatar')%>"></span>
-  
+
   <t><%=question.escape('answer_author')%>
   <% if (question.escape('author_bio')) { %>
   <span class="answer-author-bio">, <%=question.escape('author_bio')%><span>
