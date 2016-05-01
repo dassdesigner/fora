@@ -11,9 +11,9 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "add", this.addQuestionSubview);
     var that = this;
     document.title = params.title;
-    this.collection.each (function (question) {
-      that.addQuestionSubview(question);
-    });
+    // this.collection.each (function (question) {
+    //   that.addQuestionSubview(question);
+    // });
 
   },
 
@@ -29,9 +29,9 @@ Fora.Views.QuestionsIndex = Backbone.CompositeView.extend({
 
   render: function () {
     var content = this.template();
-
     this.$el.html(content);
     this.attachSubviews();
+    $('#end-feed').css('visibility', 'visible');
     return this;
   }
 });
