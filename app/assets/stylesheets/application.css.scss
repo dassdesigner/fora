@@ -182,16 +182,24 @@ ul.more-tags-container > li {
 }
 
 
-#ask-question, #answer-question {
+#ask-question, #answer-question{
   position: relative;
   top: -10px;
 }
 
+#ask-question:hover, #answer-question:hover, #current-user-dropdown:hover {
+  background-color: #EEE;
+}
 #answer-question > span, #ask-question > span {
-  top: 5px;
+  top: 7px;
   position: relative;
 }
 
+#current-user-dropdown {
+  top: -6px;
+  height: 57px;
+  position: relative;
+}
 
 .fa {
   padding-right: 6px;
@@ -422,17 +430,7 @@ span.fa.fa-pencil-square-o, span.fa.fa-question {
   height: 32px;
   width: 32px;
 }
-#current-user-dropdown {
-  padding-top: 10px;
-  padding-bottom: 0;
-  background-color: inherit;
-}
-.content-container {
 
-  // padding-left: 0px;
-  // float: left;
-  // position: relative;
-}
 #title {
   width: 100%;
 }
