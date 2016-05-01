@@ -1,5 +1,5 @@
 json.extract! answer, :id, :body, :author_id, :author_bio
-json.voters (!answer.votes.empty? && answer.votes.map {|v| User.find(v.user_id)}.map {|u| {img_src: u.img_src, name: u.name}}) || "No one!"
+json.voters (!answer.votes.empty? && answer.votes.map {|v| User.find(v.user_id)}.map {|u| {img_src: u.img_src, name: u.name}}) || ""
 json.answer_date answer.created_at.to_date.to_formatted_s(:short)
 json.answer_author answer.author.name
 json.answer_author_avatar answer.author.img_src
