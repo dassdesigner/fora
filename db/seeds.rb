@@ -15,7 +15,7 @@ u7 = User.create(name: 'Sir Lancelot', email: 'lancelot@fora.com', password: 'su
 u8 = User.create(name: 'Patrick', email: 'serobertstrong@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/yiXreqb.jpg")
 u9 = User.create(name: 'King Arthur', email: 'onetrue@fora.com', password: 'supersecurepassword', img_src: "http://i.imgur.com/EbnLwbH.jpg")
 
-q1 = Question.create(title: 'If The Onion existed in the 19th century, what would the headlines be?', author_id: 1)
+q1 = Question.create(title: 'What is your favorite cat picture?', author_id: 1)
 q2 = Question.create(title: "What in your life makes you feel rich?", author_id: 2)
 q3 = Question.create(title: "What... is your favourite colour?", author_id: 6)
 q4 = Question.create(title: 'How do I use Backbone?', body: "Looking for a guide on the Dark Arts.", author_id: 5)
@@ -29,10 +29,10 @@ q11 = Question.create(title: 'What are some good vacation spots in California?',
 q12 = Question.create(title: 'How many monitors do you use when programming?', author_id: 2)
 q13 = Question.create(title: 'What are the differences between the main Javascript frameworks?', author_id: 2)
 q14 = Question.create(title: 'What is your favorite flavor of Ice Cream?', author_id: 6, body: 'I really like Cookies and Cream.')
-a1 = Answer.create(body: "Napoleon comes out of retirement for one more European tour",
+a1 = Answer.create(author_bio: "Cat Expert.", body: "<img alt=\"\" src=\"http://i.imgur.com/veDzg0r.jpg\" title=\"\" style=\"\"><br><br>Why?<br><ul><li><span style=\"line-height: 1.42857;\">This cat has a blue tail</span><br></li><li><span style=\"line-height: 1.42857;\">It looks&nbsp;</span><span style=\"line-height: 25.7143px;\">mischievous</span><br></li></ul><span style=\"line-height: 1.42857;\">&nbsp;Therefore, it is my favorite cat picture.</span><br>",
                            author_id: 2, question_id: 1)
 
-a2 = Answer.create(author_bio: "Co-author on Beasts, and where to find them", body: "Darwin finds birds on Galapagos, concludes we used to be monkeys.", author_id: 5, question_id: 1)
+a2 = Answer.create(author_bio: "Co-author on Beasts, and where to find them", body: "<img src=\"http://i.imgur.com/veDzg0r.jpg\" title=\"Image: http://i.imgur.com/veDzg0r.jpg\"><br>", author_id: 5, question_id: 1)
 
 a3 = Answer.create(author_bio: "I enjoy cake", body: "Big packs of new socks. Maybe some cake that's not too smushed. A big 'ole hug from Harry!", author_id: 3, question_id: 2)
 a4 = Answer.create(author_bio: "Son of Tywin", body: "My hand. And Lannister gold! ", author_id: 4, question_id: 2)
@@ -49,8 +49,9 @@ a14 = Answer.create(author_bio: "Son of Tywin", body: "Getting home and seeing m
 a15 = Answer.create(author_bio: "King", body: "John Cleese", author_id: 9, question_id: 9)
 a16 = Answer.create(author_bio: "King", body: "Graham Chapman", author_id: 9, question_id: 9)
 a17 = Answer.create(author_bio: "Film Enthusiast", body: "Sneakers. One of my favorite movies and nobody I know has ever seen it.\n Awesome cast - Robert Redford, Sidney Poitier, Dan Aykroyd, River Phoenix, Mary McDonnell, David Strathairn, Ben Kingsley, Stephen Tobolowsky, James Earl Jones", author_id: 8, question_id: 10)
-a18 = Answer.create(author_bio: "UC Berkeley Student", body: "I like Cookies and Cream too! It was my favorite flavor as a child. Nowadays, with hipsters moving into my neighborhood, I get to try flavors like Rose Vanilla and Earl Grey, flavors I had no idea existed as a child. That being said, my favorite ice cream flavor is not a constant variable. It is always changing, depending on the season, my mood, and the creativity of places where I get ice cream. Did you know when I was little, I didn't like ice cream at all. And it took me a long time to like chocolate ice cream. I thought chocolate ice cream would be too sweet, but it's actually really nice and LESS SWEET than the other flavors. What a great question! I love answering questions.
-")
+a18 = Answer.create(question_id: 14, author_id: 1, author_bio: "UC Berkeley Student", body: "<img alt=\"\" src=\"http://www.simplecomfortfood.com/images/cookies-n-cream.jpg\"><br><br>I like Cookies and Cream too! It was my favorite flavor as a child. Nowadays, with hipsters moving into my neighborhood, I get to try flavors like Rose Vanilla and Earl Grey, flavors I had no idea existed as a child. That being said, my favorite ice cream flavor is not a constant variable. It is always changing, depending on the season, my mood, and the creativity of places where I get ice cream. Did you know when I was little, I didn't like ice cream at all. And it took me a long time to like chocolate ice cream. I thought chocolate ice cream would be too sweet, but it's actually really nice and LESS SWEET than the other flavors. What a great question! I love answering questions.<br>")
+a19 = Answer.create(question_id: 4, author_bio: "Doc Diver", author_id: 9, body: "<a href=\"http://backbonejs.org/\">http://backbonejs.org/</a> <br>")
+a20 = Answer.create(question_id: 11, author_bio: "Vacation Expert", author_id: 4, body: "Here's a great resource!&nbsp;<a href=\"http://www.latimes.com/travel/california/la-tr-1118-top15-pg-photogallery.html\">http://www.latimes.com/travel/california/la-tr-1118-top15-pg-photogallery.html</a>" )
 t1 = Tag.create({title: "Life", description: "On the period of time between birth and death."})
 t2 = Tag.create({title: "Humor", description: "Humans find this humorous."})
 t3 = Tag.create({title: "Meta", description: "If it doesn't go anywhere else, just add this topic. It'll be fine."})
