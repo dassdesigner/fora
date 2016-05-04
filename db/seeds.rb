@@ -32,7 +32,7 @@ q14 = Question.create(title: 'What is your favorite flavor of Ice Cream?', autho
 a1 = Answer.create(author_bio: "Cat Expert.", body: "<img alt=\"\" src=\"http://i.imgur.com/veDzg0r.jpg\" title=\"\" style=\"\"><br><br>Why?<br><ul><li><span style=\"line-height: 1.42857;\">This cat has a blue tail</span><br></li><li><span style=\"line-height: 1.42857;\">It looks&nbsp;</span><span style=\"line-height: 25.7143px;\">mischievous</span><br></li></ul><span style=\"line-height: 1.42857;\">&nbsp;Therefore, it is my favorite cat picture.</span><br>",
                            author_id: 2, question_id: 1)
 
-a2 = Answer.create(author_bio: "Co-author on Beasts, and where to find them", body: "<img src=\"http://i.imgur.com/veDzg0r.jpg\" title=\"Image: http://i.imgur.com/veDzg0r.jpg\"><br>", author_id: 5, question_id: 1)
+a2 = Answer.create(author_bio: "Co-author on Beasts, and where to find them", body: "<img src=\"https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg\" title=\"Image: https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg\"><br>", author_id: 5, question_id: 1)
 
 a3 = Answer.create(author_bio: "I enjoy cake", body: "Big packs of new socks. Maybe some cake that's not too smushed. A big 'ole hug from Harry!", author_id: 3, question_id: 2)
 a4 = Answer.create(author_bio: "Son of Tywin", body: "My hand. And Lannister gold! ", author_id: 4, question_id: 2)
