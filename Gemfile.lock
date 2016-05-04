@@ -58,6 +58,8 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -87,6 +89,8 @@ GEM
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-hotkeys-rails (0.7.9.1)
+      railties (>= 3.1)
     jquery-rails (4.0.4)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -177,10 +181,12 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap-wysihtml5-rails
   byebug
   coffee-rails (~> 4.1.0)
   font-awesome-rails
   jbuilder (~> 2.0)
+  jquery-hotkeys-rails
   jquery-rails
   newrelic_rpm
   pg

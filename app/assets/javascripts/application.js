@@ -26,3 +26,4 @@
 //= require serialize_json
 //= require spin
 //= require jquery.spin
+//= require bootstrap-wysihtml5

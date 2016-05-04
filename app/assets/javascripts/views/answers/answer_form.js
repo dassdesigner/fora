@@ -13,11 +13,14 @@ Fora.Views.AnswerForm = Backbone.View.extend({
   render: function() {
     var content = this.template({answer: this.model});
     this.$el.html(content);
+    $('#answer-form-body').wysihtml5();
     return this;
   },
 
   submit: function (event) {
     event.preventDefault();
+
+    debugger
     var attrs = this.$el.serializeJSON();
     var that = this;
     this.model.set(attrs);

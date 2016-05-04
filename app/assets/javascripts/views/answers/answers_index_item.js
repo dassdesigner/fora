@@ -32,14 +32,14 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   },
 
   editAnswer: function(e) {
-    $targetAnswer = $(e.currentTarget).parent().parent().parent().parent().parent().find('.answer-body');
-    $targetAnswer.attr('contenteditable', 'true');
-    $targetAnswer.focus();
+    $(e.currentTarget).parent().parent().parent().parent().parent().find('.answer-body').wysihtml5();
+    // $targetAnswer.attr('contenteditable', 'true');
+    // $targetAnswer.focus();
   },
 
   saveAnswer: function (e) {
     e.preventDefault();
-    var formData = $(e.currentTarget).text();
+    var formData = e.currentTarget.innerHTML;
     this.model.save({body: formData});
   }
 });
