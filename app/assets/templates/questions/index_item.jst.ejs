@@ -18,7 +18,7 @@
   <span class="answer-author-bio">, <%=question.escape('author_bio')%><span>
   <% } %>
   </p>
-  <div class="answer-body"><%=question.escape('answer_body')%></div>
+  <div class="answer-body"><%=question.toJSON()['answer_body']%></div>
   <br>
   <p class="date">Written <%=question.escape('answer_date')%></p>
 <% } else {  %>

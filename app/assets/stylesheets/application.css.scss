@@ -265,6 +265,8 @@ a {
 }
 .avatar {
   border-radius: 50%;
+  // height: 32px;
+  // width: 32px;
 }
 #add-bio {
   position: relative;
@@ -544,12 +546,27 @@ span.fa.fa-pencil-square-o, span.fa.fa-question {
   border-bottom: 1px solid #bbb;
 }
 
+.answer-editable {
+  background-color: #EEE;
+  min-height: 300px;
+  border: 1px solid #bbb;
+}
+
+.edit-answer-submit {
+  display: none;
+}
 .save-answer {
   // visibility: hidden;
 }
 
-.answer-body > * > img, .answer-body > img {
-  max-width: 500px;
+.answer-body img {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.answer-body ul {
+  list-style-type: disc;
+  padding-left: 30px;
 }
 .action-bar {
   padding-bottom: 28px;

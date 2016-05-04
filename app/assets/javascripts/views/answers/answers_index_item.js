@@ -4,7 +4,7 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   events: {
     "click .delete-answer" : "deleteAnswer",
     "click .edit-answer" : "editAnswer",
-    "blur .answer-body" : "saveAnswer"
+    "click .edit-answer-submit" : "saveAnswer"
   },
 
   tagName: "li",
@@ -32,14 +32,19 @@ Fora.Views.AnswersIndexItem = Backbone.CompositeView.extend({
   },
 
   editAnswer: function(e) {
-    $(e.currentTarget).parent().parent().parent().parent().parent().find('.answer-body').wysihtml5();
+  $targetAnswer = $(e.currentTarget).closest('.answers-index-item');
+  $targetAnswerBody = $targetAnswer.find('.answer-body');
+  $targetAnswerBody.toggleClass('answer-editable');
+  $targetAnswer.find('.edit-answer-submit').toggle();
+  $targetAnswerBody.wysihtml5();
     // $targetAnswer.attr('contenteditable', 'true');
     // $targetAnswer.focus();
   },
 
   saveAnswer: function (e) {
     e.preventDefault();
-    var formData = e.currentTarget.innerHTML;
+    $(e.currentTarget).toggleClass('answer-editable');
+    var formData = $(e.currentTarget).siblings('.answer-body')[0].innerHTML;
     this.model.save({body: formData});
   }
 });
