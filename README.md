@@ -70,3 +70,7 @@ end
 ```
 
 In the end, this gets us an array of questions matching to either the topic or title of the question. Searching based on question answers probably wouldn't be difficult to do (albeit inefficiently). This would involve using roughly the same logic as the title_matches method.
+
+<img src="https://i.gyazo.com/b37b8c8ca0d35ce69a04190d3da5fbe8.png"></img>
+<img src="https://i.gyazo.com/e5b4771d73503ac3f6db808b962c9ebd.png"></img>
+
