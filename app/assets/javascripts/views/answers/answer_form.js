@@ -20,7 +20,6 @@ Fora.Views.AnswerForm = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
 
-    debugger
     var attrs = this.$el.serializeJSON();
     var that = this;
     this.model.set(attrs);
